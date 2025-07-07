@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "NexusMetrics Solutions",
+    "Adresse Client": "19 rue montmartre, 77409 Argenteuil, France",
+    "Numéro Facture": "FAC2025010104",
+    "Date Facturation": "15/06/2022",
+    "Date Echeance": "29/06/2022",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 10965.54
+  },
+  "table": [
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "18/06/2022",
+      "TVA": 20,
+      "Montant HT": 3478.05,
+      "Total TTC": 4173.66
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "19/06/2022",
+      "TVA": 20,
+      "Montant HT": 3229.46,
+      "Total TTC": 3875.35
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "17/06/2022",
+      "TVA": 20,
+      "Montant HT": 2430.44,
+      "Total TTC": 2916.53
+    }
+  ]
+}

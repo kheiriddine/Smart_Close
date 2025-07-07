@@ -1,0 +1,49 @@
+{
+  "Nom Societe": "Alsid",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025012954",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Détection de menaces Active Directory",
+    "Total TTC": 4619.22
+  },
+  "table": [
+    {
+      "Description": "Protection des infrastructures",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 3849.35,
+      "Total TTC": 4619.22
+    },
+    {
+      "Description": "Active Directory",
+      "Date": "",
+      "TVA": "",
+      "Montant HT": "",
+      "Total TTC": ""
+    },
+    {
+      "Description": "Sous-total HT",
+      "Date": "",
+      "TVA": "",
+      "Montant HT": 3849.35,
+      "Total TTC": ""
+    },
+    {
+      "Description": "TVA (20%)",
+      "Date": "",
+      "TVA": 20.0,
+      "Montant HT": "",
+      "Total TTC": 769.87
+    },
+    {
+      "Description": "Total TTC",
+      "Date": "",
+      "TVA": "",
+      "Montant HT": "",
+      "Total TTC": 4619.22
+    }
+  ]
+}

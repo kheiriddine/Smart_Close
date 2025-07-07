@@ -1,0 +1,28 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "AnalytiCorp Technologies",
+    "Adresse Client": "16 place de la concorde, 86222 Créteil, France",
+    "Numéro Facture": "FAC2025010161",
+    "Date Facturation": "15/07/2023",
+    "Date Echeance": "28/07/2023",
+    "Type d'opération": "Conseil en stratégie data",
+    "Total TTC": 5822.49
+  },
+  "table": [
+    {
+      "Description": "Cloud Migration",
+      "Date": "16/07/2023",
+      "TVA": 20,
+      "Montant HT": 1249.09,
+      "Total TTC": 1498.91
+    },
+    {
+      "Description": "Cloud Migration",
+      "Date": "17/07/2023",
+      "TVA": 20,
+      "Montant HT": 3602.98,
+      "Total TTC": 4323.58
+    }
+  ]
+}

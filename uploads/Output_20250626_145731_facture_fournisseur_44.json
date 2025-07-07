@@ -1,0 +1,21 @@
+{
+  "Nom Societe": "MongoDB",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025012133",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Base NoSQL",
+    "Total TTC": 1430.81
+  },
+  "table": [
+    {
+      "Description": "Base de données scalable pour données non relationnelles",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 1192.34,
+      "Total TTC": 1430.81
+    }
+  ]
+}

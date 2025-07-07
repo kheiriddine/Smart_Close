@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "Fnac Darty",
+    "Adresse Client": "29 boulevard voltaire, 78949 Paris, France",
+    "Numéro Facture": "FAC2025010179",
+    "Date Facturation": "15/06/2024",
+    "Date Echeance": "16/07/2024",
+    "Type d'opération": "Développement & Ingénierie Data",
+    "Total TTC": 7410.47
+  },
+  "table": [
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "16/06/2024",
+      "TVA": 20,
+      "Montant HT": 1129.03,
+      "Total TTC": 1354.84
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "17/06/2024",
+      "TVA": 20,
+      "Montant HT": 1712.01,
+      "Total TTC": 2054.41
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "18/06/2024",
+      "TVA": 20,
+      "Montant HT": 3334.35,
+      "Total TTC": 4001.22
+    }
+  ]
+}

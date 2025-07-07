@@ -1,0 +1,21 @@
+{
+  "Nom Societe": "Gradiant (Groupe RAINBOW PARTNERS)",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025011605",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Transformation data",
+    "Total TTC": 4512.31
+  },
+  "table": [
+    {
+      "Description": "Nettoyage et transformation des données",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 3760.26,
+      "Total TTC": 4512.31
+    }
+  ]
+}

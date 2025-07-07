@@ -1,0 +1,56 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "NeuralMind Solutions",
+    "Adresse Client": "22 rue de la paix, 86426 Courbevoie, France",
+    "Numéro Facture": "FAC2025010110",
+    "Date Facturation": "19/02/2025",
+    "Date Echeance": "20/03/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 16170.56
+  },
+  "table": [
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "20/02/2025",
+      "TVA": 20,
+      "Montant HT": 1634.73,
+      "Total TTC": 1961.68
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "21/02/2025",
+      "TVA": 20,
+      "Montant HT": 3619.13,
+      "Total TTC": 4342.96
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "22/02/2025",
+      "TVA": 20,
+      "Montant HT": 1334.37,
+      "Total TTC": 1601.24
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "23/02/2025",
+      "TVA": 20,
+      "Montant HT": 1993.43,
+      "Total TTC": 2392.12
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "20/02/2025",
+      "TVA": 20,
+      "Montant HT": 2193.1,
+      "Total TTC": 2631.72
+    },
+    {
+      "Description": "Cloud Migration",
+      "Date": "21/02/2025",
+      "TVA": 20,
+      "Montant HT": 2700.7,
+      "Total TTC": 3240.84
+    }
+  ]
+}

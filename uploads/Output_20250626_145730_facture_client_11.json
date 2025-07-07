@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "DataPulse Group",
+    "Adresse Client": "48 avenue victor hugo, 78059 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025010137",
+    "Date Facturation": "12/06/2025",
+    "Date Echeance": "20/06/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 6398.1
+  },
+  "table": [
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "13/06/2025",
+      "TVA": 20,
+      "Montant HT": 1150.72,
+      "Total TTC": 1380.86
+    },
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "14/06/2025",
+      "TVA": 20,
+      "Montant HT": 2040.55,
+      "Total TTC": 2448.66
+    },
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "15/06/2025",
+      "TVA": 20,
+      "Montant HT": 2140.48,
+      "Total TTC": 2568.58
+    }
+  ]
+}

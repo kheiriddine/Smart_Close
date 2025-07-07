@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "Free",
+    "Adresse Client": "34 rue de la république, 80980 Vitry-sur-Seine, France",
+    "Numéro Facture": "FAC2025010191",
+    "Date Facturation": "15/07/2025",
+    "Date Echeance": "02/08/2025",
+    "Type d'opération": "Développement & Ingénierie Data",
+    "Total TTC": 8398.63
+  },
+  "table": [
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "16/07/2025",
+      "TVA": 20,
+      "Montant HT": 2074.14,
+      "Total TTC": 2488.97
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "17/07/2025",
+      "TVA": 20,
+      "Montant HT": 3823.77,
+      "Total TTC": 4588.52
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "18/07/2025",
+      "TVA": 20,
+      "Montant HT": 1100.95,
+      "Total TTC": 1321.14
+    }
+  ]
+}

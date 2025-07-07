@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "AlgoVision Consulting",
+    "Adresse Client": "10 rue montmartre, 91862 Vitry-sur-Seine, France",
+    "Numéro Facture": "FAC2025010149",
+    "Date Facturation": "15/06/2025",
+    "Date Echeance": "29/06/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 9566.9
+  },
+  "table": [
+    {
+      "Description": "Cadrage projet",
+      "Date": "16/06/2025",
+      "TVA": 20.0,
+      "Montant HT": 3222.69,
+      "Total TTC": 3867.23
+    },
+    {
+      "Description": "Cadrage projet",
+      "Date": "17/06/2025",
+      "TVA": 20.0,
+      "Montant HT": 1549.39,
+      "Total TTC": 1859.27
+    },
+    {
+      "Description": "Cadrage projet",
+      "Date": "18/06/2025",
+      "TVA": 20.0,
+      "Montant HT": 3200.33,
+      "Total TTC": 3840.4
+    }
+  ]
+}

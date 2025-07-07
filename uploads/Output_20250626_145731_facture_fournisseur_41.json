@@ -1,0 +1,21 @@
+{
+  "Nom Societe": "Exasol",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025012255",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Base de données analytique",
+    "Total TTC": 2211.58
+  },
+  "table": [
+    {
+      "Description": "Base de données optimisée pour l'analytique",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 1842.98,
+      "Total TTC": 2211.58
+    }
+  ]
+}

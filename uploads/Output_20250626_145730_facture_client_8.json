@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "Al Ventures Ltd",
+    "Adresse Client": "14 rue de la république, 87912 Nanterre, France",
+    "Numéro Facture": "FAC2025010128",
+    "Date Facturation": "12/01/2025",
+    "Date Echeance": "16/01/2025",
+    "Type d'opération": "Conseil en stratégie data",
+    "Total TTC": 7548.35
+  },
+  "table": [
+    {
+      "Description": "Cloud Migration",
+      "Date": "11/01/2025",
+      "TVA": 20,
+      "Montant HT": 2036.04,
+      "Total TTC": 2443.25
+    },
+    {
+      "Description": "Développement de pipeline ETL sur Azure Data Factory",
+      "Date": "12/01/2025",
+      "TVA": 20,
+      "Montant HT": 1374.07,
+      "Total TTC": 1648.88
+    },
+    {
+      "Description": "Développement de pipeline ETL sur Azure Data Factory",
+      "Date": "09/01/2025",
+      "TVA": 20,
+      "Montant HT": 2880.18,
+      "Total TTC": 3456.22
+    }
+  ]
+}

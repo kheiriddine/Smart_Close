@@ -1,0 +1,28 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "Veepee",
+    "Adresse Client": "31 place de la concorde, 79555 Boulogne-Billancourt; France",
+    "Numéro Facture": "FAC2025010129",
+    "Date Facturation": "12/01/2025",
+    "Date Echeance": "24/01/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 7290.19
+  },
+  "table": [
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "13/01/2025",
+      "TVA": 209,
+      "Montant HT": 3371.77,
+      "Total TTC": 4046.12
+    },
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "14/01/2025",
+      "TVA": 209,
+      "Montant HT": 2703.39,
+      "Total TTC": 3244.07
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "AXA PARTNERS",
+    "Adresse Client": "17 place du marché, 87585 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025010159",
+    "Date Facturation": "15/01/2025",
+    "Date Echeance": "16/02/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 8013.34
+  },
+  "table": [
+    {
+      "Description": "Sécurité et conformité des données",
+      "Date": "20/01/2025",
+      "TVA": 20,
+      "Montant HT": 1490.3,
+      "Total TTC": 1788.36
+    },
+    {
+      "Description": "Sécurité et conformité des données",
+      "Date": "21/01/2025",
+      "TVA": 20,
+      "Montant HT": 2642.93,
+      "Total TTC": 3171.52
+    },
+    {
+      "Description": "Sécurité et conformité des données",
+      "Date": "22/01/2025",
+      "TVA": 20,
+      "Montant HT": 2544.55,
+      "Total TTC": 3053.46
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "NexusMetrics Ltd",
+    "Adresse Client": "21 rue de rivoli, 93774 Argenteuil, France",
+    "Numéro Facture": "FAC2025010131",
+    "Date Facturation": "15/06/2025",
+    "Date Echeance": "16/07/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 8716.74
+  },
+  "table": [
+    {
+      "Description": "Développement de pipeline ETL sur Azure Data Factory",
+      "Date": "17/06/2025",
+      "TVA": 20.0,
+      "Montant HT": 1758.37,
+      "Total TTC": 2110.04
+    },
+    {
+      "Description": "Développement de pipeline ETL sur Azure Data Factory",
+      "Date": "18/06/2025",
+      "TVA": 20.0,
+      "Montant HT": 1917.69,
+      "Total TTC": 2301.23
+    },
+    {
+      "Description": "Développement de pipeline ETL sur Azure Data Factory",
+      "Date": "19/06/2025",
+      "TVA": 20.0,
+      "Montant HT": 3587.89,
+      "Total TTC": 4305.47
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "Nom Societe": "Didomi",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025012437",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Gestion du consentement",
+    "Total TTC": 3782.8
+  },
+  "table": [
+    {
+      "Description": "Gestion des préférences",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 3152.33,
+      "Total TTC": 3782.8
+    }
+  ]
+}

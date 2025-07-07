@@ -1,0 +1,21 @@
+{
+  "Nom Societe": "AB Tasty",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025011761",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Optimisation conversion",
+    "Total TTC": 1936.5
+  },
+  "table": [
+    {
+      "Description": "Optimisation des taux de conversion",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 1613.75,
+      "Total TTC": 1936.5
+    }
+  ]
+}

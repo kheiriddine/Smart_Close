@@ -1,0 +1,77 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "StratAlytix Technologies",
+    "Adresse Client": "avenue victor, 91482 Argenteuil, France",
+    "Numéro Facture": "FAC2025010155",
+    "Date Facturation": "15/02/2025",
+    "Date Echeance": "16/03/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 28101.07
+  },
+  "table": [
+    {
+      "Description": "Cadrage projet",
+      "Date": "17/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 1101.65,
+      "Total TTC": 1321.98
+    },
+    {
+      "Description": "Cadrage projet",
+      "Date": "18/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 2752.02,
+      "Total TTC": 3302.42
+    },
+    {
+      "Description": "Cadrage projet",
+      "Date": "19/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 3239.75,
+      "Total TTC": 3887.7
+    },
+    {
+      "Description": "Cadrage projet",
+      "Date": "20/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 2126.97,
+      "Total TTC": 2552.36
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "17/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 2841.22,
+      "Total TTC": 3409.46
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "18/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 3305.05,
+      "Total TTC": 3966.06
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "19/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 3039.39,
+      "Total TTC": 3647.27
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "20/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 2269.6,
+      "Total TTC": 2723.52
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "17/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 2741.92,
+      "Total TTC": 3290.3
+    }
+  ]
+}

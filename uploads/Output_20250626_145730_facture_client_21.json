@@ -1,0 +1,28 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "StratAlytix Consulting",
+    "Adresse Client": "29 boulevard voltaire, 76436 Créteil, France",
+    "Numéro Facture": "FAC2025010162",
+    "Date Facturation": "18/07/2023",
+    "Date Echeance": "18/08/2023",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 3399.91
+  },
+  "table": [
+    {
+      "Description": "Sécurité et conformité des données",
+      "Date": "19/07/2023",
+      "TVA": 20,
+      "Montant HT": 1494.92,
+      "Total TTC": 1793.9
+    },
+    {
+      "Description": "Sécurité et conformité des données",
+      "Date": "20/07/2023",
+      "TVA": 20,
+      "Montant HT": 1338.34,
+      "Total TTC": 1606.01
+    }
+  ]
+}

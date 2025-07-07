@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "Dell FR",
+    "Adresse Client": "38 place de la concorde, 81159 Créteil, France",
+    "Numéro Facture": "FAC2025010188",
+    "Date Facturation": "12/01/2025",
+    "Date Echeance": "14/02/2025",
+    "Type d'opération": "Développement & Ingénierie Data",
+    "Total TTC": 9856.55
+  },
+  "table": [
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "13/01/2025",
+      "TVA": 20.0,
+      "Montant HT": 3248.12,
+      "Total TTC": 3897.74
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "14/01/2025",
+      "TVA": 20.0,
+      "Montant HT": 2519.53,
+      "Total TTC": 3023.44
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "12/01/2025",
+      "TVA": 20.0,
+      "Montant HT": 2446.14,
+      "Total TTC": 2935.37
+    }
+  ]
+}

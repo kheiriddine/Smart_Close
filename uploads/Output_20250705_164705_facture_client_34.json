@@ -1,0 +1,42 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "Sopra Steria",
+    "Adresse Client": "34 boulevard saint-germain, 85953 Créteil, France",
+    "Numéro Facture": "FAC2025010121",
+    "Date Facturation": "19/02/2025",
+    "Date Echeance": "20/03/2025",
+    "Type d'opération": "Développement & Ingénierie Data",
+    "Total TTC": 16968.22
+  },
+  "table": [
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "20/02/2025",
+      "TVA": 0.2,
+      "Montant HT": 3261.33,
+      "Total TTC": 3913.6
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "21/02/2025",
+      "TVA": 0.2,
+      "Montant HT": 3732.41,
+      "Total TTC": 4478.89
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "22/02/2025",
+      "TVA": 0.2,
+      "Montant HT": 3861.3,
+      "Total TTC": 4633.56
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "23/02/2025",
+      "TVA": 0.2,
+      "Montant HT": 3285.14,
+      "Total TTC": 3942.17
+    }
+  ]
+}

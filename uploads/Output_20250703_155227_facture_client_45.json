@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "AON FRANCE",
+    "Adresse Client": "38 rue de la république, 84155 Versailles, France",
+    "Numéro Facture": "FAC2025010163",
+    "Date Facturation": "15/07/2025",
+    "Date Echeance": "24/08/2025",
+    "Type d'opération": "Conseil en stratégie data",
+    "Total TTC": 10852.25
+  },
+  "table": [
+    {
+      "Description": "Cloud Migration",
+      "Date": "17/07/2025",
+      "TVA": 20,
+      "Montant HT": 3246.98,
+      "Total TTC": 3896.38
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "18/07/2025",
+      "TVA": 20,
+      "Montant HT": 2761.26,
+      "Total TTC": 3313.51
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "16/07/2025",
+      "TVA": 20,
+      "Montant HT": 3035.3,
+      "Total TTC": 3642.36
+    }
+  ]
+}

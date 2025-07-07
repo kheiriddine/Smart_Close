@@ -1,0 +1,21 @@
+{
+  "Nom Societe": "Contentsquare",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025011991",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Analytique web",
+    "Total TTC": 1366.09
+  },
+  "table": [
+    {
+      "Description": "Tracking du comportement utilisateur web.",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 1138.41,
+      "Total TTC": 1366.09
+    }
+  ]
+}

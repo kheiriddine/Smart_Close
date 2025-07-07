@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "NexusMetrics Consulting",
+    "Adresse Client": "19 boulevard voltaire, 90120 Courbevoie France",
+    "Numéro Facture": "FAC2025010143",
+    "Date Facturation": "15/07/2025",
+    "Date Echeance": "18/08/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 12840.49
+  },
+  "table": [
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "16/07/2025",
+      "TVA": 20,
+      "Montant HT": 3319.67,
+      "Total TTC": 3983.6
+    },
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "17/07/2025",
+      "TVA": 20,
+      "Montant HT": 3731.28,
+      "Total TTC": 4477.54
+    },
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "18/07/2025",
+      "TVA": 20,
+      "Montant HT": 3649.46,
+      "Total TTC": 4379.35
+    }
+  ]
+}

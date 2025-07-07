@@ -1,0 +1,28 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "InfoVista",
+    "Adresse Client": "33 rue de rivoli, 89599 Vitry-sur-Seine, France",
+    "Numéro Facture": "FAC2025010102",
+    "Date Facturation": "12/01/2025",
+    "Date Echeance": "24/01/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 4445.71
+  },
+  "table": [
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "13/01/2025",
+      "TVA": 20,
+      "Montant HT": 1326.06,
+      "Total TTC": 1591.27
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "14/01/2025",
+      "TVA": 20,
+      "Montant HT": 2378.7,
+      "Total TTC": 2854.44
+    }
+  ]
+}

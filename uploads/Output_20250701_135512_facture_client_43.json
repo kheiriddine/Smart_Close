@@ -1,0 +1,49 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "Pulse Solution",
+    "Adresse Client": "41 place de la Concorde, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025010156",
+    "Date Facturation": "22/06/2023",
+    "Date Echeance": "22/07/2023",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 17360.09
+  },
+  "table": [
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "22/06/2023",
+      "TVA": 20,
+      "Montant HT": 3097.23,
+      "Total TTC": 3716.68
+    },
+    {
+      "Description": "Sécurité et conformité des données RGPD",
+      "Date": "23/06/2023",
+      "TVA": 20,
+      "Montant HT": 3697.23,
+      "Total TTC": 4436.68
+    },
+    {
+      "Description": "Sécurité et conformité des données RGPD",
+      "Date": "24/06/2023",
+      "TVA": 20,
+      "Montant HT": 2415.02,
+      "Total TTC": 2898.02
+    },
+    {
+      "Description": "Sécurité et conformité des données RGPD",
+      "Date": "25/06/2023",
+      "TVA": 20,
+      "Montant HT": 1459.32,
+      "Total TTC": 1751.18
+    },
+    {
+      "Description": "Cloud Migration",
+      "Date": "22/06/2023",
+      "TVA": 20,
+      "Montant HT": 3797.94,
+      "Total TTC": 4557.53
+    }
+  ]
+}

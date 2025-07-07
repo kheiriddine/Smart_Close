@@ -1,0 +1,10 @@
+{
+  "banque": "Credit Mutuel",
+  "numero_cheque": "6593816",
+  "date": "06/02/2025",
+  "montant_lettres": "trente-six mille quatre-vingt-sept euros et cinquante-neuf centimes",
+  "montant_chiffres": 36087.59,
+  "beneficiaire": "GRADIANT",
+  "lieu": "Strasbourg",
+  "signature_present": false
+}

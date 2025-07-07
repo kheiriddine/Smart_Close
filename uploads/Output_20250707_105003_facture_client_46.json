@@ -1,0 +1,42 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "BNP Paribas",
+    "Adresse Client": "27 boulevard saint-germain, 94718 Vitry-sur-Seine, France",
+    "Numéro Facture": "FAC2025010171",
+    "Date Facturation": "15/07/2025",
+    "Date Echeance": "26/07/2025",
+    "Type d'opération": "Développement & Ingénierie Data",
+    "Total TTC": 15792.83
+  },
+  "table": [
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "17/07/2025",
+      "TVA": 20,
+      "Montant HT": 3489.53,
+      "Total TTC": 4187.44
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "18/07/2025",
+      "TVA": 20,
+      "Montant HT": 3416.55,
+      "Total TTC": 4099.86
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "19/07/2025",
+      "TVA": 20,
+      "Montant HT": 3307.67,
+      "Total TTC": 3969.2
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "20/07/2025",
+      "TVA": 20,
+      "Montant HT": 2946.94,
+      "Total TTC": 3536.33
+    }
+  ]
+}

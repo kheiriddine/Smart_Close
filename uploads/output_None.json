@@ -1,0 +1,24 @@
+{
+    "document_type": "facture",
+    "data": {
+        "Nom Societe": "Example Corp",
+        "info payment": {
+            "Nom du Client": "Client Example",
+            "Adresse Client": "123 Example Street, Example City",
+            "Num\u00e9ro Facture": "FAC2025000001",
+            "Date Facturation": "01/01/2025",
+            "Date Echeance": "31/01/2025",
+            "Type d'op\u00e9ration": "Example Service",
+            "Total TTC": 1000.0
+        },
+        "table": [
+            {
+                "Description": "Example Service",
+                "Date": "01/01/2025",
+                "TVA": 0.2,
+                "Montant HT": 833.33,
+                "Total TTC": 1000.0
+            }
+        ]
+    }
+}

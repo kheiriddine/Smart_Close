@@ -1,0 +1,49 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "OptiFlow Technologies",
+    "Adresse Client": "42 boulevard voltaire, 91369 Paris, France",
+    "Numéro Facture": "FAC2025010151",
+    "Date Facturation": "15/01/2025",
+    "Date Echeance": "20/02/2025",
+    "Type d'opération": "Développement & Ingénierie Data",
+    "Total TTC": 12533.56
+  },
+  "table": [
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "21/01/2025",
+      "TVA": 20,
+      "Montant HT": 1028.94,
+      "Total TTC": 1234.73
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "22/01/2025",
+      "TVA": 20,
+      "Montant HT": 1109.63,
+      "Total TTC": 1331.56
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "19/01/2025",
+      "TVA": 20,
+      "Montant HT": 3563.57,
+      "Total TTC": 4276.28
+    },
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "20/01/2025",
+      "TVA": 20,
+      "Montant HT": 2224.4,
+      "Total TTC": 2669.28
+    },
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "21/01/2025",
+      "TVA": 20,
+      "Montant HT": 2518.09,
+      "Total TTC": 3021.71
+    }
+  ]
+}

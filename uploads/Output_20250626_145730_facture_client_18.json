@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "ByteCraft Technologies",
+    "Adresse Client": "2 avenue victor hugo, 84897 Boulogne-Billancourt, France",
+    "Numéro Facture": "FAC2025010152",
+    "Date Facturation": "15/02/2025",
+    "Date Echeance": "16/03/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 9329.9
+  },
+  "table": [
+    {
+      "Description": "Cadrage projet",
+      "Date": "19/02/2025",
+      "TVA": 20,
+      "Montant HT": 3475.85,
+      "Total TTC": 4171.02
+    },
+    {
+      "Description": "Cadrage projet",
+      "Date": "20/02/2025",
+      "TVA": 20,
+      "Montant HT": 1287.61,
+      "Total TTC": 1545.13
+    },
+    {
+      "Description": "Cadrage projet",
+      "Date": "17/02/2025",
+      "TVA": 20,
+      "Montant HT": 3011.46,
+      "Total TTC": 3613.75
+    }
+  ]
+}

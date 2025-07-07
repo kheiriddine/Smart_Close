@@ -1,0 +1,21 @@
+{
+  "Nom Societe": "Trustelem",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 Pl. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025012044",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Solutions RGPD",
+    "Total TTC": 4128.26
+  },
+  "table": [
+    {
+      "Description": "Automatisation de la conformité",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 3440.22,
+      "Total TTC": 4128.26
+    }
+  ]
+}

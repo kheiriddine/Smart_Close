@@ -1,0 +1,56 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "La Redoute",
+    "Adresse Client": "45 rue de la paix, 92287 Courbevoie, France",
+    "Numéro Facture": "FAC2025010141",
+    "Date Facturation": "15/06/2025",
+    "Date Echeance": "20/06/2025",
+    "Type d'opération": "Conseil en stratégie data",
+    "Total TTC": 18295.5
+  },
+  "table": [
+    {
+      "Description": "Cloud Migration",
+      "Date": "16/06/2025",
+      "TVA": 20,
+      "Montant HT": 3333.92,
+      "Total TTC": 4000.7
+    },
+    {
+      "Description": "Cloud Migration",
+      "Date": "17/06/2025",
+      "TVA": 20,
+      "Montant HT": 2497.78,
+      "Total TTC": 2997.34
+    },
+    {
+      "Description": "Cloud Migration",
+      "Date": "18/06/2025",
+      "TVA": 20,
+      "Montant HT": 1901.18,
+      "Total TTC": 2281.42
+    },
+    {
+      "Description": "Cloud Migration",
+      "Date": "19/06/2025",
+      "TVA": 20,
+      "Montant HT": 2124.94,
+      "Total TTC": 2549.93
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "16/06/2025",
+      "TVA": 20,
+      "Montant HT": 3333.72,
+      "Total TTC": 4000.46
+    },
+    {
+      "Description": "Automatisation des processus data",
+      "Date": "17/06/2025",
+      "TVA": 20,
+      "Montant HT": 2054.71,
+      "Total TTC": 2465.65
+    }
+  ]
+}

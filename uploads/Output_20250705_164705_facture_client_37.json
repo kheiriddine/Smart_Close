@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIAnt",
+  "info payment": {
+    "Nom du Client": "Ubisoft",
+    "Adresse Client": "38 rue de la république, 76676 Nanterre, France",
+    "Numéro Facture": "FAC2025010131",
+    "Date Facturation": "19/02/2025",
+    "Date Echeance": "20/03/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 9903.08
+  },
+  "table": [
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "19/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 3030.85,
+      "Total TTC": 3637.02
+    },
+    {
+      "Description": "Sécurité et conformité des données RGPD",
+      "Date": "20/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 1361.92,
+      "Total TTC": 1634.3
+    },
+    {
+      "Description": "Sécurité et conformité des données RGPD",
+      "Date": "21/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 3859.8,
+      "Total TTC": 4631.76
+    }
+  ]
+}

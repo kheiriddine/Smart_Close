@@ -1,0 +1,35 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "AnalytiCorp Group",
+    "Adresse Client": "46 avenue victor hugo, 80999 Créteil, France",
+    "Numéro Facture": "FAC2025010140",
+    "Date Facturation": "19/02/2025",
+    "Date Echeance": "20/03/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 9437.22
+  },
+  "table": [
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "18/02/2025",
+      "TVA": 20,
+      "Montant HT": 3698.57,
+      "Total TTC": 4438.28
+    },
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "19/02/2025",
+      "TVA": 20,
+      "Montant HT": 1843.32,
+      "Total TTC": 2211.98
+    },
+    {
+      "Description": "Développement de pipeline ELT sur AWS",
+      "Date": "17/02/2025",
+      "TVA": 20,
+      "Montant HT": 2322.47,
+      "Total TTC": 2786.96
+    }
+  ]
+}
