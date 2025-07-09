@@ -1908,15 +1908,7 @@
                             <div class="tresorerie-label">Total Crédits</div>
                         </div>
                     </div>
-                    <div class="clients-list">
-                        <h4>Comptes Bancaires (512)</h4>
-                        <div id="comptesBancaires">
-                            <div class="client-item">
-                                <span>Chargement des données...</span>
-                                <span>-</span>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
 
                 <!-- Dashboard Clients -->
@@ -1940,13 +1932,7 @@
                         </div>
                     </div>
                     <div class="clients-list">
-                        <h4>Détail des Comptes Clients (411)</h4>
-                        <div id="comptesClients">
-                            <div class="client-item">
-                                <span>Chargement des données...</span>
-                                <span>-</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -1971,13 +1957,7 @@
                         </div>
                     </div>
                     <div class="fournisseurs-list">
-                        <h4>Détail des Comptes Fournisseurs (401)</h4>
-                        <div id="comptesFournisseurs">
-                            <div class="fournisseur-item">
-                                <span>Chargement des données...</span>
-                                <span>-</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -2002,13 +1982,7 @@
                         </div>
                     </div>
                     <div class="clients-list">
-                        <h4>Comptes TVA (445)</h4>
-                        <div id="comptesTVA">
-                            <div class="client-item">
-                                <span>Chargement des données...</span>
-                                <span>-</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -2190,9 +2164,9 @@
                     const item = document.createElement('div');
                     item.className = 'client-item';
                     item.innerHTML = `
-                        <span>${compte.numero} - ${compte.libelle}</span>
+                        <span>${compte.libelle}</span>
                         <span style="font-weight: bold; color: ${compte.solde >= 0 ? '#4CAF50' : '#FF6B6B'};">
-                            ${formatCurrency(compte.solde)}
+                            
                         </span>
                     `;
                     container.appendChild(item);
@@ -2205,7 +2179,7 @@
             const creances = grandLivreData.creances_clients || 0;
             const comptes = grandLivreData.comptes_details?.clients || [];
             
-            document.getElementById('creancesClients').textContent = formatCurrency(creances);
+            document.getElementById('creancesClients').textContent = formatCurrency(grandLivreData.creances_clients);
             document.getElementById('nombreClients').textContent = comptes.length;
             document.getElementById('alertesClients').textContent = comptes.filter(c => c.solde > 5000).length;
 
@@ -2218,12 +2192,7 @@
                 comptes.forEach(compte => {
                     const item = document.createElement('div');
                     item.className = 'client-item';
-                    item.innerHTML = `
-                        <span>${compte.numero} - ${compte.libelle}</span>
-                        <span style="font-weight: bold; color: #4CAF50;">
-                            ${formatCurrency(compte.solde)}
-                        </span>
-                    `;
+                    
                     container.appendChild(item);
                 });
             }
@@ -2247,12 +2216,7 @@
                 comptes.forEach(compte => {
                     const item = document.createElement('div');
                     item.className = 'fournisseur-item';
-                    item.innerHTML = `
-                        <span>${compte.numero} - ${compte.libelle}</span>
-                        <span style="font-weight: bold; color: #FF6B6B;">
-                            ${formatCurrency(compte.solde)}
-                        </span>
-                    `;
+          
                     container.appendChild(item);
                 });
             }
@@ -2279,12 +2243,7 @@
                 comptesTVA.forEach(compte => {
                     const item = document.createElement('div');
                     item.className = 'client-item';
-                    item.innerHTML = `
-                        <span>${compte.numero} - ${compte.libelle}</span>
-                        <span style="font-weight: bold; color: ${compte.solde >= 0 ? '#4CAF50' : '#FF6B6B'};">
-                            ${formatCurrency(compte.solde)}
-                        </span>
-                    `;
+                    
                     container.appendChild(item);
                 });
             }

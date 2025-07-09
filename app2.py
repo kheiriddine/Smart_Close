@@ -8,7 +8,7 @@ from datetime import datetime
 import traceback
 from pipeline import UnifiedOCRProcessor, process_document_cli
 from anomaly_detection_workflow import get_alerts_for_documents, extract_grandlivre_data
-
+from infos_gl import get_consolidated_grandlivre_data, get_dashboard_summary, get_tresorerie_details, get_clients_details, get_fournisseurs_details, get_tva_details
 app = Flask(__name__)
 
 # Configuration
@@ -28,32 +28,6 @@ if not os.path.exists(UPLOAD_FOLDER):
 # Base de données simple en mémoire pour stocker les documents
 documents_db = []
 next_doc_id = 1
-
-# Configuration par défaut pour la détection d'anomalies
-default_config = {
-    'max_date_delay_days': 3,
-    'high_priority_delay_days': 1,
-    'medium_priority_delay_days': 2,
-    'amount_tolerance_percentage': 1.0,
-    'amount_tolerance_absolute': 0.50,
-    'critical_amount_threshold': 10000,
-    'suspicious_amount_threshold': 1000,
-    'alert_on_missing_transactions': True,
-    'alert_on_duplicate_transactions': True,
-    'alert_on_amount_discrepancy': True,
-    'alert_on_date_discrepancy': True,
-    'alert_on_unmatched_transactions': True,
-    'alert_on_weekend_transactions': True,
-    'alert_on_large_transactions': True,
-    'monitored_bank_accounts': ["512100", "512200", "531000", "467000"],
-    'critical_threshold': 80,
-    'high_threshold': 60,
-    'medium_threshold': 30,
-    'low_threshold': 10
-}
-
-# Configuration actuelle (sera mise à jour par le dashboard)
-current_config = default_config.copy()
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -94,10 +68,9 @@ def get_alerts():
     """Route pour récupérer les alertes de clôture basées sur l'analyse des fichiers JSON"""
     try:
         # Générer les alertes basées sur l'analyse des fichiers JSON des documents traités
-        # Passer la configuration actuelle à la fonction
-        alerts, score_risque = get_alerts_for_documents(documents_db, current_config)
-
-        logger.info(f"Génération de {len(alerts)} alertes basées sur {len(documents_db)} documents avec config: {current_config}")
+        alerts, score_risque = get_alerts_for_documents(documents_db)
+        
+        logger.info(f"Génération de {len(alerts)} alertes basées sur {len(documents_db)} documents")
         
         return jsonify({
             'alerts': alerts,
@@ -130,7 +103,7 @@ def get_grandlivre_data():
     """Route pour récupérer les données du grand livre pour le dashboard"""
     try:
         grandlivre_data = extract_grandlivre_data(documents_db)
-
+        grandlivre_data = get_consolidated_grandlivre_data(app.config['UPLOAD_FOLDER'])
         logger.info(f"Extraction des données du grand livre: {grandlivre_data['total_ecritures']} écritures")
         
         return jsonify(grandlivre_data)
@@ -150,106 +123,60 @@ def get_grandlivre_data():
             'balance': 0,
             'solde_banque': 0,
             'creances_clients': 0,
-            'dettes_fournisseurs': 0,
-            'chiffre_affaires': 0,
-            'charges': 0,
-            'encaissements': 0,
-            'comptes_details': {
-                'banque': [],
-                'clients': [],
-                'fournisseurs': [],
-                'tva': []
-            }
+            'dettes_fournisseurs': 0
         }
         return jsonify(default_data)
 
-@app.route('/update_config', methods=['POST'])
-def update_config():
-    """Met à jour la configuration de détection d'anomalies"""
-    global current_config
+@app.route('/dashboard_summary')
+def get_dashboard_summary_route():
+    """Route pour récupérer le résumé du dashboard"""
     try:
-        new_config = request.get_json()
-        
-        # Valider et mettre à jour la configuration
-        if new_config:
-            # Fusionner avec la configuration par défaut pour s'assurer que tous les champs sont présents
-            current_config = {**default_config, **new_config}
-            
-            logger.info(f"Configuration mise à jour: {current_config}")
-            
-            return jsonify({
-                'message': 'Configuration mise à jour avec succès',
-                'config': current_config
-            })
-        else:
-            return jsonify({'error': 'Configuration invalide'}), 400
-            
+        summary = get_dashboard_summary(app.config['UPLOAD_FOLDER'])
+        return jsonify(summary)
     except Exception as e:
-        logger.error(f"Erreur mise à jour configuration: {str(e)}")
-        return jsonify({'error': f'Erreur lors de la mise à jour: {str(e)}'}), 500
+        logger.error(f"Erreur lors de la récupération du résumé: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
-@app.route('/get_config', methods=['GET'])
-def get_config():
-    """Récupère la configuration actuelle"""
-    return jsonify(current_config)
-
-@app.route('/analysis_report', methods=['GET'])
-def get_analysis_report():
-    """Génère et retourne un rapport d'analyse complet"""
+@app.route('/tresorerie_details')
+def get_tresorerie_details_route():
+    """Route pour récupérer les détails de trésorerie"""
     try:
-        # Générer les alertes avec la configuration actuelle
-        alerts, score_risque = get_alerts_for_documents(documents_db, current_config)
-        
-        # Extraire les données du grand livre
-        grandlivre_data = extract_grandlivre_data(documents_db)
-        
-        # Créer le rapport complet
-        rapport = {
-            'date_rapport': datetime.now().isoformat(),
-            'configuration': current_config,
-            'donnees_analysees': {
-                'total_documents': len(documents_db),
-                'documents_traites': len([d for d in documents_db if d['status'] == 'completed']),
-                'documents_en_attente': len([d for d in documents_db if d['status'] == 'pending']),
-                'documents_en_cours': len([d for d in documents_db if d['status'] == 'processing']),
-                'documents_echec': len([d for d in documents_db if d['status'] == 'failed']),
-                'factures': len([d for d in documents_db if d['type'] == 'facture']),
-                'cheques': len([d for d in documents_db if d['type'] == 'cheque']),
-                'releves': len([d for d in documents_db if d['type'] == 'releve']),
-                'grandlivre': len([d for d in documents_db if d['type'] == 'grandlivre'])
-            },
-            'score_risque': score_risque,
-            'alertes': alerts,
-            'donnees_comptables': grandlivre_data,
-            'statistiques_alertes': {
-                'total_alertes': len(alerts),
-                'alertes_haute_priorite': len([a for a in alerts if a.get('priority') == 'high']),
-                'alertes_moyenne_priorite': len([a for a in alerts if a.get('priority') == 'medium']),
-                'alertes_faible_priorite': len([a for a in alerts if a.get('priority') == 'low']),
-                'types_alertes': {}
-            }
-        }
-        
-        # Compter les types d'alertes
-        for alert in alerts:
-            alert_type = alert.get('type', 'unknown')
-            if alert_type not in rapport['statistiques_alertes']['types_alertes']:
-                rapport['statistiques_alertes']['types_alertes'][alert_type] = 0
-            rapport['statistiques_alertes']['types_alertes'][alert_type] += 1
-        
-        # Retourner le rapport en JSON
-        response = app.response_class(
-            response=json.dumps(rapport, indent=2, ensure_ascii=False),
-            status=200,
-            mimetype='application/json'
-        )
-        response.headers['Content-Disposition'] = f'attachment; filename=rapport_analyse_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json'
-        
-        return response
-        
+        details = get_tresorerie_details(app.config['UPLOAD_FOLDER'])
+        return jsonify(details)
     except Exception as e:
-        logger.error(f"Erreur génération rapport: {str(e)}")
-        return jsonify({'error': f'Erreur lors de la génération du rapport: {str(e)}'}), 500
+        logger.error(f"Erreur lors de la récupération des détails trésorerie: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/clients_details')
+def get_clients_details_route():
+    """Route pour récupérer les détails clients"""
+    try:
+        details = get_clients_details(app.config['UPLOAD_FOLDER'])
+        return jsonify(details)
+    except Exception as e:
+        logger.error(f"Erreur lors de la récupération des détails clients: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/fournisseurs_details')
+def get_fournisseurs_details_route():
+    """Route pour récupérer les détails fournisseurs"""
+    try:
+        details = get_fournisseurs_details(app.config['UPLOAD_FOLDER'])
+        return jsonify(details)
+    except Exception as e:
+        logger.error(f"Erreur lors de la récupération des détails fournisseurs: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/tva_details')
+def get_tva_details_route():
+    """Route pour récupérer les détails TVA"""
+    try:
+        details = get_tva_details(app.config['UPLOAD_FOLDER'])
+        return jsonify(details)
+    except Exception as e:
+        logger.error(f"Erreur lors de la récupération des détails TVA: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
@@ -260,37 +187,15 @@ def uploaded_file(filename):
         logger.error(f"Erreur lors de la récupération du fichier {filename}: {str(e)}")
         return jsonify({'error': 'Fichier non trouvé'}), 404
 
-@app.route('/update_alert_status/<int:alert_id>', methods=['POST'])
-def update_alert_status(alert_id):
-    """Met à jour le statut d'une alerte"""
-    try:
-        data = request.get_json()
-        new_status = data.get('status')
-        comment = data.get('comment', '')
-        
-        if not new_status:
-            return jsonify({'error': 'Statut requis'}), 400
-            
-        # Pour cette démo, on retourne juste un succès
-        # Dans un vrai système, vous stockeriez cela en base de données
-        logger.info(f"Mise à jour alerte {alert_id}: {new_status} - {comment}")
-        
-        return jsonify({
-            'message': f'Alerte {alert_id} mise à jour avec le statut: {new_status}',
-            'alert_id': alert_id,
-            'status': new_status,
-            'comment': comment
-        })
-        
-    except Exception as e:
-        logger.error(f"Erreur mise à jour alerte {alert_id}: {str(e)}")
-        return jsonify({'error': f'Erreur lors de la mise à jour: {str(e)}'}), 500
+
+
+
 
 @app.route('/upload', methods=['POST'])
 def upload_files():
     """Upload multiple files"""
     global next_doc_id
-
+    
     try:
         if 'files' not in request.files:
             return jsonify({'error': 'Aucun fichier fourni'}), 400
@@ -323,6 +228,7 @@ def upload_files():
                     'file_path': file_path,
                     'size': os.path.getsize(file_path),
                     'processed_data': None,
+                    'ocr_accuracy': 0.0,
                     'error': None
                 }
                 
@@ -362,7 +268,7 @@ def process_single_document(doc_id):
         doc = next((d for d in documents_db if d['id'] == doc_id), None)
         if not doc:
             return jsonify({'error': 'Document non trouvé'}), 404
-
+        
         if doc['status'] != 'pending':
             return jsonify({'error': 'Document déjà traité ou en cours de traitement'}), 400
         
@@ -377,16 +283,19 @@ def process_single_document(doc_id):
         document_type = doc['type']
         
         # Utiliser la fonction process_document_cli du pipeline
-        processed_data, output_path = process_document_cli(file_path, document_type)
+        processed_data, output_path, ocr_accuracy = process_document_cli(file_path, document_type)
         
         if processed_data:
             # Succès
             doc['status'] = 'completed'
             doc['processed_data'] = processed_data
             doc['output_path'] = output_path
+            # Utiliser la précision OCR calculée par le processeur
+            doc['ocr_accuracy'] = ocr_accuracy
             doc['processing_end'] = datetime.now().isoformat()
             
             logger.info(f"Document {doc_id} traité avec succès. Fichier JSON: {output_path}")
+            logger.info(f"Précision OCR: {doc['ocr_accuracy']:.1f}%")
             return jsonify({
                 'message': f'Document {doc["name"]} traité avec succès',
                 'document': doc,
@@ -396,6 +305,7 @@ def process_single_document(doc_id):
             # Échec
             doc['status'] = 'failed'
             doc['error'] = 'Erreur lors du traitement OCR'
+            doc['ocr_accuracy'] = 0.0
             doc['processing_end'] = datetime.now().isoformat()
             
             logger.error(f"Échec traitement document {doc_id}")
@@ -406,6 +316,7 @@ def process_single_document(doc_id):
         if 'doc' in locals():
             doc['status'] = 'failed'
             doc['error'] = str(e)
+            doc['ocr_accuracy'] = 0.0
             doc['processing_end'] = datetime.now().isoformat()
         
         logger.error(f"Erreur traitement document {doc_id}: {str(e)}")
@@ -418,7 +329,7 @@ def process_documents():
     try:
         # Trouver tous les documents en attente
         pending_docs = [d for d in documents_db if d['status'] == 'pending']
-
+        
         if not pending_docs:
             return jsonify({'message': 'Aucun document en attente', 'processed': []})
         
@@ -436,48 +347,56 @@ def process_documents():
                 file_path = doc['file_path']
                 document_type = doc['type']
                 
-                processed_data, output_path = process_document_cli(file_path, document_type)
+                processed_data, output_path, ocr_accuracy = process_document_cli(file_path, document_type)
                 
                 if processed_data:
                     # Succès
                     doc['status'] = 'completed'
                     doc['processed_data'] = processed_data
                     doc['output_path'] = output_path
+                    # Utiliser la précision OCR calculée par le processeur
+                    doc['ocr_accuracy'] = ocr_accuracy
                     doc['processing_end'] = datetime.now().isoformat()
                     
                     processed_results.append({
                         'id': doc['id'],
                         'name': doc['name'],
                         'status': 'success',
-                        'data': processed_data
+                        'data': processed_data,
+                        'ocr_accuracy': doc['ocr_accuracy']
                     })
                     
                     logger.info(f"Document {doc['id']} traité avec succès. JSON: {output_path}")
+                    logger.info(f"Précision OCR: {doc['ocr_accuracy']:.1f}%")
                     
                 else:
                     # Échec
                     doc['status'] = 'failed'
                     doc['error'] = 'Erreur lors du traitement OCR'
+                    doc['ocr_accuracy'] = 0.0
                     doc['processing_end'] = datetime.now().isoformat()
                     
                     processed_results.append({
                         'id': doc['id'],
                         'name': doc['name'],
                         'status': 'failed',
-                        'error': 'Erreur lors du traitement OCR'
+                        'error': 'Erreur lors du traitement OCR',
+                        'ocr_accuracy': 0.0
                     })
                     
             except Exception as e:
                 # Échec individuel
                 doc['status'] = 'failed'
                 doc['error'] = str(e)
+                doc['ocr_accuracy'] = 0.0
                 doc['processing_end'] = datetime.now().isoformat()
                 
                 processed_results.append({
                     'id': doc['id'],
                     'name': doc['name'],
                     'status': 'failed',
-                    'error': str(e)
+                    'error': str(e),
+                    'ocr_accuracy': 0.0
                 })
                 
                 logger.error(f"Erreur traitement document {doc['id']}: {str(e)}")
@@ -502,7 +421,7 @@ def download_json(doc_id):
         doc = next((d for d in documents_db if d['id'] == doc_id), None)
         if not doc:
             return jsonify({'error': 'Document non trouvé'}), 404
-
+        
         if doc['status'] != 'completed' or not doc.get('output_path'):
             return jsonify({'error': 'Document non traité ou fichier JSON non disponible'}), 400
         
@@ -524,7 +443,7 @@ def delete_document(doc_id):
         doc = next((d for d in documents_db if d['id'] == doc_id), None)
         if not doc:
             return jsonify({'error': 'Document non trouvé'}), 404
-
+        
         # Supprimer les fichiers
         if os.path.exists(doc['file_path']):
             os.remove(doc['file_path'])
@@ -550,13 +469,21 @@ def get_stats():
     processing = len([d for d in documents_db if d['status'] == 'processing'])
     completed = len([d for d in documents_db if d['status'] == 'completed'])
     failed = len([d for d in documents_db if d['status'] == 'failed'])
-
+    
+    # Calculer la précision OCR moyenne
+    completed_docs = [d for d in documents_db if d['status'] == 'completed']
+    avg_accuracy = 0.0
+    if completed_docs:
+        total_accuracy = sum(d.get('ocr_accuracy', 0.0) for d in completed_docs)
+        avg_accuracy = total_accuracy / len(completed_docs)
+    
     return jsonify({
         'total': total,
         'pending': pending,
         'processing': processing,
         'completed': completed,
-        'failed': failed
+        'failed': failed,
+        'avg_ocr_accuracy': round(avg_accuracy, 1)
     })
 
 if __name__ == '__main__':

@@ -1,0 +1,6596 @@
+{
+  "type": "grandlivre",
+  "ecritures_comptables": [
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    },
+    {
+      "numero_compte": "",
+      "libelle": "",
+      "debit": 0.0,
+      "credit": 0.0,
+      "date": ""
+    }
+  ],
+  "nombre_ecritures": 939,
+  "file_path": "uploads/20250708_165941_Grand_livre_comptable.xlsx",
+  "processing_method": "file_direct",
+  "ocr_metadata": {
+    "engines_used": [
+      "easyocr",
+      "paddleocr"
+    ],
+    "accuracies": {
+      "easyocr": 74.34498044127155,
+      "paddleocr": 59.43025507988077,
+      "average": 66.88761776057616
+    },
+    "best_engine": "easyocr",
+    "processing_timestamp": "2025-07-08T17:01:06.375362",
+    "file_path": "uploads/20250708_165941_Grand_livre_comptable.xlsx",
+    "document_type": "grandlivre"
+  }
+}

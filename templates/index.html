@@ -1385,28 +1385,18 @@
             updateCurrentDate();
             loadDocuments();
             setupSearchBar();
-            initializeOCRAccuracies();
             
             // Actualisation automatique toutes les 5 secondes
             refreshInterval = setInterval(loadDocuments, 5000);
         }
 
-        function initializeOCRAccuracies() {
-            // Initialiser les pourcentages OCR très faibles pour tous les documents
-            if (!localStorage.getItem('ocrAccuracies')) {
-                localStorage.setItem('ocrAccuracies', JSON.stringify({}));
+        // Utilisation des vraies données OCR du serveur
+        function getOCRAccuracy(doc) {
+            // Utiliser la précision réelle du serveur si disponible
+            if (doc.ocr_accuracy !== undefined && doc.ocr_accuracy !== null) {
+                return Math.round(doc.ocr_accuracy);
             }
-        }
-
-        function getOCRAccuracy(docId) {
-            const accuracies = JSON.parse(localStorage.getItem('ocrAccuracies') || '{}');
-            return accuracies[docId] || 0; // 0% initial    
-        }
-
-        function setOCRAccuracy(docId, accuracy) {
-            const accuracies = JSON.parse(localStorage.getItem('ocrAccuracies') || '{}');
-            accuracies[docId] = accuracy;
-            localStorage.setItem('ocrAccuracies', JSON.stringify(accuracies));
+            return 0;
         }
 
         function updateCurrentDate() {
@@ -1551,7 +1541,7 @@
             const cheques = documents.filter(d => d.type === 'cheque' && d.status === 'completed').length;
             const releves = documents.filter(d => d.type === 'releve' && d.status === 'completed').length;
             const grandlivres = documents.filter(d => d.type === 'grandlivre' && d.status === 'completed').length;
-            const validated = documents.filter(d => d.status === 'completed' && getOCRAccuracy(d.id) > 50).length;
+            const validated = documents.filter(d => d.status === 'completed' && getOCRAccuracy(d) > 50).length;
 
             document.getElementById('cheques-completed').textContent = cheques;
             document.getElementById('releves-completed').textContent = releves;
@@ -1605,22 +1595,34 @@
             const completedDocs = documents.filter(d => d.status === 'completed');
             
             if (completedDocs.length > 0) {
-                // Calcul de la précision moyenne
+                // Calcul de la précision moyenne avec les vraies données
                 let totalAccuracy = 0;
+                let countWithAccuracy = 0;
+                
                 completedDocs.forEach(doc => {
-                    totalAccuracy += getOCRAccuracy(doc.id);
+                    const accuracy = getOCRAccuracy(doc);
+                    if (accuracy > 0) {
+                        totalAccuracy += accuracy;
+                        countWithAccuracy++;
+                    }
                 });
-                const avgAccuracy = Math.round(totalAccuracy / completedDocs.length);
+                
+                const avgAccuracy = countWithAccuracy > 0 ? Math.round(totalAccuracy / countWithAccuracy) : 0;
                 
                 document.getElementById('overall-accuracy').style.width = `${avgAccuracy}%`;
                 document.getElementById('overall-accuracy-text').textContent = `${avgAccuracy}%`;
                 
                 // Taux de validation automatique
-                const validatedCount = completedDocs.filter(doc => getOCRAccuracy(doc.id) > 50).length;
-                const validationRate = Math.round((validatedCount / completedDocs.length) * 100);
+                const validatedCount = completedDocs.filter(doc => getOCRAccuracy(doc) > 50).length;
+                const validationRate = completedDocs.length > 0 ? Math.round((validatedCount / completedDocs.length) * 100) : 0;
                 
                 document.getElementById('validation-rate').style.width = `${validationRate}%`;
                 document.getElementById('validation-rate-text').textContent = `${validationRate}%`;
+            } else {
+                document.getElementById('overall-accuracy').style.width = '0%';
+                document.getElementById('overall-accuracy-text').textContent = '0%';
+                document.getElementById('validation-rate').style.width = '0%';
+                document.getElementById('validation-rate-text').textContent = '0%';
             }
         }
 
@@ -1730,7 +1732,8 @@
                 new Date(doc.processing_end).toLocaleDateString('fr-FR') : 
                 new Date(doc.upload_date).toLocaleDateString('fr-FR');
 
-            const accuracy = getOCRAccuracy(doc.id);
+            // Utiliser la vraie précision OCR du serveur
+            const accuracy = getOCRAccuracy(doc);
             
             // Indicateur de traitement
             const processingIndicator = doc.status === 'processing' ? 
@@ -1823,7 +1826,7 @@
                         doc.status === 'processing' ? 'processing' : 
                         doc.status === 'failed' ? 'error' : 'warning';
                     
-                    const accuracy = getOCRAccuracy(doc.id);
+                    const accuracy = getOCRAccuracy(doc);
                     
                     row.innerHTML = `
                         <td>${doc.name.length > 20 ? doc.name.substring(0, 20) + '...' : doc.name}</td>
@@ -1947,11 +1950,6 @@
                 
                 if (response.ok) {
                     showMessage(result.message, 'success');
-                    
-                    // Initialiser un pourcentage OCR faible pour le nouveau document traité
-                    const initialAccuracy = Math.floor(Math.random() * 15) + 5;
-                    setOCRAccuracy(docId, initialAccuracy);
-                    
                     loadDocuments();
                 } else {
                     showMessage(result.error || 'Erreur lors du traitement', 'error');
@@ -1974,15 +1972,6 @@
                 
                 if (response.ok) {
                     showMessage(result.message, 'success');
-                    
-                    // Initialiser des pourcentages OCR faibles pour tous les nouveaux documents traités
-                    result.processed.forEach(processedDoc => {
-                        if (processedDoc.status === 'success') {
-                            const initialAccuracy = Math.floor(Math.random() * 15) + 5;
-                            setOCRAccuracy(processedDoc.id, initialAccuracy);
-                        }
-                    });
-                    
                     loadDocuments();
                 } else {
                     showMessage(result.error || 'Erreur lors du traitement', 'error');
@@ -2008,12 +1997,6 @@
                 
                 if (response.ok) {
                     showMessage(result.message, 'success');
-                    
-                    // Supprimer les données OCR du localStorage
-                    const accuracies = JSON.parse(localStorage.getItem('ocrAccuracies') || '{}');
-                    delete accuracies[docId];
-                    localStorage.setItem('ocrAccuracies', JSON.stringify(accuracies));
-                    
                     loadDocuments();
                 } else {
                     showMessage(result.error || 'Erreur lors de la suppression', 'error');
@@ -2025,18 +2008,17 @@
         }
 
         function validateOCR(docId) {
-            const currentAccuracy = getOCRAccuracy(docId);
+            const doc = documents.find(d => d.id === docId);
+            if (!doc) return;
+            
+            const currentAccuracy = getOCRAccuracy(doc);
             
             if (currentAccuracy > 50) {
                 showMessage('Ce document est déjà validé', 'info');
                 return;
             }
             
-            // Augmenter le pourcentage de validation (entre 60-95%)
-            const newAccuracy = Math.floor(Math.random() * 35) + 60;
-            setOCRAccuracy(docId, newAccuracy);
-            
-            showMessage(`OCR validé! Précision mise à jour: ${newAccuracy}%`, 'success');
+            showMessage('OCR validé! Les données sont acceptées', 'success');
             
             // Actualiser l'affichage
             updateUI();

@@ -1,0 +1,25 @@
+{
+  "type": "cheque",
+  "numero_cheque": "N/A",
+  "date": "N/A",
+  "montant": 0.0,
+  "beneficiaire": "N/A",
+  "banque": "ou d",
+  "raw_text": "Crédit Mutuel Payez contre ce chéque non endossable sauf au profit d'une banque ou d'un organisme visé par la loi Somme en toutes lettres 39046.88 trente-neuf mille quarante-six euros et quatre-uingt-huit centimes A GRADIANT SPÉCIMEN Fait a Le Clichy 12/0.2/25 PAYABLE EN FRANCE Code Banque: 56270 Code Guichet: 77542 88 RUE CARDINET, 75017 PARIS Numéro de Compte: 72466299057 Clé RIB: 52 Amazon FR Cheque n\" 1062886 88 RUE CARDINET, 75017 PARIS Henri Garnier 0000 0000 00 0 00 0000 0 0 0 0 0 0",
+  "file_path": "uploads/20250708_165958_cheque_vGradiant_76.png",
+  "ocr_metadata": {
+    "engines_used": [
+      "easyocr",
+      "paddleocr"
+    ],
+    "accuracies": {
+      "easyocr": 78.68777671197212,
+      "paddleocr": 96.35868360256326,
+      "average": 87.52323015726769
+    },
+    "best_engine": "paddleocr",
+    "processing_timestamp": "2025-07-08T17:03:40.850735",
+    "file_path": "uploads/20250708_165958_cheque_vGradiant_76.png",
+    "document_type": "cheque"
+  }
+}

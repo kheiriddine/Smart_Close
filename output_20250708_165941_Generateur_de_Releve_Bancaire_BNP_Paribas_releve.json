@@ -1,0 +1,24 @@
+{
+  "type": "releve",
+  "numero_compte": "512200729",
+  "periode": "N/A",
+  "solde": 39659.15,
+  "operations": [],
+  "raw_text": "RELEVÉ BANCAIRE\nCompte: 512200729\nPériode: 07/2025\nSolde: 39659.15€",
+  "file_path": "uploads/20250708_165941_Generateur_de_Releve_Bancaire_BNP_Paribas.pdf",
+  "ocr_metadata": {
+    "engines_used": [
+      "easyocr",
+      "paddleocr"
+    ],
+    "accuracies": {
+      "easyocr": 90.30613236452187,
+      "paddleocr": 81.88637504028473,
+      "average": 86.0962537024033
+    },
+    "best_engine": "easyocr",
+    "processing_timestamp": "2025-07-08T17:00:37.919815",
+    "file_path": "uploads/20250708_165941_Generateur_de_Releve_Bancaire_BNP_Paribas.pdf",
+    "document_type": "releve"
+  }
+}

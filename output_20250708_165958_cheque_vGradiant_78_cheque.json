@@ -1,0 +1,25 @@
+{
+  "type": "cheque",
+  "numero_cheque": "2032961",
+  "date": "N/A",
+  "montant": 0.0,
+  "beneficiaire": "N/A",
+  "banque": "",
+  "raw_text": "Boursorama Payez contre ce chéque non endossable sauf au profit d'une bangue ou d'un organisme visé par la loi Somme en toutes lettres € 36732.66 trente-six mille sept cent trente-deux euros et soixante-six centimes A GRADIANT SPÉCIMEN Fait ä Le Iury-sur-Seine 11/0.2/25 PAYABLE EN FRANCE Code Banque: 73914 Code Guichet: 44524 Numéro de Compte: 44926544391 Clé RIB: 46 Fnac Darty Chéque n° 2032961 Gabrielle Rousseau 0000 0000 00 000 0000 000 00 0",
+  "file_path": "uploads/20250708_165958_cheque_vGradiant_78.png",
+  "ocr_metadata": {
+    "engines_used": [
+      "easyocr",
+      "paddleocr"
+    ],
+    "accuracies": {
+      "easyocr": 80.93413426653434,
+      "paddleocr": 98.09820055961609,
+      "average": 89.51616741307521
+    },
+    "best_engine": "paddleocr",
+    "processing_timestamp": "2025-07-08T17:01:36.540743",
+    "file_path": "uploads/20250708_165958_cheque_vGradiant_78.png",
+    "document_type": "cheque"
+  }
+}

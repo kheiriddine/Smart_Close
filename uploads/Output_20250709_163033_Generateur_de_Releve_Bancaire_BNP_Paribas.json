@@ -1,0 +1,1366 @@
+{
+  "informations_bancaires": {
+    "banque": "BNP Paribas",
+    "siret": "662042449",
+    "adresse_banque": "16 Boulevard des Italiens, 75009",
+    "periode_releve": {
+      "date_debut": "12/02/2025",
+      "date_fin": "01/01/4570"
+    },
+    "informations_compte": {
+      "titulaire": "GRADIANT  (Groupe Rainbow Partners)\nCabinet de Conseil - Data & IA",
+      "numero_compte_complet": "FR7630004000190000123456700",
+      "code_banque": "30004",
+      "code_guichet": "00019",
+      "numero_compte": "00001234567",
+      "solde_precedent": 250000.0
+    }
+  },
+  "operations": [
+    {
+      "date": "12/02/2025",
+      "nature": "REMISE DE CHEQUE N°9147740 - Covéa",
+      "montant": 45197.42,
+      "type": "crédit"
+    },
+    {
+      "date": "15/02/2025",
+      "nature": "REMISE DE CHEQUE N°2544359 - EDF",
+      "montant": 2961.17,
+      "type": "crédit"
+    },
+    {
+      "date": "15/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 3433902 à HYDRODA TA ()",
+      "montant": 2669.24,
+      "type": "débit"
+    },
+    {
+      "date": "15/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 61 17085 à GOVDA TA COMPLIANCE ()",
+      "montant": 11324.91,
+      "type": "débit"
+    },
+    {
+      "date": "15/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 31451 16 à GREENDA TA ()",
+      "montant": 9939.27,
+      "type": "débit"
+    },
+    {
+      "date": "16/02/2025",
+      "nature": "REMISE DE CHEQUE N°4124840 - Swiss Life",
+      "montant": 31791.39,
+      "type": "crédit"
+    },
+    {
+      "date": "16/02/2025",
+      "nature": "REMISE DE CHEQUE N°3470013 - Airbus",
+      "montant": 10818.65,
+      "type": "crédit"
+    },
+    {
+      "date": "17/02/2025",
+      "nature": "REMISE DE CHEQUE N°3599022 - La Banque Postale",
+      "montant": 32020.73,
+      "type": "crédit"
+    },
+    {
+      "date": "17/02/2025",
+      "nature": "REMISE DE CHEQUE N°8621555 - IKEA",
+      "montant": 41330.27,
+      "type": "crédit"
+    },
+    {
+      "date": "17/02/2025",
+      "nature": "REMISE DE CHEQUE N°1301607 - HP  France",
+      "montant": 4121.6,
+      "type": "crédit"
+    },
+    {
+      "date": "17/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 2457416 à PYXIS ANAL YTICS ()",
+      "montant": 7879.0,
+      "type": "débit"
+    },
+    {
+      "date": "17/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 8305046 à OMNIDA TA ()",
+      "montant": 7687.94,
+      "type": "débit"
+    },
+    {
+      "date": "18/02/2025",
+      "nature": "REMISE DE CHEQUE N°8095212 - Malakof f Humanis",
+      "montant": 46212.64,
+      "type": "crédit"
+    },
+    {
+      "date": "18/02/2025",
+      "nature": "REMISE DE CHEQUE N°9418470 - Engie",
+      "montant": 28846.52,
+      "type": "crédit"
+    },
+    {
+      "date": "18/02/2025",
+      "nature": "REMISE DE CHEQUE N°7001910 - Cdiscount",
+      "montant": 4138.85,
+      "type": "crédit"
+    },
+    {
+      "date": "18/02/2025",
+      "nature": "REMISE DE CHEQUE N°1939069 - Sopra Steria",
+      "montant": 49375.1,
+      "type": "crédit"
+    },
+    {
+      "date": "19/02/2025",
+      "nature": "REMISE DE CHEQUE N°9615372 - Commerzbank",
+      "montant": 35110.94,
+      "type": "crédit"
+    },
+    {
+      "date": "19/02/2025",
+      "nature": "REMISE DE CHEQUE N°871 1911 - Banque de France",
+      "montant": 27857.64,
+      "type": "crédit"
+    },
+    {
+      "date": "19/02/2025",
+      "nature": "REMISE DE CHEQUE N°4857617 - Michelin",
+      "montant": 3386.06,
+      "type": "crédit"
+    },
+    {
+      "date": "19/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 2892743 à SECURENODE ()",
+      "montant": 8452.29,
+      "type": "débit"
+    },
+    {
+      "date": "20/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 8145480 à SECURENODE ()",
+      "montant": 2165.48,
+      "type": "débit"
+    },
+    {
+      "date": "20/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 5855855 à GREENDA TA ()",
+      "montant": 7723.3,
+      "type": "débit"
+    },
+    {
+      "date": "21/02/2025",
+      "nature": "REMISE DE CHEQUE N°6216222 - Deutsche Bank FR",
+      "montant": 4676.29,
+      "type": "crédit"
+    },
+    {
+      "date": "21/02/2025",
+      "nature": "REMISE DE CHEQUE N°5746452 - Aéma Groupe",
+      "montant": 17578.04,
+      "type": "crédit"
+    },
+    {
+      "date": "21/02/2025",
+      "nature": "REMISE DE CHEQUE N°3959984 - Suez",
+      "montant": 23815.77,
+      "type": "crédit"
+    },
+    {
+      "date": "21/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012292 - HarfangLab",
+      "montant": 2583.72,
+      "type": "crédit"
+    },
+    {
+      "date": "21/02/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1748 - Informatica",
+      "montant": 3821.6,
+      "type": "crédit"
+    },
+    {
+      "date": "21/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012021 - KNIME",
+      "montant": 1302.89,
+      "type": "crédit"
+    },
+    {
+      "date": "22/02/2025",
+      "nature": "REMISE DE CHEQUE N°7250574 - Euler Hermes",
+      "montant": 2392.42,
+      "type": "crédit"
+    },
+    {
+      "date": "22/02/2025",
+      "nature": "REMISE DE CHEQUE N°2635002 - Allianz",
+      "montant": 7781.02,
+      "type": "crédit"
+    },
+    {
+      "date": "22/02/2025",
+      "nature": "REMISE DE CHEQUE N°5479553 - Ubisoft",
+      "montant": 19440.39,
+      "type": "crédit"
+    },
+    {
+      "date": "22/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012739 - Alteryx",
+      "montant": 1746.14,
+      "type": "crédit"
+    },
+    {
+      "date": "23/02/2025",
+      "nature": "REMISE DE CHEQUE N°2685339 - BNP  Paribas",
+      "montant": 22805.69,
+      "type": "crédit"
+    },
+    {
+      "date": "23/02/2025",
+      "nature": "REMISE DE CHEQUE N°9121445 - ING France",
+      "montant": 33329.23,
+      "type": "crédit"
+    },
+    {
+      "date": "23/02/2025",
+      "nature": "REMISE DE CHEQUE N°3552818 - Arkéa Banque",
+      "montant": 24346.62,
+      "type": "crédit"
+    },
+    {
+      "date": "23/02/2025",
+      "nature": "REMISE DE CHEQUE N°5692020 - Groupama",
+      "montant": 11879.75,
+      "type": "crédit"
+    },
+    {
+      "date": "23/02/2025",
+      "nature": "REMISE DE CHEQUE N°7142901 - V eepee",
+      "montant": 11624.95,
+      "type": "crédit"
+    },
+    {
+      "date": "23/02/2025",
+      "nature": "REMISE DE CHEQUE N°50281 16 - Bouygues Telecom",
+      "montant": 32967.11,
+      "type": "crédit"
+    },
+    {
+      "date": "23/02/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1547 - Dataiku",
+      "montant": 4489.51,
+      "type": "crédit"
+    },
+    {
+      "date": "23/02/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1605 - Stitch",
+      "montant": 4512.31,
+      "type": "crédit"
+    },
+    {
+      "date": "23/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 7978258 à QUANTUMLINK ()",
+      "montant": 2349.51,
+      "type": "débit"
+    },
+    {
+      "date": "24/02/2025",
+      "nature": "REMISE DE CHEQUE N°1961659 - CIC",
+      "montant": 36976.68,
+      "type": "crédit"
+    },
+    {
+      "date": "24/02/2025",
+      "nature": "REMISE DE CHEQUE N°6569892 - Generali",
+      "montant": 30711.82,
+      "type": "crédit"
+    },
+    {
+      "date": "24/02/2025",
+      "nature": "REMISE DE CHEQUE N°2339715 - Saint-Gobain",
+      "montant": 28614.8,
+      "type": "crédit"
+    },
+    {
+      "date": "24/02/2025",
+      "nature": "REMISE DE CHEQUE N°6793482 - Decathlon",
+      "montant": 2799.87,
+      "type": "crédit"
+    },
+    {
+      "date": "24/02/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1888 - Sinequa",
+      "montant": 1862.58,
+      "type": "crédit"
+    },
+    {
+      "date": "24/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012716 - Kameleoon",
+      "montant": 2883.78,
+      "type": "crédit"
+    },
+    {
+      "date": "24/02/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1549 - Criteo",
+      "montant": 4413.89,
+      "type": "crédit"
+    },
+    {
+      "date": "24/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 4738256 à SAINT -GOBAIN ANAL YTICS ()",
+      "montant": 3770.71,
+      "type": "débit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "REMISE DE CHEQUE N°9398055 - AG2R La Mondiale",
+      "montant": 28660.33,
+      "type": "crédit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "REMISE DE CHEQUE N°6905543 - Pernod Ricard",
+      "montant": 42184.83,
+      "type": "crédit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "REMISE DE CHEQUE N°2032961 - Fnac Darty",
+      "montant": 36732.66,
+      "type": "crédit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "REMISE DE CHEQUE N°2562856 - Zalando",
+      "montant": 19951.2,
+      "type": "crédit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "REMISE DE CHEQUE N°1338526 - Free",
+      "montant": 36140.36,
+      "type": "crédit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012091 - Talend",
+      "montant": 1960.94,
+      "type": "crédit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012458 - Collibra",
+      "montant": 4135.2,
+      "type": "crédit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 9763974 à GOVDA TA COMPLIANCE ()",
+      "montant": 11367.81,
+      "type": "débit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 7528488 à SILICONCORE ()",
+      "montant": 6257.96,
+      "type": "débit"
+    },
+    {
+      "date": "25/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 3502975 à QUANTUMLINK ()",
+      "montant": 3316.93,
+      "type": "débit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "REMISE DE CHEQUE N°8970993 - AXA",
+      "montant": 26281.1,
+      "type": "crédit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "REMISE DE CHEQUE N°8196070 - MACIF",
+      "montant": 42760.66,
+      "type": "crédit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "REMISE DE CHEQUE N°4616901 - Sanofi",
+      "montant": 43605.48,
+      "type": "crédit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "REMISE DE CHEQUE N°5659321 - Thales",
+      "montant": 18242.6,
+      "type": "crédit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "REMISE DE CHEQUE N°7514669 - Carrefour",
+      "montant": 41417.87,
+      "type": "crédit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "REMISE DE CHEQUE N°2150378 - Capgemini",
+      "montant": 12012.67,
+      "type": "crédit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012124 - Datalakes",
+      "montant": 1577.51,
+      "type": "crédit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1609 - Ubigreen",
+      "montant": 2914.81,
+      "type": "crédit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012531 - MicroStrategy",
+      "montant": 2466.18,
+      "type": "crédit"
+    },
+    {
+      "date": "26/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012459 - Looker",
+      "montant": 1878.7,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "ENCAISSEMENT  FAC20250101 19 - CloudNest Technologies",
+      "montant": 10768.32,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010147 - QuantumSoft Consulting",
+      "montant": 12774.18,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "REMISE DE CHEQUE N°9872510 - LCL",
+      "montant": 29273.07,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "REMISE DE CHEQUE N°6593816 - Crédit Mutuel",
+      "montant": 36087.59,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "REMISE DE CHEQUE N°3136004 - April",
+      "montant": 45622.8,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "REMISE DE CHEQUE N°7826060 - Aon France",
+      "montant": 7631.66,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "REMISE DE CHEQUE N°4980605 - SCOR",
+      "montant": 35560.16,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "REMISE DE CHEQUE N°9351674 - Renault",
+      "montant": 27238.33,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "REMISE DE CHEQUE N°4543299 - Dell FR",
+      "montant": 7307.39,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012013 - Predictron",
+      "montant": 3217.27,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012437 - Didomi",
+      "montant": 3782.8,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012710 - Domino Data Lab",
+      "montant": 1402.34,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012079 - H2O.ai",
+      "montant": 2160.05,
+      "type": "crédit"
+    },
+    {
+      "date": "27/02/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 9510102 à DA TAFORGE ()",
+      "montant": 6677.01,
+      "type": "débit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010102 - InfoV ista Ltd",
+      "montant": 4445.71,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010107 - OptiFlow Ltd",
+      "montant": 8575.3,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010134 - AlgoV ision Group",
+      "montant": 18325.87,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010137 - DataPulse Group",
+      "montant": 6398.1,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010149 - AlgoV ision Consulting",
+      "montant": 9566.9,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010155 - StratAlytix Technologies",
+      "montant": 28101.07,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010176 - NexusMetrics Technologies",
+      "montant": 6830.03,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010129 - V eepee",
+      "montant": 7290.19,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025010134 - Criteo",
+      "montant": 9160.11,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "REMISE DE CHEQUE N°7678153 - Boursorama",
+      "montant": 36084.33,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "REMISE DE CHEQUE N°1318323 - Caisse des Dépôts",
+      "montant": 43886.7,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "REMISE DE CHEQUE N°7070255 - MAIF",
+      "montant": 17787.72,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "REMISE DE CHEQUE N°5712638 - Air Liquide",
+      "montant": 47505.46,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "REMISE DE CHEQUE N°8092783 - Stellantis",
+      "montant": 13392.17,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "REMISE DE CHEQUE N°9756500 - Safran",
+      "montant": 10996.39,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "REMISE DE CHEQUE N°1062886 - Amazon FR",
+      "montant": 39046.88,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012692 - OVHcloud",
+      "montant": 2527.49,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1878 - Hiveo",
+      "montant": 1328.17,
+      "type": "crédit"
+    },
+    {
+      "date": "28/02/2025",
+      "nature": "ENCAISSEMENT  FAC2025012035 - Elastic",
+      "montant": 4656.36,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010140 - AnalytiCorp Group",
+      "montant": 9437.22,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010162 - StratAlytix Consulting",
+      "montant": 3399.91,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010182 - Zalando",
+      "montant": 8618.97,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "REMISE DE CHEQUE N°4662339 - Natixis",
+      "montant": 46571.09,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "REMISE DE CHEQUE N°2766058 - MMA",
+      "montant": 3866.8,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "REMISE DE CHEQUE N°7792123 - Swiss Re",
+      "montant": 7826.02,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "REMISE DE CHEQUE N°3167490 - Schneider Electric",
+      "montant": 31579.35,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "REMISE DE CHEQUE N°5846447 - Legrand",
+      "montant": 30793.49,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1704 - Platform.sh",
+      "montant": 2003.3,
+      "type": "crédit"
+    },
+    {
+      "date": "01/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012655 - Zeenea",
+      "montant": 4298.04,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010159 - AXA PARTNERS",
+      "montant": 8013.34,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010173 - InfoV ista Group",
+      "montant": 9808.95,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "REMISE DE CHEQUE N°7190699 - Klépierre",
+      "montant": 14577.22,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "REMISE DE CHEQUE N°4344394 - Dassault Systèmes",
+      "montant": 3184.49,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "REMISE DE CHEQUE N°8092673 - La Redoute",
+      "montant": 21498.66,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1912 - Critizr",
+      "montant": 4581.37,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012883 - Splio",
+      "montant": 3578.98,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012868 - SAS France",
+      "montant": 4447.08,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012255 - Exasol",
+      "montant": 2211.58,
+      "type": "crédit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 5517468 à DA TACRAFT  ()",
+      "montant": 9954.64,
+      "type": "débit"
+    },
+    {
+      "date": "02/03/2025",
+      "nature": "FRAIS BANCAIRES Banque: Frais chèques",
+      "montant": 118.8,
+      "type": "crédit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010200 - Amazon FR",
+      "montant": 6319.3,
+      "type": "crédit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "REMISE DE CHEQUE N°2966338 - Alstom",
+      "montant": 26554.76,
+      "type": "crédit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "REMISE DE CHEQUE N°9074797 - Doctolib",
+      "montant": 15221.41,
+      "type": "crédit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012041 - DPOrganizer",
+      "montant": 2955.88,
+      "type": "crédit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012216 - Lengow",
+      "montant": 3616.37,
+      "type": "crédit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012954 - Alsid",
+      "montant": 4619.22,
+      "type": "crédit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012717 - Fivetran",
+      "montant": 2494.32,
+      "type": "crédit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012133 - MongoDB",
+      "montant": 1430.81,
+      "type": "crédit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 3968560 à NEXAST ORAGE ()",
+      "montant": 642.11,
+      "type": "débit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 8489601 à PYXIS ANAL YTICS ()",
+      "montant": 5497.3,
+      "type": "débit"
+    },
+    {
+      "date": "03/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 7628755 à HYDRODA TA ()",
+      "montant": 964.76,
+      "type": "débit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010104 - NexusMetrics Solutions",
+      "montant": 10965.54,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010194 - Capgemini",
+      "montant": 10502.73,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010163 - AON FRANCE",
+      "montant": 10852.25,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010171 - BNP  Paribas",
+      "montant": 15792.83,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "REMISE DE CHEQUE N°9554388 - HSBC France",
+      "montant": 4967.91,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "REMISE DE CHEQUE N°4179374 - BPCE",
+      "montant": 9715.99,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "REMISE DE CHEQUE N°7880458 - Rothschild & Co",
+      "montant": 12400.16,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "REMISE DE CHEQUE N°1235342 - CNP  Assurances",
+      "montant": 8903.64,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "REMISE DE CHEQUE N°6836728 - Leroy Merlin",
+      "montant": 43446.95,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "REMISE DE CHEQUE N°6325630 - Sephora",
+      "montant": 2090.28,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "REMISE DE CHEQUE N°7864024 - Orange",
+      "montant": 2146.86,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "REMISE DE CHEQUE N°7676469 - Criteo",
+      "montant": 49152.46,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012625 - Tinyclues",
+      "montant": 4116.52,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012798 - Altair",
+      "montant": 2473.06,
+      "type": "crédit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 8253607 à OMNIDA TA ()",
+      "montant": 8997.7,
+      "type": "débit"
+    },
+    {
+      "date": "04/03/2025",
+      "nature": "Banque: Tenue de compte mensuelle",
+      "montant": 25.0,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010125 - SCOR",
+      "montant": 13010.44,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010137 - V eepee TLS",
+      "montant": 13828.68,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010141 - La Redoute",
+      "montant": 18295.5,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010151 - OptiFlow Technologies",
+      "montant": 12533.56,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "REMISE DE CHEQUE N°2250841 - V inci",
+      "montant": 27081.83,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "REMISE DE CHEQUE N°4480574 - Dassault Aviation",
+      "montant": 42586.5,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012102 - Clever Cloud",
+      "montant": 3224.35,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012990 - V ade Secure",
+      "montant": 3279.38,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012044 - Trustelem",
+      "montant": 4128.26,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012679 - TIBCO",
+      "montant": 4148.28,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012827 - Neo4j",
+      "montant": 1390.27,
+      "type": "crédit"
+    },
+    {
+      "date": "05/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 3891214 à NEXAST ORAGE ()",
+      "montant": 10862.66,
+      "type": "débit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010161 - AnalytiCorp Technologies",
+      "montant": 5822.49,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "REMISE DE CHEQUE N°7760998 - Société Générale",
+      "montant": 22306.02,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "REMISE DE CHEQUE N°3408910 - Crédit Agricole",
+      "montant": 49572.31,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "REMISE DE CHEQUE N°7140368 - Amundi",
+      "montant": 20405.3,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "REMISE DE CHEQUE N°6438155 - Axa Partners",
+      "montant": 16865.61,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "REMISE DE CHEQUE N°1235439 - Publicis Groupe",
+      "montant": 3505.93,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "REMISE DE CHEQUE N°6089626 - Atos",
+      "montant": 15481.47,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012726 - Wizata",
+      "montant": 3847.75,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1991 - Contentsquare",
+      "montant": 1366.09,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012506 - Hivency",
+      "montant": 1513.12,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012031 - RapidMiner",
+      "montant": 3842.58,
+      "type": "crédit"
+    },
+    {
+      "date": "06/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 5672300 à SILICONCORE ()",
+      "montant": 7507.88,
+      "type": "débit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010146 - DataSphere Solutions",
+      "montant": 8273.3,
+      "type": "crédit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010185 - Boulanger",
+      "montant": 8987.14,
+      "type": "crédit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010191 - Free",
+      "montant": 8398.63,
+      "type": "crédit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010156 - Pulse Solution",
+      "montant": 17360.09,
+      "type": "crédit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "REMISE DE CHEQUE N°8203391 - Crédit Foncier",
+      "montant": 43376.76,
+      "type": "crédit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "REMISE DE CHEQUE N°5464623 - Cardif",
+      "montant": 29752.62,
+      "type": "crédit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "REMISE DE CHEQUE N°2789949 - TotalEnergies",
+      "montant": 36708.26,
+      "type": "crédit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "REMISE DE CHEQUE N°8466407 - SFR",
+      "montant": 23723.86,
+      "type": "crédit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1516 - DataRobot",
+      "montant": 1924.8,
+      "type": "crédit"
+    },
+    {
+      "date": "07/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 4787924 à SAINT -GOBAIN ANAL YTICS ()",
+      "montant": 7202.25,
+      "type": "débit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC20250101 10 - NeuralMind Solutions",
+      "montant": 16170.56,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC20250101 16 - NeuroT ech Ltd",
+      "montant": 18297.7,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010122 - DataSphere Consulting",
+      "montant": 9866.1,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010128 - AI Ventures Ltd",
+      "montant": 7548.35,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010143 - NexusMetrics Consulting",
+      "montant": 12840.49,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010152 - ByteCraft Technologies",
+      "montant": 9329.9,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010164 - NeuralMind Ltd",
+      "montant": 8198.12,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010179 - Fnac Darty",
+      "montant": 7410.47,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010188 - Dell FR",
+      "montant": 9856.55,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010197 - Dassault Aviation",
+      "montant": 7620.54,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010121 - Sopra Steria",
+      "montant": 16968.22,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010131 - Ubisoft",
+      "montant": 9903.08,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010175 - VINCI",
+      "montant": 12612.59,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "REMISE DE CHEQUE N°36561 16 - Harmonie Mutuelle",
+      "montant": 48296.99,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "REMISE DE CHEQUE N°1458942 - Danone",
+      "montant": 32109.77,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "REMISE DE CHEQUE N°5991640 - EssilorLuxottica",
+      "montant": 48051.9,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1658 - Ysance",
+      "montant": 2587.18,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1995 - Matillion",
+      "montant": 2112.31,
+      "type": "crédit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 4809222 à DA TAFORGE ()",
+      "montant": 565.81,
+      "type": "débit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 5313682 à DA TACRAFT  ()",
+      "montant": 3911.38,
+      "type": "débit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 7001782 à SAINT -GOBAIN ANAL YTICS ()",
+      "montant": 8328.15,
+      "type": "débit"
+    },
+    {
+      "date": "08/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 9470024 à ECOPOWER ANAL YTICS ()",
+      "montant": 9358.31,
+      "type": "débit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010131 - NexusMetrics Ltd",
+      "montant": 8716.74,
+      "type": "crédit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025010167 - NeuralMind Group",
+      "montant": 8301.64,
+      "type": "crédit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "REMISE DE CHEQUE N°3998976 - AXA Banque",
+      "montant": 35982.25,
+      "type": "crédit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "REMISE DE CHEQUE N°7582148 - Oddo BHF",
+      "montant": 48147.83,
+      "type": "crédit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "REMISE DE CHEQUE N°7530834 - Gras Savoye",
+      "montant": 47227.32,
+      "type": "crédit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "REMISE DE CHEQUE N°9409219 - L'Oréal",
+      "montant": 24688.54,
+      "type": "crédit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "REMISE DE CHEQUE N°8264082 - L VMH",
+      "montant": 20924.31,
+      "type": "crédit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "REMISE DE CHEQUE N°87631 15 - V eolia",
+      "montant": 37286.24,
+      "type": "crédit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "ENCAISSEMENT  FAC2025012850 - Qlik France",
+      "montant": 1643.93,
+      "type": "crédit"
+    },
+    {
+      "date": "09/03/2025",
+      "nature": "ENCAISSEMENT  FAC202501 1761 - AB Tasty",
+      "montant": 1936.5,
+      "type": "crédit"
+    },
+    {
+      "date": "10/03/2025",
+      "nature": "REMISE DE CHEQUE N°4905768 - Milleis Banque",
+      "montant": 14712.78,
+      "type": "crédit"
+    },
+    {
+      "date": "10/03/2025",
+      "nature": "REMISE DE CHEQUE N°9567374 - Boulanger",
+      "montant": 47562.85,
+      "type": "crédit"
+    },
+    {
+      "date": "11/03/2025",
+      "nature": "REMISE DE CHEQUE N°7748781 - Matmut",
+      "montant": 31072.54,
+      "type": "crédit"
+    },
+    {
+      "date": "11/03/2025",
+      "nature": "REMISE DE CHEQUE N°5887233 - Generali France",
+      "montant": 5161.72,
+      "type": "crédit"
+    },
+    {
+      "date": "11/03/2025",
+      "nature": "REMISE DE CHEQUE N°8255151 - Allianz Travel",
+      "montant": 12734.01,
+      "type": "crédit"
+    },
+    {
+      "date": "12/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 8017375 à CYBERPLANT  ()",
+      "montant": 8670.25,
+      "type": "débit"
+    },
+    {
+      "date": "13/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 1887923 à CYBERPLANT  ()",
+      "montant": 1761.82,
+      "type": "débit"
+    },
+    {
+      "date": "15/03/2025",
+      "nature": "PAIEMENT  PAR CHEQUE 3987246 à ECOPOWER ANAL YTICS ()",
+      "montant": 9011.44,
+      "type": "débit"
+    }
+  ],
+  "ocr_accuracy": 85.0
+}
