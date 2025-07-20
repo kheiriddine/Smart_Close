@@ -22,7 +22,7 @@
         }
 
         .dashboard {
-            padding: 20px;
+            padding: 0px;
             max-width: 100%;
             margin: 0 auto;
         }
@@ -32,7 +32,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             background: rgba(255, 255, 255, 0.95);
             padding: 8px 15px;
             border-radius: 8px;
@@ -198,6 +198,31 @@
         .action-btn:hover {
             transform: translateY(-1px);
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* New Refresh Alerts Button */
+        .refresh-alerts-btn {
+            background: linear-gradient(135deg, #FF6B6B 0%, #EE5A24 100%);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+        }
+
+        .refresh-alerts-btn:hover {
+            background: linear-gradient(135deg, #EE5A24 0%, #DD2C00 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+        }
+
+        .refresh-alerts-btn.loading {
+            background: linear-gradient(135deg, #9E9E9E 0%, #757575 100%);
+            cursor: not-allowed;
         }
         
         /* OCR Button Special Style */
@@ -998,6 +1023,13 @@
             opacity: 0.9;
         }
 
+        .alert-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            opacity: 0.6;
+        }
+
         /* Risk Score Card */
         .risk-score-card {
             background: white;
@@ -1437,14 +1469,12 @@
                 <button class="action-btn primary" onclick="openUploadModal()">
                     <i class="fas fa-upload"></i> Télécharger Fichier
                 </button>
-                <button class="action-btn secondary" id="ocrToggleBtn" onclick="toggleOCRSection()">
-                    <i class="fas fa-eye"></i> OCR Real Time
+                
+                <button class="action-btn config" id="configToggleBtn" onclick="toggleConfigSection()">
+                    <i class="fas fa-cogs"></i> Configuration Alerts Anomalies
                 </button>
                 <button class="action-btn warning" id="alertsToggleBtn" onclick="toggleAlertsSection()">
                     <i class="fas fa-exclamation-triangle"></i> Alertes Anomalies
-                </button>
-                <button class="action-btn config" id="configToggleBtn" onclick="toggleConfigSection()">
-                    <i class="fas fa-cogs"></i> Configuration Rapprochement
                 </button>
                 <button class="action-btn secondary" onclick="downloadAnalysisReport()">
                     <i class="fas fa-file-download"></i> Rapport Analyse
@@ -1480,17 +1510,17 @@
                         <div class="config-grid">
                             <div class="config-form-group">
                                 <label for="maxDateDelay">Délai maximum (jours)</label>
-                                <input type="number" id="maxDateDelay" name="max_date_delay_days" value="3" min="1" max="30">
+                                <input type="number" id="maxDateDelay" name="max_date_delay_days" value="30" min="1" max="90">
                                 <div class="config-help-text">Délai maximum acceptable entre relevé bancaire et grand livre</div>
                             </div>
                             <div class="config-form-group">
                                 <label for="highPriorityDelay">Délai alerte haute priorité (jours)</label>
-                                <input type="number" id="highPriorityDelay" name="high_priority_delay_days" value="1" min="1" max="10">
+                                <input type="number" id="highPriorityDelay" name="high_priority_delay_days" value="15" min="1" max="30">
                                 <div class="config-help-text">Délai pour déclencher une alerte haute priorité</div>
                             </div>
                             <div class="config-form-group">
                                 <label for="mediumPriorityDelay">Délai alerte moyenne priorité (jours)</label>
-                                <input type="number" id="mediumPriorityDelay" name="medium_priority_delay_days" value="2" min="1" max="15">
+                                <input type="number" id="mediumPriorityDelay" name="medium_priority_delay_days" value="30" min="1" max="60">
                                 <div class="config-help-text">Délai pour déclencher une alerte moyenne priorité</div>
                             </div>
                             <div class="config-form-group">
@@ -1500,7 +1530,7 @@
                             </div>
                             <div class="config-form-group">
                                 <label for="amountToleranceAbsolute">Tolérance absolue (€)</label>
-                                <input type="number" id="amountToleranceAbsolute" name="amount_tolerance_absolute" value="0.50" min="0" max="100" step="0.01">
+                                <input type="number" id="amountToleranceAbsolute" name="amount_tolerance_absolute" value="0.01" min="0" max="100" step="0.01">
                                 <div class="config-help-text">Tolérance absolue en euros</div>
                             </div>
                         </div>
@@ -1517,8 +1547,18 @@
                             </div>
                             <div class="config-form-group">
                                 <label for="suspiciousAmountThreshold">Seuil suspect (€)</label>
-                                <input type="number" id="suspiciousAmountThreshold" name="suspicious_amount_threshold" value="1000" min="50" max="100000">
+                                <input type="number" id="suspiciousAmountThreshold" name="suspicious_amount_threshold" value="50000" min="50" max="100000">
                                 <div class="config-help-text">Montant au-dessus duquel l'alerte devient suspecte</div>
+                            </div>
+                            <div class="config-form-group">
+                                <label for="factureRapprochementDays">Délai rapprochement factures (jours)</label>
+                                <input type="number" id="factureRapprochementDays" name="facture_rapprochement_days" value="30" min="1" max="90">
+                                <div class="config-help-text">Délai pour rapprocher les factures</div>
+                            </div>
+                            <div class="config-form-group">
+                                <label for="chequeRapprochementDays">Délai rapprochement chèques (jours)</label>
+                                <input type="number" id="chequeRapprochementDays" name="cheque_rapprochement_days" value="7" min="1" max="30">
+                                <div class="config-help-text">Délai pour rapprocher les chèques</div>
                             </div>
                         </div>
 
@@ -1578,17 +1618,33 @@
                             </div>
                         </div>
 
-                        <!-- Comptes Bancaires Surveillés -->
+                        <!-- Comptes Surveillés -->
                         <div class="config-section-title">
-                            <i class="fas fa-university"></i> Comptes Bancaires Surveillés
+                            <i class="fas fa-university"></i> Comptes Surveillés
                         </div>
-                        <div class="config-form-group">
-                            <label for="monitoredAccounts">Numéros de comptes (un par ligne)</label>
-                            <textarea id="monitoredAccounts" name="monitored_bank_accounts" rows="4" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">512100
-512200
-531000
-467000</textarea>
-                            <div class="config-help-text">Liste des comptes bancaires à surveiller pour le rapprochement</div>
+                        <div class="config-grid">
+                            <div class="config-form-group">
+                                <label for="monitoredAccounts">Comptes Bancaires (un par ligne)</label>
+                                <textarea id="monitoredAccounts" name="monitored_bank_accounts" rows="4" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">512200
+512100
+512300</textarea>
+                                <div class="config-help-text">Liste des comptes bancaires à surveiller</div>
+                            </div>
+                            <div class="config-form-group">
+                                <label for="fournisseurAccounts">Comptes Fournisseurs (un par ligne)</label>
+                                <textarea id="fournisseurAccounts" name="fournisseur_accounts" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">401</textarea>
+                                <div class="config-help-text">Comptes fournisseurs à analyser</div>
+                            </div>
+                            <div class="config-form-group">
+                                <label for="chargeAccounts">Comptes de Charges (un par ligne)</label>
+                                <textarea id="chargeAccounts" name="charge_accounts" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">6</textarea>
+                                <div class="config-help-text">Comptes de charges à analyser</div>
+                            </div>
+                            <div class="config-form-group">
+                                <label for="clientAccounts">Comptes Clients (un par ligne)</label>
+                                <textarea id="clientAccounts" name="client_accounts" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">411</textarea>
+                                <div class="config-help-text">Comptes clients à analyser</div>
+                            </div>
                         </div>
 
                         <!-- Niveaux de Notification -->
@@ -1642,10 +1698,16 @@
                         <div class="stage-icon alerts">
                             <i class="fas fa-shield-alt"></i>
                         </div>
+                        
                         <div>
                             <h3 class="stage-title">Score de Risque Global</h3>
                             <p class="stage-description">Évaluation automatique des anomalies détectées</p>
                         </div>
+                        
+                        
+                        <button class="refresh-alerts-btn" id="refreshAlertsBtn" onclick="refreshAlerts()">
+                           <i class="fas fa-refresh"></i> Actualiser Alertes
+                        </button>
                     </div>
                     
                     <div class="risk-score-card">
@@ -1802,44 +1864,66 @@
 
             <!-- Content Grid -->
             <div class="content-grid">
-                <!-- Planning Section -->
-                <div class="planning-section">
-                    <h3>Planning de clôture</h3>
-                    <div class="date-info">
-                        <i class="fas fa-calendar"></i>
-                        <span id="currentMonth">Fevrier 2025</span>
-                    </div>
-                    <div class="planning-item">
-                        <span>Rapprochement bancaire</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%;"></div>
-                        </div>
-                        <span class="percentage">0%</span>
-                    </div>
-                    <div class="planning-item">
-                        <span>Comptes clients</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%;"></div>
-                        </div>
-                        <span class="percentage">0%</span>
-                    </div>
-                    <div class="planning-item">
-                        <span>Provisions</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%;"></div>
-                        </div>
-                        <span class="percentage">0%</span>
-                    </div>
-                    <div class="planning-item">
-                        <span>Consolidation</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%;"></div>
-                        </div>
-                        <span class="percentage">0%</span>
-                    </div>
+               <!-- Planning Section -->
+			<div class="planning-section">
+			    <h3>Planning de la clôture comptable</h3>
+			    <div class="date-info">
+				<i class="fas fa-calendar"></i>
+				<span id="currentMonth">Février 2025</span>
+			    </div>
 
-                    
-                </div>
+			    <div class="planning-item">
+				<span><strong>Préparation des pièces et informations : </strong> Avant le 1er jour ouvré</span>
+				
+				<div class="progress-bar">
+				    <div class="progress-fill" style="width: 0%;"></div>
+				</div>
+				<span class="percentage">0%</span>
+			    </div>
+
+			    <div class="planning-item">
+				<span><strong>OCR & vérifications comptables:</strong> J+2 à J+4 </span>
+				<ul class="step-details">
+				    <li>Lanchement de l'OCR factures/cheques </li>
+				    <li>Lettrage clients/fournisseurs</li>
+				    <li>Contrôle TVA </li>
+				    <li>Rapprochement bancaire </li>
+				    <li>Vérification des comptes transitoires</li>
+				</ul>
+				<div class="progress-bar">
+				    <div class="progress-fill" style="width: 0%;"></div>
+				</div>
+				<span class="percentage">0%</span>
+			    </div>
+
+			    <div class="planning-item">
+				<span><strong>Contrôles de cohérence:</strong> J+8 à J+10 </span>
+				<ul class="step-details">
+				    <li>Analyse des balances auxiliaires</li>
+				    <li>Contrôle des journaux</li>
+				    <li>Vérification de l'équilibre bilan</li>
+				</ul>
+				<div class="progress-bar">
+				    <div class="progress-fill" style="width: 0%;"></div>
+				</div>
+				<span class="percentage">0%</span>
+			    </div>
+
+			    <div class="planning-item">
+				<span><strong> Clôture & génération des états:</strong> J+10 à J+12 </span>
+				<ul class="step-details">
+				    <li>Validation et clôture des journaux</li>
+				    <li>Édition de la balance, bilan, résultat</li>
+				    <li>Archivage des pièces comptables</li>
+				    <li>Préparation des déclarations fiscales</li>
+				</ul>
+				<div class="progress-bar">
+				    <div class="progress-fill" style="width: 0%;"></div>
+				</div>
+				<span class="percentage">0%</span>
+			    </div>
+			</div>
+
 
                 <!-- Charts Section -->
                 <div class="charts-section" id="mainChartsSection">
@@ -1908,7 +1992,7 @@
                             <div class="tresorerie-label">Total Crédits</div>
                         </div>
                     </div>
-                   
+                    
                 </div>
 
                 <!-- Dashboard Clients -->
@@ -1931,9 +2015,7 @@
                             <div class="client-label">Alertes Clients</div>
                         </div>
                     </div>
-                    <div class="clients-list">
-                        
-                    </div>
+                    
                 </div>
 
                 <!-- Dashboard Fournisseurs -->
@@ -1956,9 +2038,7 @@
                             <div class="fournisseur-label">Alertes Fournisseurs</div>
                         </div>
                     </div>
-                    <div class="fournisseurs-list">
-                        
-                    </div>
+                    
                 </div>
 
                 <!-- Dashboard TVA -->
@@ -1981,9 +2061,7 @@
                             <div class="tva-label">TVA à Déclarer</div>
                         </div>
                     </div>
-                    <div class="clients-list">
-                        
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -2059,6 +2137,9 @@
                         <button type="button" class="btn btn-secondary" onclick="formatJSON()">
                             <i class="fas fa-code"></i> Formater
                         </button>
+                        <button type="button" class="btn btn-warning" onclick="validateJSONSyntax()">
+                            <i class="fas fa-check-circle"></i> Valider Syntaxe
+                        </button>
                         <button type="button" class="btn btn-primary" onclick="saveJSON()">
                             <i class="fas fa-save"></i> Sauvegarder
                         </button>
@@ -2080,19 +2161,22 @@
         let currentConfig = {};
         let currentDashboard = 'main';
         let grandLivreData = {};
+        let isRefreshingAlerts = false;
 
         // API endpoints
         const API_BASE = '/';
 
-        // Configuration par défaut
+        // Configuration par défaut harmonisée avec app2.py
         const DEFAULT_CONFIG = {
-            max_date_delay_days: 3,
-            high_priority_delay_days: 1,
-            medium_priority_delay_days: 2,
-            amount_tolerance_percentage: 1.0,
-            amount_tolerance_absolute: 0.50,
+            max_date_delay_days: 30,
+            high_priority_delay_days: 15,
+            medium_priority_delay_days: 30,
+            amount_tolerance_percentage: 0.01,
+            amount_tolerance_absolute: 0.01,
             critical_amount_threshold: 10000,
-            suspicious_amount_threshold: 1000,
+            suspicious_amount_threshold: 50000,
+            facture_rapprochement_days: 30,
+            cheque_rapprochement_days: 7,
             alert_on_missing_transactions: true,
             alert_on_duplicate_transactions: true,
             alert_on_amount_discrepancy: true,
@@ -2100,7 +2184,11 @@
             alert_on_unmatched_transactions: true,
             alert_on_weekend_transactions: true,
             alert_on_large_transactions: true,
-            monitored_bank_accounts: ["512100", "512200", "531000", "467000"],
+            monitored_bank_accounts: ["512200", "512100", "512300"],
+            fournisseur_accounts: ["401"],
+            charge_accounts: ["6"],
+            client_accounts: ["411"],
+            tva_accounts: ["445", "44566", "44571"],
             critical_threshold: 80,
             high_threshold: 60,
             medium_threshold: 30,
@@ -2112,6 +2200,43 @@
             window.location.href = '/ocr_dashboard';
         }
 
+        // Nouvelle fonction pour actualiser les alertes
+        async function refreshAlerts() {
+            if (isRefreshingAlerts) return;
+            
+            isRefreshingAlerts = true;
+            const refreshBtn = document.getElementById('refreshAlertsBtn');
+            const originalText = refreshBtn.innerHTML;
+            
+            try {
+                // Mettre à jour le bouton visuellement
+                refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Actualisation...';
+                refreshBtn.classList.add('loading');
+                
+                // Forcer le rechargement des alertes
+                await loadAlerts();
+                
+                showMessage('Alertes actualisées avec succès', 'success');
+                
+                // Ouvrir automatiquement la section des alertes si elle n'est pas ouverte
+                const alertsSection = document.getElementById('alertsSection');
+                if (!alertsSection.classList.contains('active')) {
+                    toggleAlertsSection();
+                }
+                
+            } catch (error) {
+                console.error('Erreur lors de l\'actualisation des alertes:', error);
+                showMessage('Erreur lors de l\'actualisation des alertes', 'error');
+            } finally {
+                // Restaurer le bouton
+                setTimeout(() => {
+                    refreshBtn.innerHTML = originalText;
+                    refreshBtn.classList.remove('loading');
+                    isRefreshingAlerts = false;
+                }, 1000);
+            }
+        }
+
         // Fonction pour basculer entre les dashboards
         function switchDashboard(dashboard) {
             // Masquer tous les dashboards
@@ -2121,12 +2246,13 @@
             document.getElementById('fournisseursDashboard').style.display = 'none';
             document.getElementById('tvaDashboard').style.display = 'none';
 
-            currentDashboard = dashboard;
+            currentDashboard=dashboard;
 
             switch(dashboard) {
                 case 'main':
                     document.getElementById('mainChartsSection').style.display = 'block';
-                    break;
+                    loadGrandLivreData();
+                    break;   
                 case 'tresorerie':
                     document.getElementById('tresorerieDashboard').style.display = 'block';
                     loadTresorerieData();
@@ -2145,107 +2271,85 @@
                     break;
             }
         }
-
-        // Charger les données de trésorerie
-        function loadTresorerieData() {
-            document.getElementById('soldeBanque').textContent = formatCurrency(grandLivreData.solde_banque || 0);
-            document.getElementById('totalDebitsTresorerie').textContent = formatCurrency(grandLivreData.total_debit || 0);
-            document.getElementById('totalCreditsTresorerie').textContent = formatCurrency(grandLivreData.total_credit || 0);
-
-            const container = document.getElementById('comptesBancaires');
-            container.innerHTML = '';
-            
-            const comptesBanque = grandLivreData.comptes_details?.banque || [];
-            
-            if (comptesBanque.length === 0) {
-                container.innerHTML = '<div class="client-item"><span>Aucun compte bancaire trouvé</span><span>-</span></div>';
-            } else {
-                comptesBanque.forEach(compte => {
-                    const item = document.createElement('div');
-                    item.className = 'client-item';
-                    item.innerHTML = `
-                        <span>${compte.libelle}</span>
-                        <span style="font-weight: bold; color: ${compte.solde >= 0 ? '#4CAF50' : '#FF6B6B'};">
-                            
-                        </span>
-                    `;
-                    container.appendChild(item);
-                });
-            }
-        }
-
-        // Charger les données clients
-        function loadClientsData() {
-            const creances = grandLivreData.creances_clients || 0;
-            const comptes = grandLivreData.comptes_details?.clients || [];
-            
-            document.getElementById('creancesClients').textContent = formatCurrency(grandLivreData.creances_clients);
-            document.getElementById('nombreClients').textContent = comptes.length;
-            document.getElementById('alertesClients').textContent = comptes.filter(c => c.solde > 5000).length;
-
-            const container = document.getElementById('comptesClients');
-            container.innerHTML = '';
-            
-            if (comptes.length === 0) {
-                container.innerHTML = '<div class="client-item"><span>Aucun compte client trouvé</span><span>-</span></div>';
-            } else {
-                comptes.forEach(compte => {
-                    const item = document.createElement('div');
-                    item.className = 'client-item';
+        //Charger les données de trésorerie avec les vraies données GL
+        async function loadTresorerieData() {
+            try {
+                const response = await fetch(`${API_BASE}tresorerie_details`);
+                if (response.ok) {
+                    const data = await response.json();
                     
-                    container.appendChild(item);
-                });
+                    document.getElementById('soldeBanque').textContent = formatCurrency(data.solde_banque_principal || 0);
+                    document.getElementById('totalDebitsTresorerie').textContent = formatCurrency(data.total_debit || 0);
+                    document.getElementById('totalCreditsTresorerie').textContent = formatCurrency(data.total_credit || 0);
+
+                 
+                }
+            } catch (error) {
+                console.error('Erreur chargement données trésorerie:', error);
+                // Fallback avec données locales
+                document.getElementById('soldeBanque').textContent = formatCurrency(grandLivreData.solde_banque || 0);
+                document.getElementById('totalDebitsTresorerie').textContent = formatCurrency(grandLivreData.total_debit || 0);
+                document.getElementById('totalCreditsTresorerie').textContent = formatCurrency(grandLivreData.total_credit || 0);
             }
         }
 
-        // Charger les données fournisseurs
-        function loadFournisseursData() {
-            const dettes = grandLivreData.dettes_fournisseurs || 0;
-            const comptes = grandLivreData.comptes_details?.fournisseurs || [];
-            
-            document.getElementById('dettesFournisseurs').textContent = formatCurrency(dettes);
-            document.getElementById('nombreFournisseurs').textContent = comptes.length;
-            document.getElementById('alertesFournisseurs').textContent = comptes.filter(c => c.solde > 10000).length;
-
-            const container = document.getElementById('comptesFournisseurs');
-            container.innerHTML = '';
-            
-            if (comptes.length === 0) {
-                container.innerHTML = '<div class="fournisseur-item"><span>Aucun compte fournisseur trouvé</span><span>-</span></div>';
-            } else {
-                comptes.forEach(compte => {
-                    const item = document.createElement('div');
-                    item.className = 'fournisseur-item';
-          
-                    container.appendChild(item);
-                });
-            }
-        }
-
-        // Charger les données TVA
-        function loadTVAData() {
-            const tvaDeductible = grandLivreData.tva_deductible || 0;
-            const tvaCollectee = grandLivreData.tva_collectee || 0;
-            const tvaADeclarer = tvaCollectee - tvaDeductible;
-            
-            document.getElementById('tvaDeductibleDashboard').textContent = formatCurrency(tvaDeductible);
-            document.getElementById('tvaCollecteeDashboard').textContent = formatCurrency(tvaCollectee);
-            document.getElementById('tvaADeclarerDashboard').textContent = formatCurrency(tvaADeclarer);
-
-            const container = document.getElementById('comptesTVA');
-            container.innerHTML = '';
-            
-            const comptesTVA = grandLivreData.comptes_details?.tva || [];
-            
-            if (comptesTVA.length === 0) {
-                container.innerHTML = '<div class="client-item"><span>Aucun compte TVA trouvé</span><span>-</span></div>';
-            } else {
-                comptesTVA.forEach(compte => {
-                    const item = document.createElement('div');
-                    item.className = 'client-item';
+        // Charger les données clients avec les vraies données GL
+        async function loadClientsData() {
+            try {
+                const response = await fetch(`${API_BASE}clients_details`);
+                if (response.ok) {
+                    const data = await response.json();
                     
-                    container.appendChild(item);
-                });
+                    document.getElementById('creancesClients').textContent = formatCurrency(data.creances_totales || 0);
+                    document.getElementById('nombreClients').textContent = data.nb_comptes_clients || 0;
+                    document.getElementById('alertesClients').textContent = data.alertes_clients || 0;
+                }
+            } catch (error) {
+                console.error('Erreur chargement données clients:', error);
+                // Fallback avec données locales
+                document.getElementById('creancesClients').textContent = formatCurrency(grandLivreData.creances_clients || 0);
+                document.getElementById('nombreClients').textContent = grandLivreData.comptes_details?.clients?.length || 0;
+                document.getElementById('alertesClients').textContent = 0;
+            }
+        }
+
+        // Charger les données fournisseurs avec les vraies données GL
+        async function loadFournisseursData() {
+            try {
+                const response = await fetch(`${API_BASE}fournisseurs_details`);
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    document.getElementById('dettesFournisseurs').textContent = formatCurrency(data.dettes_totales || 0);
+                    document.getElementById('nombreFournisseurs').textContent = data.nb_comptes_fournisseurs || 0;
+                    document.getElementById('alertesFournisseurs').textContent = data.alertes_fournisseurs || 0;
+                }
+            } catch (error) {
+                console.error('Erreur chargement données fournisseurs:', error);
+                // Fallback avec données locales
+                document.getElementById('dettesFournisseurs').textContent = formatCurrency(grandLivreData.dettes_fournisseurs || 0);
+                document.getElementById('nombreFournisseurs').textContent = grandLivreData.comptes_details?.fournisseurs?.length || 0;
+                document.getElementById('alertesFournisseurs').textContent = 0;
+            }
+        }
+
+        // Charger les données TVA avec les vraies données GL
+        async function loadTVAData() {
+            try {
+                const response = await fetch(`${API_BASE}tva_details`);
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    document.getElementById('tvaDeductibleDashboard').textContent = formatCurrency(data.tva_deductible || 0);
+                    document.getElementById('tvaCollecteeDashboard').textContent = formatCurrency(data.tva_collectee || 0);
+                    document.getElementById('tvaADeclarerDashboard').textContent = formatCurrency(data.tva_a_declarer || 0);
+                }
+            } catch (error) {
+                console.error('Erreur chargement données TVA:', error);
+                // Fallback avec données locales
+                document.getElementById('tvaDeductibleDashboard').textContent = formatCurrency(grandLivreData.tva_deductible || 0);
+                document.getElementById('tvaCollecteeDashboard').textContent = formatCurrency(grandLivreData.tva_collectee || 0);
+                document.getElementById('tvaADeclarerDashboard').textContent = formatCurrency((grandLivreData.tva_collectee || 0) - (grandLivreData.tva_deductible || 0));
             }
         }
 
@@ -2267,16 +2371,16 @@
             setupSearchBar();
             initializeOCRAccuracies();
             
-            // Actualisation automatique toutes les 5 secondes
+            // Actualisation automatique toutes les 10 secondes
             refreshInterval = setInterval(() => {
                 loadDocuments();
-                loadAlerts();
                 loadGrandLivreData();
                 updateCurrentMonth();
-            }, 5000);
+                // Ne pas recharger les alertes automatiquement pour éviter le spam
+            }, 10000);
         }
 
-        // Charger les données du grand livre
+        // Charger les données du grand livre avec les vraies données
         async function loadGrandLivreData() {
             try {
                 const response = await fetch(`${API_BASE}grandlivre_data`);
@@ -2388,28 +2492,37 @@
                 if (response.ok) {
                     const alertsData = await response.json();
                     alerts = alertsData.alerts || [];
-                    updateAlertsUI();
+                    const scoreRisque = alertsData.score_risque || { score: 0, niveau: 'FAIBLE' };
+                    updateAlertsUI(scoreRisque);
                 }
             } catch (error) {
                 console.error('Erreur chargement alertes:', error);
+                updateAlertsUI({ score: 0, niveau: 'ERREUR' });
             }
         }
 
         // Chargement de la configuration
-        function loadConfiguration() {
+        async function loadConfiguration() {
             try {
+                // Essayer de charger depuis le serveur
+                const response = await fetch(`${API_BASE}config/anomaly`);
+                if (response.ok) {
+                    const data = await response.json();
+                    currentConfig = data.config || DEFAULT_CONFIG;
+                } else {
+                    throw new Error('Configuration serveur non disponible');
+                }
+            } catch (error) {
+                console.error('Erreur chargement configuration serveur:', error);
+                // Fallback vers localStorage
                 const savedConfig = localStorage.getItem('reconciliationConfig');
                 if (savedConfig) {
                     currentConfig = { ...DEFAULT_CONFIG, ...JSON.parse(savedConfig) };
                 } else {
                     currentConfig = { ...DEFAULT_CONFIG };
                 }
-                populateConfigForm();
-            } catch (error) {
-                console.error('Erreur chargement configuration:', error);
-                currentConfig = { ...DEFAULT_CONFIG };
-                populateConfigForm();
             }
+            populateConfigForm();
         }
 
         // Remplir le formulaire de configuration
@@ -2424,6 +2537,8 @@
             // Seuils d'alertes
             document.getElementById('criticalAmountThreshold').value = currentConfig.critical_amount_threshold;
             document.getElementById('suspiciousAmountThreshold').value = currentConfig.suspicious_amount_threshold;
+            document.getElementById('factureRapprochementDays').value = currentConfig.facture_rapprochement_days || 30;
+            document.getElementById('chequeRapprochementDays').value = currentConfig.cheque_rapprochement_days || 7;
 
             // Types d'alertes
             document.getElementById('alertMissingTransactions').checked = currentConfig.alert_on_missing_transactions;
@@ -2434,8 +2549,11 @@
             document.getElementById('alertWeekendTransactions').checked = currentConfig.alert_on_weekend_transactions;
             document.getElementById('alertLargeTransactions').checked = currentConfig.alert_on_large_transactions;
 
-            // Comptes bancaires
-            document.getElementById('monitoredAccounts').value = currentConfig.monitored_bank_accounts.join('\n');
+            // Comptes surveillés
+            document.getElementById('monitoredAccounts').value = (currentConfig.monitored_bank_accounts || []).join('\n');
+            document.getElementById('fournisseurAccounts').value = (currentConfig.fournisseur_accounts || ['401']).join('\n');
+            document.getElementById('chargeAccounts').value = (currentConfig.charge_accounts || ['6']).join('\n');
+            document.getElementById('clientAccounts').value = (currentConfig.client_accounts || ['411']).join('\n');
 
             // Niveaux de notification
             document.getElementById('criticalThreshold').value = currentConfig.critical_threshold;
@@ -2459,6 +2577,8 @@
                 newConfig.amount_tolerance_absolute = parseFloat(formData.get('amount_tolerance_absolute'));
                 newConfig.critical_amount_threshold = parseFloat(formData.get('critical_amount_threshold'));
                 newConfig.suspicious_amount_threshold = parseFloat(formData.get('suspicious_amount_threshold'));
+                newConfig.facture_rapprochement_days = parseInt(document.getElementById('factureRapprochementDays').value);
+                newConfig.cheque_rapprochement_days = parseInt(document.getElementById('chequeRapprochementDays').value);
 
                 // Valeurs booléennes
                 newConfig.alert_on_missing_transactions = document.getElementById('alertMissingTransactions').checked;
@@ -2469,9 +2589,11 @@
                 newConfig.alert_on_weekend_transactions = document.getElementById('alertWeekendTransactions').checked;
                 newConfig.alert_on_large_transactions = document.getElementById('alertLargeTransactions').checked;
 
-                // Comptes bancaires
-                const accountsText = document.getElementById('monitoredAccounts').value;
-                newConfig.monitored_bank_accounts = accountsText.split('\n').filter(account => account.trim() !== '');
+                // Comptes surveillés
+                newConfig.monitored_bank_accounts = document.getElementById('monitoredAccounts').value.split('\n').filter(account => account.trim() !== '');
+                newConfig.fournisseur_accounts = document.getElementById('fournisseurAccounts').value.split('\n').filter(account => account.trim() !== '');
+                newConfig.charge_accounts = document.getElementById('chargeAccounts').value.split('\n').filter(account => account.trim() !== '');
+                newConfig.client_accounts = document.getElementById('clientAccounts').value.split('\n').filter(account => account.trim() !== '');
 
                 // Seuils de notification
                 newConfig.critical_threshold = parseInt(formData.get('critical_threshold'));
@@ -2485,8 +2607,8 @@
                     return;
                 }
 
-                if (newConfig.medium_priority_delay_days >= newConfig.max_date_delay_days) {
-                    showConfigStatus('Le délai moyenne priorité doit être inférieur au délai maximum', 'error');
+                if (newConfig.medium_priority_delay_days > newConfig.max_date_delay_days) {
+                    showConfigStatus('Le délai moyenne priorité doit être inférieur ou égal au délai maximum', 'error');
                     return;
                 }
 
@@ -2495,13 +2617,13 @@
                     return;
                 }
 
-                // Sauvegarder dans localStorage
+                // Sauvegarder dans localStorage d'abord
                 localStorage.setItem('reconciliationConfig', JSON.stringify(newConfig));
                 currentConfig = newConfig;
 
-                // Envoyer au serveur (simulation)
+                // Envoyer au serveur
                 try {
-                    const response = await fetch(`${API_BASE}update_config`, {
+                    const response = await fetch(`${API_BASE}config/anomaly`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -2512,7 +2634,9 @@
                     if (response.ok) {
                         showConfigStatus('Configuration sauvegardée avec succès', 'success');
                         // Recharger les alertes avec la nouvelle configuration
-                        setTimeout(loadAlerts, 1000);
+                        setTimeout(() => {
+                            loadAlerts();
+                        }, 1000);
                     } else {
                         showConfigStatus('Configuration sauvegardée localement (serveur non disponible)', 'warning');
                     }
@@ -2683,42 +2807,62 @@
             updateOCRStatistics();
         }
 
-        function updateAlertsUI() {
-            updateRiskScore();
+        function updateAlertsUI(scoreRisque = null) {
+            updateRiskScore(scoreRisque);
             updateAlertsDisplay();
             updateAlertsCounts();
         }
 
-        function updateRiskScore() {
-            if (alerts.length === 0) {
+        function updateRiskScore(scoreRisque = null) {
+            if (!scoreRisque && alerts.length === 0) {
                 document.getElementById('risk-score-value').textContent = '0';
                 document.getElementById('risk-score-level').textContent = 'AUCUN RISQUE';
                 document.getElementById('risk-score-value').className = 'risk-score-value faible';
                 return;
             }
 
-            // Calculer le score de risque
             let score = 0;
-            alerts.forEach(alert => {
-                if (alert.priority === 'high') score += 3;
-                else if (alert.priority === 'medium') score += 1;
-                else score += 5;
-            });
-
-            score = Math.min(score, 100);
-
             let level = 'FAIBLE';
             let levelClass = 'faible';
-            
-            if (score >= currentConfig.critical_threshold) {
-                level = 'CRITIQUE';
-                levelClass = 'critique';
-            } else if (score >= currentConfig.high_threshold) {
-                level = 'ÉLEVÉ';
-                levelClass = 'eleve';
-            } else if (score >= currentConfig.medium_threshold) {
-                level = 'MOYEN';
-                levelClass = 'moyen';
+
+            if (scoreRisque) {
+                score = scoreRisque.score;
+                level = scoreRisque.niveau;
+                
+                switch(level.toLowerCase()) {
+                    case 'critique':
+                        levelClass = 'critique';
+                        break;
+                    case 'élevé':
+                    case 'eleve':
+                        levelClass = 'eleve';
+                        break;
+                    case 'moyen':
+                        levelClass = 'moyen';
+                        break;
+                    default:
+                        levelClass = 'faible';
+                }
+            } else {
+                // Calculer le score de risque local
+                alerts.forEach(alert => {
+                    if (alert.priority === 'high') score += 3;
+                    else if (alert.priority === 'medium') score += 1;
+                    else score += 0.5;
+                });
+
+                score = Math.min(score, 100);
+                
+                if (score >= currentConfig.critical_threshold) {
+                    level = 'CRITIQUE';
+                    levelClass = 'critique';
+                } else if (score >= currentConfig.high_threshold) {
+                    level = 'ÉLEVÉ';
+                    levelClass = 'eleve';
+                } else if (score >= currentConfig.medium_threshold) {
+                    level = 'MOYEN';
+                    levelClass = 'moyen';
+                }
             }
 
             document.getElementById('risk-score-value').textContent = score;
@@ -2748,6 +2892,7 @@
         function createAlertCard(alert) {
             const card = document.createElement('div');
             card.className = `alert-card ${alert.priority}`;
+            card.id = `alert-card-${alert.id}`;
             
             card.innerHTML = `
                 <div class="alert-header">
@@ -2790,30 +2935,105 @@
         // Fonctions de gestion des alertes
         async function validateAlert(alertId) {
             try {
-                showMessage(`Alerte ${alertId} validée - Anomalie confirmée`, 'warning');
-                // Ici vous pourriez envoyer une requête au serveur pour mettre à jour le statut
-                setTimeout(loadAlerts, 1000); // Recharger les alertes
+                const response = await fetch(`${API_BASE}alerts/${alertId}/adjust`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'validate',
+                        comment: 'Anomalie confirmée par l\'utilisateur'
+                    })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    showMessage(result.message, 'warning');
+                    
+                    // Désactiver les boutons de cette alerte
+                    const alertCard = document.getElementById(`alert-card-${alertId}`);
+                    if (alertCard) {
+                        const buttons = alertCard.querySelectorAll('.alert-btn');
+                        buttons.forEach(btn => btn.disabled = true);
+                        alertCard.style.opacity = '0.6';
+                    }
+                } else {
+                    showMessage('Erreur lors de la validation', 'error');
+                }
             } catch (error) {
+                console.error('Erreur validation alerte:', error);
                 showMessage('Erreur lors de la validation', 'error');
             }
         }
 
         async function correctAlert(alertId) {
             try {
-                showMessage(`Alerte ${alertId} marquée comme corrigée`, 'success');
-                // Ici vous pourriez envoyer une requête au serveur pour mettre à jour le statut
-                setTimeout(loadAlerts, 1000); // Recharger les alertes
+                const response = await fetch(`${API_BASE}alerts/${alertId}/adjust`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'correct',
+                        comment: 'Anomalie corrigée par l\'utilisateur'
+                    })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    showMessage(result.message, 'success');
+                    
+                    // Désactiver les boutons de cette alerte
+                    const alertCard = document.getElementById(`alert-card-${alertId}`);
+                    if (alertCard) {
+                        const buttons = alertCard.querySelectorAll('.alert-btn');
+                        buttons.forEach(btn => btn.disabled = true);
+                        alertCard.style.opacity = '0.6';
+                    }
+                } else {
+                    showMessage('Erreur lors de la correction', 'error');
+                }
             } catch (error) {
+                console.error('Erreur correction alerte:', error);
                 showMessage('Erreur lors de la correction', 'error');
             }
         }
 
         async function rejectAlert(alertId) {
             try {
-                showMessage(`Alerte ${alertId} rejetée - Fausse alerte`, 'info');
-                // Ici vous pourriez envoyer une requête au serveur pour mettre à jour le statut
-                setTimeout(loadAlerts, 1000); // Recharger les alertes
+                const response = await fetch(`${API_BASE}alerts/${alertId}/adjust`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'reject',
+                        comment: 'Fausse alerte rejetée par l\'utilisateur'
+                    })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    showMessage(result.message, 'info');
+                    
+                    // Supprimer l'alerte de l'affichage avec animation
+                    const alertCard = document.getElementById(`alert-card-${alertId}`);
+                    if (alertCard) {
+                        alertCard.style.transition = 'all 0.3s ease';
+                        alertCard.style.transform = 'translateX(-100%)';
+                        alertCard.style.opacity = '0';
+                        
+                        setTimeout(() => {
+                            alertCard.remove();
+                            // Recharger les alertes pour mettre à jour le score
+                            loadAlerts();
+                        }, 300);
+                    }
+                } else {
+                    showMessage('Erreur lors du rejet', 'error');
+                }
             } catch (error) {
+                console.error('Erreur rejet alerte:', error);
                 showMessage('Erreur lors du rejet', 'error');
             }
         }
@@ -2821,10 +3041,13 @@
         // Téléchargement du rapport d'analyse
         async function downloadAnalysisReport() {
             try {
-                const response = await fetch(`${API_BASE}analysis_report`);
+                const response = await fetch(`${API_BASE}alerts/matching_report`);
                 
                 if (response.ok) {
-                    const blob = await response.blob();
+                    const reportData = await response.json();
+                    
+                    // Créer un fichier JSON avec le rapport
+                    const blob = new Blob([JSON.stringify(reportData, null, 2)], { type: 'application/json' });
                     const url = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
                     a.href = url;
@@ -3143,18 +3366,18 @@
             }
 
             try {
-                // Charger le contenu JSON
-                const response = await fetch(`${API_BASE}documents/${docId}`);
+                // Charger le contenu JSON depuis la nouvelle route
+                const response = await fetch(`${API_BASE}get_json/${docId}`);
                 if (!response.ok) throw new Error('Erreur de chargement');
                 
-                const docData = await response.json();
+                const jsonData = await response.json();
                 
                 currentEditingDocument = docId;
                 const modal = new bootstrap.Modal(document.getElementById('jsonEditorModal'));
                 document.getElementById('jsonEditorTitle').textContent = `Éditer JSON: ${doc.name}`;
                 
-                // Afficher les données traitées
-                const jsonContent = docData.processed_data || {};
+                // Afficher le contenu JSON
+                const jsonContent = jsonData.json_content || {};
                 document.getElementById('jsonEditor').value = JSON.stringify(jsonContent, null, 2);
                 
                 modal.show();
@@ -3164,17 +3387,28 @@
             }
         }
 
-        function formatJSON() {
+        // Supprimez cette fonction
+	function formatJSON() {
+	    const editor = document.getElementById('jsonEditor');
+	    try {
+		const jsonObj = JSON.parse(editor.value);
+		editor.value = JSON.stringify(jsonObj, null, 2);
+		showMessage('JSON formaté avec succès', 'success');
+	    } catch (error) {
+		showMessage('JSON invalide - impossible de formater', 'error');
+	    }
+	}
+
+
+        function validateJSONSyntax() {
             const editor = document.getElementById('jsonEditor');
             try {
-                const jsonObj = JSON.parse(editor.value);
-                editor.value = JSON.stringify(jsonObj, null, 2);
-                showMessage('JSON formaté avec succès', 'success');
+                JSON.parse(editor.value);
+                showMessage('✓ Syntaxe JSON valide', 'success');
             } catch (error) {
-                showMessage('JSON invalide - impossible de formater', 'error');
+                showMessage(`✗ Erreur de syntaxe: ${error.message}`, 'error');
             }
         }
-
         async function saveJSON() {
             if (!currentEditingDocument) return;
             
@@ -3184,9 +3418,25 @@
                 // Valider le JSON
                 const jsonData = JSON.parse(editor.value);
                 
-                // Note: Ici vous devriez implémenter l'endpoint pour sauvegarder le JSON modifié
-                // Pour l'instant, on simule la sauvegarde
-                showMessage('JSON sauvegardé avec succès', 'success');
+                // Sauvegarder via l'API
+                const response = await fetch(`${API_BASE}save_json/${currentEditingDocument}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        json_content: editor.value
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showMessage(result.message, 'success');
+                } else {
+                    showMessage(result.error || 'Erreur lors de la sauvegarde', 'error');
+                    return;
+                }
                 
                 // Fermer le modal
                 const modal = bootstrap.Modal.getInstance(document.getElementById('jsonEditorModal'));
@@ -3195,8 +3445,15 @@
                 // Actualiser les données
                 loadDocuments();
                 
+                // Recharger les alertes et données grand livre après modification
+                setTimeout(() => {
+                    loadGrandLivreData();
+                    loadAlerts();
+                }, 1000);
+                
             } catch (error) {
-                showMessage('JSON invalide - impossible de sauvegarder', 'error');
+                console.error('Erreur sauvegarde JSON:', error);
+                showMessage('Erreur lors de la sauvegarde du JSON', 'error');
             }
         }
 
@@ -3219,8 +3476,8 @@
                     loadDocuments();
                     // Recharger les alertes et données grand livre après traitement d'un document
                     setTimeout(() => {
-                        loadAlerts();
                         loadGrandLivreData();
+                        loadAlerts();
                     }, 2000);
                 } else {
                     showMessage(result.error || 'Erreur lors du traitement', 'error');
@@ -3255,8 +3512,8 @@
                     loadDocuments();
                     // Recharger les alertes et données grand livre après traitement de tous les documents
                     setTimeout(() => {
-                        loadAlerts();
                         loadGrandLivreData();
+                        loadAlerts();
                     }, 3000);
                 } else {
                     showMessage(result.error || 'Erreur lors du traitement', 'error');
@@ -3291,8 +3548,8 @@
                     loadDocuments();
                     // Recharger les alertes et données grand livre après suppression d'un document
                     setTimeout(() => {
-                        loadAlerts();
                         loadGrandLivreData();
+                        loadAlerts();
                     }, 1000);
                 } else {
                     showMessage(result.error || 'Erreur lors de la suppression', 'error');
@@ -3453,7 +3710,6 @@
 
         function refreshStats() {
             loadDocuments();
-            loadAlerts();
             loadGrandLivreData();
             showMessage('Statistiques actualisées', 'success');
         }
@@ -3495,6 +3751,18 @@
                 console.error('Erreur téléchargement JSON:', error);
                 showMessage('Erreur lors du téléchargement', 'error');
             }
+        }
+
+        function animatePipelineFlow() {
+            const flowSteps = document.querySelectorAll('.flow-step');
+            flowSteps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.classList.add('active');
+                    setTimeout(() => {
+                        step.classList.remove('active');
+                    }, 1000);
+                }, index * 500);
+            });
         }
 
         function showMessage(message, type = 'info') {

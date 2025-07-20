@@ -1,0 +1,36 @@
+{
+  "Nom Societe": "GRADIANT",
+  "info payment": {
+    "Nom du Client": "OptiFlow Ltd",
+    "Adresse Client": "39 avenue des champs-élysées, 88412 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025010107",
+    "Date Facturation": "12/01/2025",
+    "Date Echeance": "24/01/2025",
+    "Type d'opération": "Services de Consulting Data",
+    "Total TTC": 8575.3
+  },
+  "table": [
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "13/01/2025",
+      "TVA": 20,
+      "Montant HT": 1387.79,
+      "Total TTC": 1665.35
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "14/01/2025",
+      "TVA": 20,
+      "Montant HT": 1876.41,
+      "Total TTC": 2251.69
+    },
+    {
+      "Description": "Accompagnement dans la transformation data",
+      "Date": "15/01/2025",
+      "TVA": 20,
+      "Montant HT": 3881.88,
+      "Total TTC": 4658.26
+    }
+  ],
+  "ocr_accuracy": 88.64588091628177
+}

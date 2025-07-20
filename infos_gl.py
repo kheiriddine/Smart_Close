@@ -161,7 +161,7 @@ def analyze_grandlivre_json(json_file_path: str) -> Dict[str, Any]:
             }
         }
 
-        logger.info(f"Analyse terminée: {result['total_ecritures']} écritures, "
+        logger.info(f"Analyse terminée: {result} écritures, "
                     f"Total débits: {result['total_debit']:.2f}€, "
                     f"Total crédits: {result['total_credit']:.2f}€")
 
@@ -391,7 +391,7 @@ def get_clients_details(uploads_folder: str = 'uploads') -> Dict[str, Any]:
         'comptes_clients': grandlivre_data['comptes_details']['clients'],
         'alertes_clients': len([c for c in grandlivre_data['comptes_details']['clients'] if c['solde'] > 5000])
     }
-    
+    print(clients_details)
     return clients_details
 
 def get_fournisseurs_details(uploads_folder: str = 'uploads') -> Dict[str, Any]:

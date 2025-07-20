@@ -1,14 +1,22 @@
 from flask import Flask, request, jsonify, render_template, send_file
 import os
-import subprocess
+import subprocess 
 import json
 import logging
 from werkzeug.utils import secure_filename
 from datetime import datetime
 import traceback
 from pipeline import UnifiedOCRProcessor, process_document_cli
-from anomaly_detection_workflow import get_alerts_for_documents, extract_grandlivre_data
-from infos_gl import get_consolidated_grandlivre_data, get_dashboard_summary, get_tresorerie_details, get_clients_details, get_fournisseurs_details, get_tva_details
+from anomaly_detection_workflow import AnomalyDetectionWorkflow
+from infos_gl import (
+    get_consolidated_grandlivre_data,
+    get_dashboard_summary,
+    get_tresorerie_details,
+    get_clients_details,
+    get_fournisseurs_details,
+    get_tva_details,
+    find_grandlivre_json_files
+)
 app = Flask(__name__)
 
 # Configuration
@@ -28,6 +36,42 @@ if not os.path.exists(UPLOAD_FOLDER):
 # Base de données simple en mémoire pour stocker les documents
 documents_db = []
 next_doc_id = 1
+
+# Configuration par défaut pour l'analyse d'anomalies - harmonisée avec anomaly_detection_workflow.py
+DEFAULT_ANOMALY_CONFIG = {
+    'max_date_delay_days': 30,
+    'high_priority_delay_days': 15,
+    'medium_priority_delay_days': 30,
+    'amount_tolerance_percentage': 0.01,
+    'amount_tolerance_absolute': 0.01,
+    'critical_amount_threshold': 10000,
+    'suspicious_amount_threshold': 50000,
+    'facture_rapprochement_days': 30,
+    'cheque_rapprochement_days': 7,
+    'alert_on_missing_transactions': True,
+    'alert_on_duplicate_transactions': True,
+    'alert_on_amount_discrepancy': True,
+    'alert_on_date_discrepancy': True,
+    'alert_on_unmatched_transactions': True,
+    'alert_on_weekend_transactions': True,
+    'alert_on_large_transactions': True,
+    'alert_on_unexpected_balances': True,
+    'monitored_bank_accounts': ['512200', '512100', '512300'],
+    'fournisseur_accounts': ['401'],
+    'charge_accounts': ['6'],
+    'client_accounts': ['411'],
+    'tva_accounts': ['445', '44566', '44571'],
+    'critical_threshold': 80,
+    'high_threshold': 60,
+    'medium_threshold': 30,
+    'low_threshold': 10
+}
+
+# Instance globale du workflow d'analyse d'anomalies
+anomaly_workflow = AnomalyDetectionWorkflow(config=DEFAULT_ANOMALY_CONFIG)
+
+# Liste globale des alertes supprimées pour éviter leur réapparition
+suppressed_alerts = set()
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -65,15 +109,25 @@ def ocr_dashboard():
 
 @app.route('/alerts')
 def get_alerts():
-    """Route pour récupérer les alertes de clôture basées sur l'analyse des fichiers JSON"""
+    """Route pour récupérer les alertes avec matching avancé"""
     try:
-        # Générer les alertes basées sur l'analyse des fichiers JSON des documents traités
-        alerts, score_risque = get_alerts_for_documents(documents_db)
+        # Utiliser le workflow configuré pour générer les alertes avec matching
+        alerts, score_risque = anomaly_workflow.get_alerts_for_documents(documents_db)
         
-        logger.info(f"Génération de {len(alerts)} alertes basées sur {len(documents_db)} documents")
+        # Filtrer les alertes supprimées
+        filtered_alerts = []
+        for alert in alerts:
+            alert_key = f"{alert.get('type', '')}_{alert.get('ref', '')}_{alert.get('montant', 0)}"
+            if alert_key not in suppressed_alerts:
+                filtered_alerts.append(alert)
+        
+        # Recalculer le score de risque avec les alertes filtrées
+        score_risque = anomaly_workflow._calculate_risk_score(filtered_alerts)
+        
+        logger.info(f"Génération de {len(filtered_alerts)} alertes actives (sur {len(alerts)} totales) avec matching avancé basées sur {len(documents_db)} documents")
         
         return jsonify({
-            'alerts': alerts,
+            'alerts': filtered_alerts,
             'score_risque': score_risque
         })
         
@@ -98,34 +152,203 @@ def get_alerts():
             'score_risque': {'score': 0, 'niveau': 'ERREUR'}
         })
 
+@app.route('/alerts/<int:alert_id>/adjust', methods=['POST'])
+def adjust_alert(alert_id):
+    """Route pour ajuster/configurer une alerte spécifique"""
+    global suppressed_alerts
+    
+    try:
+        data = request.get_json()
+        action = data.get('action')  # 'validate', 'correct', 'reject'
+        comment = data.get('comment', '')
+        
+        # Récupérer les alertes actuelles
+        alerts, _ = anomaly_workflow.get_alerts_for_documents(documents_db)
+        
+        # Trouver l'alerte à ajuster
+        alert_to_adjust = None
+        for alert in alerts:
+            if alert.get('id') == alert_id:
+                alert_to_adjust = alert
+                break
+        
+        if not alert_to_adjust:
+            return jsonify({'error': 'Alerte non trouvée'}), 404
+        
+        # Traiter l'action
+        if action == 'validate':
+            # Valider : ne fait rien de spécial, juste marquer comme validée
+            alert_to_adjust['status'] = 'validated'
+            alert_to_adjust['comment'] = f"Alerte validée - Anomalie confirmée. {comment}"
+            message = f'Alerte {alert_id} validée - Anomalie confirmée'
+            
+        elif action == 'correct':
+            # Corriger : ne fait rien de spécial, juste marquer comme corrigée
+            alert_to_adjust['status'] = 'corrected'
+            alert_to_adjust['comment'] = f"Alerte marquée comme corrigée. {comment}"
+            message = f'Alerte {alert_id} marquée comme corrigée'
+            
+        elif action == 'reject':
+            # Rejeter : supprimer l'alerte de la liste et l'ajouter aux suppressions
+            alert_key = f"{alert_to_adjust.get('type', '')}_{alert_to_adjust.get('ref', '')}_{alert_to_adjust.get('montant', 0)}"
+            suppressed_alerts.add(alert_key)
+            alert_to_adjust['status'] = 'rejected'
+            alert_to_adjust['comment'] = f"Alerte rejetée - Fausse alerte. {comment}"
+            message = f'Alerte {alert_id} rejetée et supprimée'
+        
+        # Marquer la date de modification
+        alert_to_adjust['date_modification'] = datetime.now().isoformat()
+        
+        logger.info(f"Alerte {alert_id} ajustée: {action}")
+        
+        return jsonify({
+            'message': message,
+            'alert': alert_to_adjust,
+            'action': action
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de l'ajustement de l'alerte {alert_id}: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/alerts/reset_suppressed', methods=['POST'])
+def reset_suppressed_alerts():
+    """Route pour réinitialiser les alertes supprimées"""
+    global suppressed_alerts
+    suppressed_alerts.clear()
+    logger.info("Alertes supprimées réinitialisées")
+    return jsonify({'message': 'Alertes supprimées réinitialisées'})
+
+@app.route('/alerts/matching_report')
+def get_matching_report():
+    """Route pour obtenir un rapport détaillé des correspondances"""
+    try:
+        alerts, score_risque = anomaly_workflow.get_alerts_for_documents(documents_db)
+        
+        # Filtrer les alertes supprimées
+        filtered_alerts = []
+        for alert in alerts:
+            alert_key = f"{alert.get('type', '')}_{alert.get('ref', '')}_{alert.get('montant', 0)}"
+            if alert_key not in suppressed_alerts:
+                filtered_alerts.append(alert)
+        
+        # Analyser les types d'alertes pour le rapport
+        matching_stats = {
+            'total_alerts': len(filtered_alerts),
+            'suppressed_alerts': len(suppressed_alerts),
+            'missing_transactions': len([a for a in filtered_alerts if a.get('type') in ['OPERATION_MANQUANTE_GRAND_LIVRE', 'OPERATION_MANQUANTE_RELEVE', 'TRANSACTION_MANQUANTE']]),
+            'duplicate_transactions': len([a for a in filtered_alerts if 'DOUBLON' in a.get('type', '')]),
+            'amount_discrepancies': len([a for a in filtered_alerts if a.get('type') == 'ECART_MONTANT']),
+            'date_discrepancies': len([a for a in filtered_alerts if a.get('type') == 'SEQUENCE_ILLOGIQUE']),
+            'weekend_transactions': len([a for a in filtered_alerts if a.get('type') in ['JOUR_NON_OUVRABLE', 'TRANSACTION_JOUR_NON_OUVRABLE']]),
+            'large_transactions': len([a for a in filtered_alerts if a.get('type') in ['ARRONDI_SUSPECT', 'TRANSACTION_MONTANT_ELEVE']]),
+            'missing_invoices': len([a for a in filtered_alerts if a.get('type') == 'FACTURE_MANQUANTE_GL']),
+            'missing_checks': len([a for a in filtered_alerts if a.get('type') == 'CHEQUE_MANQUANT_GL'])
+        }
+        
+        # Statistiques par document
+        doc_stats = {}
+        for doc in documents_db:
+            if doc['status'] == 'completed':
+                doc_alerts = [a for a in filtered_alerts if a.get('document_id') == doc['id']]
+                doc_stats[doc['name']] = {
+                    'type': doc['type'],
+                    'alerts_count': len(doc_alerts),
+                    'high_priority': len([a for a in doc_alerts if a.get('priority') == 'high']),
+                    'medium_priority': len([a for a in doc_alerts if a.get('priority') == 'medium']),
+                    'low_priority': len([a for a in doc_alerts if a.get('priority') == 'low'])
+                }
+        
+        # Recalculer le score de risque avec les alertes filtrées
+        score_risque = anomaly_workflow._calculate_risk_score(filtered_alerts)
+        
+        return jsonify({
+            'matching_stats': matching_stats,
+            'document_stats': doc_stats,
+            'score_risque': score_risque,
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de la génération du rapport de matching: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/config/anomaly', methods=['GET'])
+def get_anomaly_config():
+    """Route pour récupérer la configuration actuelle de l'analyse d'anomalies"""
+    try:
+        return jsonify({
+            'config': anomaly_workflow.config,
+            'message': 'Configuration récupérée avec succès'
+        })
+    except Exception as e:
+        logger.error(f"Erreur lors de la récupération de la configuration: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/config/anomaly', methods=['POST'])
+def update_anomaly_config():
+    """Route pour mettre à jour la configuration de l'analyse d'anomalies"""
+    try:
+        global anomaly_workflow
+        
+        new_config = request.get_json()
+        if not new_config:
+            return jsonify({'error': 'Configuration manquante'}), 400
+        
+        # Valider et fusionner avec la configuration par défaut
+        updated_config = DEFAULT_ANOMALY_CONFIG.copy()
+        updated_config.update(new_config)
+        
+        # Créer une nouvelle instance du workflow avec la nouvelle configuration
+        anomaly_workflow = AnomalyDetectionWorkflow(config=updated_config)
+        
+        logger.info("Configuration d'analyse d'anomalies mise à jour avec matching avancé")
+        
+        return jsonify({
+            'message': 'Configuration mise à jour avec succès',
+            'config': updated_config
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de la mise à jour de la configuration: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/config/anomaly/reset', methods=['POST'])
+def reset_anomaly_config():
+    """Route pour réinitialiser la configuration aux valeurs par défaut"""
+    try:
+        global anomaly_workflow
+        
+        # Réinitialiser avec la configuration par défaut
+        anomaly_workflow = AnomalyDetectionWorkflow(config=DEFAULT_ANOMALY_CONFIG.copy())
+        
+        logger.info("Configuration d'analyse d'anomalies réinitialisée")
+        
+        return jsonify({
+            'message': 'Configuration réinitialisée aux valeurs par défaut',
+            'config': DEFAULT_ANOMALY_CONFIG
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de la réinitialisation de la configuration: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
 @app.route('/grandlivre_data')
 def get_grandlivre_data():
     """Route pour récupérer les données du grand livre pour le dashboard"""
+    grandlivre_data = {}
     try:
-        grandlivre_data = extract_grandlivre_data(documents_db)
-        grandlivre_data = get_consolidated_grandlivre_data(app.config['UPLOAD_FOLDER'])
-        logger.info(f"Extraction des données du grand livre: {grandlivre_data['total_ecritures']} écritures")
-        
-        return jsonify(grandlivre_data)
-        
+        consolidated_data = get_consolidated_grandlivre_data(app.config['UPLOAD_FOLDER'])
+            # Fusionner les données si possible
+        if consolidated_data:
+            grandlivre_data.update(consolidated_data)
     except Exception as e:
-        logger.error(f"Erreur lors de l'extraction des données du grand livre: {str(e)}")
-        logger.error(traceback.format_exc())
+        logger.warning(f"Impossible d'obtenir les données consolidées: {str(e)}")
         
-        # Retourner des données par défaut en cas d'erreur
-        default_data = {
-            'total_ecritures': 0,
-            'total_debit': 0,
-            'total_credit': 0,
-            'comptes': {},
-            'tva_deductible': 0,
-            'tva_collectee': 0,
-            'balance': 0,
-            'solde_banque': 0,
-            'creances_clients': 0,
-            'dettes_fournisseurs': 0
-        }
-        return jsonify(default_data)
+    logger.info(f"Extraction des données du grand livre")
+        
+    return jsonify(grandlivre_data)
+        
+    
 
 @app.route('/dashboard_summary')
 def get_dashboard_summary_route():
@@ -149,7 +372,7 @@ def get_tresorerie_details_route():
 
 @app.route('/clients_details')
 def get_clients_details_route():
-    """Route pour récupérer les détails clients"""
+    """Route pour récupérer les détails clients avec créances calculées"""
     try:
         details = get_clients_details(app.config['UPLOAD_FOLDER'])
         return jsonify(details)
@@ -159,7 +382,7 @@ def get_clients_details_route():
 
 @app.route('/fournisseurs_details')
 def get_fournisseurs_details_route():
-    """Route pour récupérer les détails fournisseurs"""
+    """Route pour récupérer les détails fournisseurs avec dettes calculées"""
     try:
         details = get_fournisseurs_details(app.config['UPLOAD_FOLDER'])
         return jsonify(details)
@@ -177,7 +400,6 @@ def get_tva_details_route():
         logger.error(f"Erreur lors de la récupération des détails TVA: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
-
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     """Route pour servir les fichiers uploadés (pour la visualisation des images)"""
@@ -186,10 +408,6 @@ def uploaded_file(filename):
     except Exception as e:
         logger.error(f"Erreur lors de la récupération du fichier {filename}: {str(e)}")
         return jsonify({'error': 'Fichier non trouvé'}), 404
-
-
-
-
 
 @app.route('/upload', methods=['POST'])
 def upload_files():
@@ -290,7 +508,6 @@ def process_single_document(doc_id):
             doc['status'] = 'completed'
             doc['processed_data'] = processed_data
             doc['output_path'] = output_path
-            # Utiliser la précision OCR calculée par le processeur
             doc['ocr_accuracy'] = ocr_accuracy
             doc['processing_end'] = datetime.now().isoformat()
             
@@ -354,7 +571,6 @@ def process_documents():
                     doc['status'] = 'completed'
                     doc['processed_data'] = processed_data
                     doc['output_path'] = output_path
-                    # Utiliser la précision OCR calculée par le processeur
                     doc['ocr_accuracy'] = ocr_accuracy
                     doc['processing_end'] = datetime.now().isoformat()
                     
@@ -436,6 +652,59 @@ def download_json(doc_id):
         logger.error(f"Erreur téléchargement JSON {doc_id}: {str(e)}")
         return jsonify({'error': f'Erreur lors du téléchargement: {str(e)}'}), 500
 
+@app.route('/save_json/<int:doc_id>', methods=['POST'])
+def save_json(doc_id):
+    """Sauvegarde le contenu JSON modifié d'un document"""
+    try:
+        doc = next((d for d in documents_db if d['id'] == doc_id), None)
+        if not doc:
+            return jsonify({'error': 'Document non trouvé'}), 404
+        
+        if doc['status'] != 'completed':
+            return jsonify({'error': 'Document non traité'}), 400
+        
+        data = request.get_json()
+        if not data or 'json_content' not in data:
+            return jsonify({'error': 'Contenu JSON manquant'}), 400
+        
+        json_content = data['json_content']
+        
+        # Valider le JSON
+        try:
+            parsed_json = json.loads(json_content)
+        except json.JSONDecodeError as e:
+            return jsonify({'error': f'JSON invalide: {str(e)}'}), 400
+        
+        # Déterminer le chemin du fichier JSON
+        if doc.get('output_path') and os.path.exists(doc['output_path']):
+            # Utiliser le fichier existant
+            json_file_path = doc['output_path']
+        else:
+            # Créer un nouveau fichier JSON dans uploads
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            json_filename = f"edited_{timestamp}_{doc['name']}.json"
+            json_file_path = os.path.join(app.config['UPLOAD_FOLDER'], json_filename)
+            doc['output_path'] = json_file_path
+        
+        # Sauvegarder le fichier JSON
+        with open(json_file_path, 'w', encoding='utf-8') as f:
+            f.write(json_content)
+        
+        # Mettre à jour les données du document
+        doc['processed_data'] = parsed_json
+        doc['last_modified'] = datetime.now().isoformat()
+        
+        logger.info(f"JSON sauvegardé pour document {doc_id}: {json_file_path}")
+        
+        return jsonify({
+            'message': f'JSON sauvegardé avec succès pour {doc["name"]}',
+            'file_path': json_file_path
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur sauvegarde JSON {doc_id}: {str(e)}")
+        return jsonify({'error': f'Erreur lors de la sauvegarde: {str(e)}'}), 500
+
 @app.route('/delete_document/<int:doc_id>', methods=['DELETE'])
 def delete_document(doc_id):
     """Supprime un document"""
@@ -463,19 +732,59 @@ def delete_document(doc_id):
 
 @app.route('/stats', methods=['GET'])
 def get_stats():
-    """Récupère les statistiques des documents"""
+    """Récupère les statistiques des documents avec informations de matching"""
     total = len(documents_db)
     pending = len([d for d in documents_db if d['status'] == 'pending'])
     processing = len([d for d in documents_db if d['status'] == 'processing'])
     completed = len([d for d in documents_db if d['status'] == 'completed'])
     failed = len([d for d in documents_db if d['status'] == 'failed'])
     
-    # Calculer la précision OCR moyenne
+    # Calculer la précision OCR moyenne avec les vraies valeurs
     completed_docs = [d for d in documents_db if d['status'] == 'completed']
     avg_accuracy = 0.0
     if completed_docs:
         total_accuracy = sum(d.get('ocr_accuracy', 0.0) for d in completed_docs)
         avg_accuracy = total_accuracy / len(completed_docs)
+    
+    # Statistiques par type de document
+    doc_types = {}
+    for doc in documents_db:
+        doc_type = doc['type']
+        if doc_type not in doc_types:
+            doc_types[doc_type] = {'total': 0, 'completed': 0, 'failed': 0}
+        doc_types[doc_type]['total'] += 1
+        if doc['status'] == 'completed':
+            doc_types[doc_type]['completed'] += 1
+        elif doc['status'] == 'failed':
+            doc_types[doc_type]['failed'] += 1
+    
+    # Obtenir les statistiques de matching
+    matching_stats = {}
+    try:
+        alerts, score_risque = anomaly_workflow.get_alerts_for_documents(documents_db)
+        
+        # Filtrer les alertes supprimées
+        filtered_alerts = []
+        for alert in alerts:
+            alert_key = f"{alert.get('type', '')}_{alert.get('ref', '')}_{alert.get('montant', 0)}"
+            if alert_key not in suppressed_alerts:
+                filtered_alerts.append(alert)
+        
+        # Recalculer le score de risque avec les alertes filtrées
+        score_risque = anomaly_workflow._calculate_risk_score(filtered_alerts)
+        
+        matching_stats = {
+            'total_alerts': len(filtered_alerts),
+            'suppressed_alerts': len(suppressed_alerts),
+            'risk_score': score_risque['score'],
+            'risk_level': score_risque['niveau'],
+            'high_priority_alerts': len([a for a in filtered_alerts if a.get('priority') == 'high']),
+            'medium_priority_alerts': len([a for a in filtered_alerts if a.get('priority') == 'medium']),
+            'low_priority_alerts': len([a for a in filtered_alerts if a.get('priority') == 'low'])
+        }
+    except Exception as e:
+        logger.error(f"Erreur calcul stats matching: {str(e)}")
+        matching_stats = {'error': str(e)}
     
     return jsonify({
         'total': total,
@@ -483,7 +792,9 @@ def get_stats():
         'processing': processing,
         'completed': completed,
         'failed': failed,
-        'avg_ocr_accuracy': round(avg_accuracy, 1)
+        'avg_ocr_accuracy': round(avg_accuracy, 1),
+        'doc_types': doc_types,
+        'matching_stats': matching_stats
     })
 
 if __name__ == '__main__':

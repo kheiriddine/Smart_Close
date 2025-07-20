@@ -261,7 +261,9 @@ class UnifiedOCRProcessor:
 
             # Convert datetime objects to strings
             if 'date' in df_table.columns:
-                df_table['date'] = df_table['date'].astype(str)
+                df_table['date'] = pd.to_datetime(df_table['date'], errors='coerce').dt.strftime('%d/%m/%Y')
+                # Remplacement des NaT par des chaînes vides
+                df_table['date'] = df_table['date'].fillna('')
 
             ecritures = df_table.to_dict('records')
         else:

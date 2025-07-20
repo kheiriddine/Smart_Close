@@ -1,0 +1,15 @@
+{
+  "Banque": "HSBC France",
+  "Adresse Banque": "",
+  "Emetteur": "Atos",
+  "Adresse Emetteur": "",
+  "Destinataire": "Fait a",
+  "Fait à": "Le Bezors",
+  "Le": "21/02/2025",
+  "Code Banque": "55945",
+  "Code Guichet": "87740",
+  "Numéro de Compte": "49830372112",
+  "Numéro de Chèque": "6089626",
+  "Montant du Chèque": 15481.47,
+  "ocr_accuracy": 96.3796575154577
+}

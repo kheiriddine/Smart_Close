@@ -1,1094 +1,1019 @@
 import pandas as pd
 import json
+import re
 import os
 from datetime import datetime, timedelta
-import random
-from collections import Counter
-import math
+from typing import Dict, List, Tuple, Any, Optional
 import logging
 
 logger = logging.getLogger(__name__)
 
-class AnomalyDetectionWorkflow:
-    def __init__(self):
-        self.alerts = []
-        self.codes_couleur = {
-            'ACTIVE': {'couleur': '🔴', 'description': 'Actif'},
-            'VALIDE': {'couleur': '🟢', 'description': 'Validé'},
-            'CORRIGE': {'couleur': '🔵', 'description': 'Corrigé'},
-            'REJETE': {'couleur': '⚪', 'description': 'Rejeté'}
-        }
-        
-    def analyze_json_files(self, documents_db):
-        """Analyse les fichiers JSON générés par l'OCR pour détecter des anomalies"""
-        alerts = []
-        
-        # Analyser seulement les documents traités avec succès qui ont des fichiers JSON
-        completed_docs = [d for d in documents_db if d['status'] == 'completed' and d.get('output_path')]
-        
-        for doc in completed_docs:
-            try:
-                # Charger le fichier JSON généré par l'OCR
-                if os.path.exists(doc['output_path']):
-                    with open(doc['output_path'], 'r', encoding='utf-8') as f:
-                        json_data = json.load(f)
-                    
-                    # Analyser selon le type de document
-                    if doc['type'] == 'facture':
-                        alerts.extend(self._analyze_facture_json(doc, json_data))
-                    elif doc['type'] == 'cheque':
-                        alerts.extend(self._analyze_cheque_json(doc, json_data))
-                    elif doc['type'] == 'releve':
-                        alerts.extend(self._analyze_releve_json(doc, json_data))
-                    elif doc['type'] == 'grandlivre':
-                        alerts.extend(self._analyze_grandlivre_json(doc, json_data))
-                        
-            except Exception as e:
-                # Alerte si le fichier JSON ne peut pas être lu
-                alerts.append({
-                    'id': len(alerts) + 1,
-                    'title': f'Erreur lecture JSON - {doc["name"]}',
-                    'description': f'Impossible de lire le fichier JSON pour {doc["name"]}: {str(e)}',
-                    'priority': 'high',
-                    'type': 'error',
-                    'date': datetime.now().strftime('%Y-%m-%d'),
-                    'status': 'active',
-                    'document_id': doc['id'],
-                    'severite': 'HAUTE'
-                })
-        
-        # Ajouter des alertes de clôture génériques
-        alerts.extend(self._generate_closure_alerts())
-        
-        return alerts
-    
-    def _analyze_facture_json(self, doc, json_data):
-        """Analyse le JSON d'une facture pour détecter des anomalies"""
-        alerts = []
-        
-        try:
-            # Vérifier la présence des champs obligatoires
-            required_fields = ['montant', 'date', 'numero_facture', 'fournisseur']
-            missing_fields = []
-            
-            for field in required_fields:
-                if field not in json_data or not json_data[field] or json_data[field] == 'N/A':
-                    missing_fields.append(field)
-            
-            if missing_fields:
-                alerts.append({
-                    'id': len(alerts) + 1,
-                    'title': f'Données incomplètes - Facture {doc["name"]}',
-                    'description': f'Champs manquants: {", ".join(missing_fields)}',
-                    'priority': 'medium',
-                    'type': 'INCOHERENCE_MONTANT_FACTURE',
-                    'date': datetime.now().strftime('%Y-%m-%d'),
-                    'status': 'active',
-                    'document_id': doc['id'],
-                    'severite': 'MOYENNE',
-                    'montant': json_data.get('montant', 'N/A')
-                })
-            
-            # Vérifier les montants suspects
-            if 'montant' in json_data:
-                try:
-                    montant = float(str(json_data['montant']).replace(',', '.').replace('€', '').strip())
-                    
-                    # Montant trop élevé
-                    if montant > 50000:
-                        alerts.append({
-                            'id': len(alerts) + 1,
-                            'title': f'Montant élevé détecté - {doc["name"]}',
-                            'description': f'Montant de {montant}€ nécessite une validation',
-                            'priority': 'high',
-                            'type': 'ARRONDI_SUSPECT',
-                            'date': datetime.now().strftime('%Y-%m-%d'),
-                            'status': 'active',
-                            'document_id': doc['id'],
-                            'severite': 'HAUTE',
-                            'montant': montant
-                        })
-                    
-                    # Montant rond suspect
-                    if montant > 1000 and montant % 1000 == 0:
-                        alerts.append({
-                            'id': len(alerts) + 1,
-                            'title': f'Montant rond suspect - {doc["name"]}',
-                            'description': f'Montant de {montant}€ (montant rond) à vérifier',
-                            'priority': 'medium',
-                            'type': 'ARRONDI_SUSPECT',
-                            'date': datetime.now().strftime('%Y-%m-%d'),
-                            'status': 'active',
-                            'document_id': doc['id'],
-                            'severite': 'MOYENNE',
-                            'montant': montant
-                        })
-                        
-                except ValueError:
-                    alerts.append({
-                        'id': len(alerts) + 1,
-                        'title': f'Format montant invalide - {doc["name"]}',
-                        'description': f'Le montant "{json_data["montant"]}" n\'est pas dans un format valide',
-                        'priority': 'medium',
-                        'type': 'error',
-                        'date': datetime.now().strftime('%Y-%m-%d'),
-                        'status': 'active',
-                        'document_id': doc['id'],
-                        'severite': 'MOYENNE'
-                    })
-            
-            # Vérifier les dates
-            if 'date' in json_data and json_data['date'] != 'N/A':
-                try:
-                    # Essayer différents formats de date
-                    date_formats = ['%d/%m/%Y', '%Y-%m-%d', '%d-%m-%Y']
-                    date_obj = None
-                    
-                    for fmt in date_formats:
-                        try:
-                            date_obj = datetime.strptime(json_data['date'], fmt)
-                            break
-                        except ValueError:
-                            continue
-                    
-                    if date_obj:
-                        # Date future
-                        if date_obj > datetime.now():
-                            alerts.append({
-                                'id': len(alerts) + 1,
-                                'title': f'Date future détectée - {doc["name"]}',
-                                'description': f'Date de facture dans le futur: {json_data["date"]}',
-                                'priority': 'medium',
-                                'type': 'SEQUENCE_ILLOGIQUE',
-                                'date': datetime.now().strftime('%Y-%m-%d'),
-                                'status': 'active',
-                                'document_id': doc['id'],
-                                'severite': 'MOYENNE'
-                            })
-                        
-                        # Date trop ancienne (plus de 2 ans)
-                        if date_obj < datetime.now() - timedelta(days=730):
-                            alerts.append({
-                                'id': len(alerts) + 1,
-                                'title': f'Facture ancienne - {doc["name"]}',
-                                'description': f'Facture datée de plus de 2 ans: {json_data["date"]}',
-                                'priority': 'low',
-                                'type': 'info',
-                                'date': datetime.now().strftime('%Y-%m-%d'),
-                                'status': 'active',
-                                'document_id': doc['id'],
-                                'severite': 'FAIBLE'
-                            })
-                            
-                except ValueError:
-                    alerts.append({
-                        'id': len(alerts) + 1,
-                        'title': f'Format date invalide - {doc["name"]}',
-                        'description': f'Format de date non reconnu: {json_data["date"]}',
-                        'priority': 'medium',
-                        'type': 'error',
-                        'date': datetime.now().strftime('%Y-%m-%d'),
-                        'status': 'active',
-                        'document_id': doc['id'],
-                        'severite': 'MOYENNE'
-                    })
-                    
-        except Exception as e:
-            alerts.append({
-                'id': len(alerts) + 1,
-                'title': f'Erreur analyse facture - {doc["name"]}',
-                'description': f'Erreur lors de l\'analyse: {str(e)}',
-                'priority': 'medium',
-                'type': 'error',
-                'date': datetime.now().strftime('%Y-%m-%d'),
-                'status': 'active',
-                'document_id': doc['id'],
-                'severite': 'MOYENNE'
-            })
-        
-        return alerts
-    
-    def _analyze_cheque_json(self, doc, json_data):
-        """Analyse le JSON d'un chèque pour détecter des anomalies"""
-        alerts = []
-        
-        try:
-            # Vérifier les champs obligatoires pour un chèque
-            required_fields = ['montant', 'date', 'numero_cheque', 'beneficiaire']
-            missing_fields = []
-            
-            for field in required_fields:
-                if field not in json_data or not json_data[field] or json_data[field] == 'N/A':
-                    missing_fields.append(field)
-            
-            if missing_fields:
-                alerts.append({
-                    'id': len(alerts) + 1,
-                    'title': f'Informations chèque incomplètes - {doc["name"]}',
-                    'description': f'Champs manquants: {", ".join(missing_fields)}',
-                    'priority': 'high',
-                    'type': 'INFORMATIONS_BANCAIRES_INCOMPLETES',
-                    'date': datetime.now().strftime('%Y-%m-%d'),
-                    'status': 'active',
-                    'document_id': doc['id'],
-                    'severite': 'HAUTE'
-                })
-            
-            # Vérifier la cohérence montant en chiffres vs lettres
-            if 'montant' in json_data and 'montant_lettres' in json_data:
-                if json_data['montant'] != 'N/A' and json_data['montant_lettres'] != 'N/A':
-                    alerts.append({
-                        'id': len(alerts) + 1,
-                        'title': f'Vérification montant chèque - {doc["name"]}',
-                        'description': f'Vérifier cohérence: {json_data["montant"]} vs {json_data["montant_lettres"]}',
-                        'priority': 'medium',
-                        'type': 'ECART_MONTANT',
-                        'date': datetime.now().strftime('%Y-%m-%d'),
-                        'status': 'active',
-                        'document_id': doc['id'],
-                        'severite': 'MOYENNE',
-                        'montant': json_data['montant']
-                    })
-                    
-        except Exception as e:
-            alerts.append({
-                'id': len(alerts) + 1,
-                'title': f'Erreur analyse chèque - {doc["name"]}',
-                'description': f'Erreur lors de l\'analyse: {str(e)}',
-                'priority': 'medium',
-                'type': 'error',
-                'date': datetime.now().strftime('%Y-%m-%d'),
-                'status': 'active',
-                'document_id': doc['id'],
-                'severite': 'MOYENNE'
-            })
-        
-        return alerts
-    
-    def _analyze_releve_json(self, doc, json_data):
-        """Analyse le JSON d'un relevé bancaire"""
-        alerts = []
-        
-        try:
-            # Vérifier la présence des opérations
-            if 'operations' in json_data:
-                operations = json_data['operations']
-                if isinstance(operations, list) and len(operations) > 0:
-                    
-                    # Analyser les opérations pour détecter des anomalies
-                    for i, operation in enumerate(operations):
-                        if isinstance(operation, dict):
-                            # Vérifier les montants élevés
-                            if 'montant' in operation:
-                                try:
-                                    montant = float(str(operation['montant']).replace(',', '.').replace('€', '').strip())
-                                    if abs(montant) > 100000:
-                                        alerts.append({
-                                            'id': len(alerts) + 1,
-                                            'title': f'Opération bancaire importante - {doc["name"]}',
-                                            'description': f'Opération de {montant}€ nécessite une vérification',
-                                            'priority': 'high',
-                                            'type': 'ECART_MONTANT',
-                                            'date': datetime.now().strftime('%Y-%m-%d'),
-                                            'status': 'active',
-                                            'document_id': doc['id'],
-                                            'severite': 'HAUTE',
-                                            'montant': montant
-                                        })
-                                except ValueError:
-                                    pass
-                    
-                    # Vérifier le nombre d'opérations
-                    if len(operations) > 100:
-                        alerts.append({
-                            'id': len(alerts) + 1,
-                            'title': f'Volume élevé d\'opérations - {doc["name"]}',
-                            'description': f'{len(operations)} opérations détectées, vérification recommandée',
-                            'priority': 'medium',
-                            'type': 'info',
-                            'date': datetime.now().strftime('%Y-%m-%d'),
-                            'status': 'active',
-                            'document_id': doc['id'],
-                            'severite': 'FAIBLE'
-                        })
-                else:
-                    alerts.append({
-                        'id': len(alerts) + 1,
-                        'title': f'Relevé vide - {doc["name"]}',
-                        'description': 'Aucune opération détectée dans le relevé',
-                        'priority': 'medium',
-                        'type': 'OPERATION_MANQUANTE_GRAND_LIVRE',
-                        'date': datetime.now().strftime('%Y-%m-%d'),
-                        'status': 'active',
-                        'document_id': doc['id'],
-                        'severite': 'MOYENNE'
-                    })
-                    
-        except Exception as e:
-            alerts.append({
-                'id': len(alerts) + 1,
-                'title': f'Erreur analyse relevé - {doc["name"]}',
-                'description': f'Erreur lors de l\'analyse: {str(e)}',
-                'priority': 'medium',
-                'type': 'error',
-                'date': datetime.now().strftime('%Y-%m-%d'),
-                'status': 'active',
-                'document_id': doc['id'],
-                'severite': 'MOYENNE'
-            })
-        
-        return alerts
-    
-    def _analyze_grandlivre_json(self, doc, json_data):
-        """Analyse le JSON d'un grand livre"""
-        alerts = []
-        
-        try:
-            # Vérifier la présence des écritures
-            if 'ecritures' in json_data or 'lignes' in json_data:
-                ecritures = json_data.get('ecritures', json_data.get('lignes', []))
-                
-                if isinstance(ecritures, list) and len(ecritures) > 0:
-                    
-                    # Analyser les écritures
-                    debit_total = 0
-                    credit_total = 0
-                    
-                    for ecriture in ecritures:
-                        if isinstance(ecriture, dict):
-                            # Calculer les totaux débit/crédit
-                            if 'debit' in ecriture:
-                                try:
-                                    debit = float(str(ecriture['debit']).replace(',', '.').replace('€', '').strip() or 0)
-                                    debit_total += debit
-                                except ValueError:
-                                    pass
-                            
-                            if 'credit' in ecriture:
-                                try:
-                                    credit = float(str(ecriture['credit']).replace(',', '.').replace('€', '').strip() or 0)
-                                    credit_total += credit
-                                except ValueError:
-                                    pass
-                    
-                    # Vérifier l'équilibre débit/crédit
-                    difference = abs(debit_total - credit_total)
-                    if difference > 0.01:  # Tolérance de 1 centime
-                        alerts.append({
-                            'id': len(alerts) + 1,
-                            'title': f'Déséquilibre comptable - {doc["name"]}',
-                            'description': f'Écart débit/crédit: {difference:.2f}€ (Débit: {debit_total:.2f}€, Crédit: {credit_total:.2f}€)',
-                            'priority': 'high',
-                            'type': 'DOUBLON_GRAND_LIVRE',
-                            'date': datetime.now().strftime('%Y-%m-%d'),
-                            'status': 'active',
-                            'document_id': doc['id'],
-                            'severite': 'HAUTE',
-                            'montant': difference
-                        })
-                    
-                    # Vérifier le volume d'écritures
-                    if len(ecritures) > 1000:
-                        alerts.append({
-                            'id': len(alerts) + 1,
-                            'title': f'Volume important d\'écritures - {doc["name"]}',
-                            'description': f'{len(ecritures)} écritures détectées, contrôle approfondi recommandé',
-                            'priority': 'medium',
-                            'type': 'info',
-                            'date': datetime.now().strftime('%Y-%m-%d'),
-                            'status': 'active',
-                            'document_id': doc['id'],
-                            'severite': 'FAIBLE'
-                        })
-                        
-                else:
-                    alerts.append({
-                        'id': len(alerts) + 1,
-                        'title': f'Grand livre vide - {doc["name"]}',
-                        'description': 'Aucune écriture détectée dans le grand livre',
-                        'priority': 'medium',
-                        'type': 'OPERATION_MANQUANTE_GRAND_LIVRE',
-                        'date': datetime.now().strftime('%Y-%m-%d'),
-                        'status': 'active',
-                        'document_id': doc['id'],
-                        'severite': 'MOYENNE'
-                    })
-                    
-        except Exception as e:
-            alerts.append({
-                'id': len(alerts) + 1,
-                'title': f'Erreur analyse grand livre - {doc["name"]}',
-                'description': f'Erreur lors de l\'analyse: {str(e)}',
-                'priority': 'medium',
-                'type': 'error',
-                'date': datetime.now().strftime('%Y-%m-%d'),
-                'status': 'active',
-                'document_id': doc['id'],
-                'severite': 'MOYENNE'
-            })
-        
-        return alerts
-    
-    def _generate_closure_alerts(self):
-        """Génère des alertes de clôture basées sur la date actuelle"""
-        alerts = []
-        now = datetime.now()
-        
-        # Alertes de fin de mois
-        if now.day > 25:
-            alerts.append({
-                'id': 9001,
-                'title': 'Clôture mensuelle approche',
-                'description': 'La clôture mensuelle approche. Vérifiez que tous les documents sont traités.',
-                'priority': 'high',
-                'type': 'warning',
-                'date': now.strftime('%Y-%m-%d'),
-                'status': 'active',
-                'severite': 'HAUTE'
-            })
-        
-        # Alertes de fin d'année
-        if now.month == 12 and now.day > 15:
-            alerts.append({
-                'id': 9002,
-                'title': 'Clôture annuelle - Préparation',
-                'description': 'Préparation de la clôture annuelle. Vérification des écritures de régularisation nécessaire.',
-                'priority': 'high',
-                'type': 'error',
-                'date': now.strftime('%Y-%m-%d'),
-                'status': 'active',
-                'severite': 'HAUTE'
-            })
-        
-        # Alertes TVA
-        if now.day < 20:
-            alerts.append({
-                'id': 9003,
-                'title': 'Déclaration TVA',
-                'description': f'La déclaration de TVA pour {now.strftime("%B %Y")} doit être transmise avant le 20.',
-                'priority': 'medium',
-                'type': 'warning',
-                'date': now.strftime('%Y-%m-%d'),
-                'status': 'active',
-                'severite': 'MOYENNE'
-            })
-        
-        return alerts
+# Jours fériés France 2025
+JOURS_FERIES_2025 = {
+    datetime(2025, 1, 1).date(), datetime(2025, 4, 14).date(), datetime(2025, 5, 1).date(),
+    datetime(2025, 5, 8).date(), datetime(2025, 5, 29).date(), datetime(2025, 6, 9).date(),
+    datetime(2025, 7, 14).date(), datetime(2025, 8, 15).date(), datetime(2025, 11, 1).date(),
+    datetime(2025, 11, 11).date(), datetime(2025, 12, 25).date()
+}
 
-    def calculate_risk_score(self, alerts, total_documents):
-        """Calcule un score de risque réaliste basé sur les alertes et le volume de documents"""
-        if not alerts or total_documents == 0:
-            return {'score': 0, 'niveau': 'FAIBLE'}
+class AnomalyDetectionWorkflow:
+    """
+    Workflow de détection d'anomalies pour l'analyse comptable et bancaire
+    Utilise la configuration DEFAULT_ANOMALY_CONFIG d'app2.py
+    """
+    
+    def __init__(self, config: Dict[str, Any]):
+        """
+        Initialise le workflow avec une configuration
         
-        # Pondération par sévérité
-        severity_weights = {
-            'HAUTE': 10,
-            'MOYENNE': 5,
-            'FAIBLE': 2
-        }
+        Args:
+            config: Configuration des seuils et paramètres de détection (DEFAULT_ANOMALY_CONFIG d'app2.py)
+        """
+        self.config = config
+        self.alerts_counter = 1
         
-        # Pondération par type d'anomalie
-        type_weights = {
-            'DOUBLON_GRAND_LIVRE': 8,
-            'ARRONDI_SUSPECT': 7,
-            'ECART_MONTANT': 6,
-            'INCOHERENCE_MONTANT_FACTURE': 5,
-            'SEQUENCE_ILLOGIQUE': 4,
-            'INFORMATIONS_BANCAIRES_INCOMPLETES': 4,
-            'OPERATION_MANQUANTE_GRAND_LIVRE': 3,
-            'JOUR_NON_OUVRABLE': 2,
-            'error': 3,
-            'warning': 2,
-            'info': 1
-        }
+    def is_weekend(self, date_obj: datetime) -> bool:
+        """Vérifie si une date est un week-end"""
+        return date_obj.weekday() >= 5
+    
+    def is_non_working_day(self, date_obj: datetime) -> bool:
+        """Vérifie si une date est un jour non ouvrable (week-end ou férié)"""
+        return self.is_weekend(date_obj) or date_obj.date() in JOURS_FERIES_2025
+    
+    def extract_reference_and_name(self, text: str) -> Tuple[Optional[str], Optional[str]]:
+        """
+        Extrait la référence et le nom d'une transaction à partir du texte
         
-        # Calculer le score pondéré
-        weighted_score = 0
-        for alert in alerts:
-            severity = alert.get('severite', 'FAIBLE')
-            alert_type = alert.get('type', 'info')
+        Args:
+            text: Texte de la transaction
             
-            severity_weight = severity_weights.get(severity, 1)
-            type_weight = type_weights.get(alert_type, 1)
+        Returns:
+            Tuple (référence, nom)
+        """
+        if not text:
+            return None, None
             
-            weighted_score += severity_weight * type_weight
+        text_clean = text.upper().replace(" ", "")
         
-        # Normaliser par rapport au nombre de documents
-        # Plus il y a de documents, plus le score est dilué
-        normalized_score = weighted_score / max(total_documents, 1)
+        # Recherche de référence facture
+        fac_match = re.search(r"(FAC\d{6,})", text_clean)
+        # Recherche de référence chèque
+        chq_match = re.search(r"(?:CH[EÈ]QUE|CHEQUE|CHQ|N[°O]|PARCHEQUE)[:\-]?\s*(\d{5,})", text_clean)
         
-        # Appliquer une fonction logarithmique pour éviter les scores trop élevés
-        final_score = min(100, int(30 * math.log(normalized_score + 1)))
+        ref = fac_match.group(1) if fac_match else chq_match.group(1) if chq_match else None
         
-        # Déterminer le niveau de risque
-        if final_score >= 70:
-            niveau = 'CRITIQUE'
-        elif final_score >= 40:
-            niveau = 'ÉLEVÉ'
-        elif final_score >= 20:
-            niveau = 'MOYEN'
-        else:
-            niveau = 'FAIBLE'
+        # Extraction du nom après tiret
+        name_match = re.search(r"(?:-|–)\s*(.+)", text)
+        name = name_match.group(1).strip().title() if name_match else None
+        
+        return ref, name
+    
+    def is_fees_or_maintenance(self, text: str) -> bool:
+        """Détecte si une transaction est des frais ou maintenance"""
+        if not text:
+            return False
+        text = text.lower()
+        return any(kw in text for kw in ['frais', 'tenue de compte', 'cheque', 'chèque'])
+    
+    def parse_date(self, date_str: str) -> datetime:
+        """Parse une date depuis différents formats"""
+        try:
+            return pd.to_datetime(date_str, dayfirst=True)
+        except:
+            return pd.to_datetime(date_str)
+    
+    def normalize_entry(self, df: pd.DataFrame, is_gl: bool = False) -> pd.DataFrame:
+        """
+        Normalise les entrées d'un DataFrame (relevé bancaire ou grand livre)
+        
+        Args:
+            df: DataFrame source
+            is_gl: True si c'est un grand livre, False si relevé bancaire
+            
+        Returns:
+            DataFrame normalisé
+        """
+        entries = []
+        
+        for _, row in df.iterrows():
+            try:
+                if is_gl and isinstance(row['débit'], str) and 'DÉBIT' in row['débit'].upper():
+                    continue
+                # Parsing de la date
+                date_obj = self.parse_date(row['date'])
+                
+                # Extraction du montant selon le type
+                if is_gl:
+                    debit = float(row['débit']) if pd.notnull(row['débit']) and str(row['débit']).strip() != '' else 0
+                    credit = float(row['crédit']) if pd.notnull(row['crédit']) and str(row['crédit']).strip() != '' else 0
+                    montant = abs(debit if debit > 0 else credit)
+                else:
+                    montant = abs(float(row['montant']))
+                
+                # Extraction de la nature/libellé
+                nature = row['nature'] if not is_gl else row['libellé']
+                date_str = date_obj.strftime('%d/%m/%Y')
+                ref, name = self.extract_reference_and_name(nature)
+                
+                entries.append({
+                    "date": date_str,
+                    "date_obj": date_obj,
+                    "montant": round(montant, 2),
+                    "ref": ref,
+                    "name": name,
+                    "weekend": self.is_weekend(date_obj),
+                    "non_ouvrable": self.is_non_working_day(date_obj),
+                    "source": "GL" if is_gl else "RELEVE",
+                    "raw_text": nature,
+                    "is_special": self.is_fees_or_maintenance(nature),
+                    "account": row.get('n° compte', '') if is_gl else '',
+                    "debit": float(row['débit']) if is_gl and pd.notnull(row['débit']) and str(row['débit']).strip() != '' else 0,
+                    "credit": float(row['crédit']) if is_gl and pd.notnull(row['crédit']) and str(row['crédit']).strip() != '' else 0
+                })
+            except Exception as e:
+                logger.warning(f"Erreur ligne : {row}\n{e}")
+                continue
+                
+        return pd.DataFrame(entries)
+    
+    def est_compte_concerne(self, compte: str, prefixes: List[str]) -> bool:
+        """Vérifie si le compte appartient à un des préfixes donnés"""
+        try:
+            compte_str = str(compte).strip()
+            if not compte_str:
+                return False
+            for prefix in prefixes:
+                prefix_str = str(prefix)
+                if compte_str.startswith(prefix_str):
+                    return True
+            return False
+        except:
+            return False
+    
+    def detect_missing_transactions(self, releve_norm: pd.DataFrame, gl_norm: pd.DataFrame, gl_all_norm: pd.DataFrame, gl_all_df: pd.DataFrame) -> List[Dict[str, Any]]:
+        """
+        Détecte les transactions manquantes Relevé-GL avec logique améliorée en 3 étapes
+        
+        Étape 1 : Recherche élargie dans TOUS les comptes GL
+        Étape 2 : Classification selon présence dans 512xxx
+        Étape 3 : Trois types d'anomalies :
+        - Vraiment manquante : Absente de tout le GL
+        - Non rapprochée : Présente en 401/411/6xxx mais pas en 512xxx
+        - Incohérente : Présente en 512xxx mais pas dans autres comptes
+        """
+        alerts = []
+        
+        if not self.config.get('alert_on_missing_transactions', True):
+            return alerts
+        
+        for _, rel_tx in releve_norm.iterrows():
+            if pd.isna(rel_tx['ref']) or str(rel_tx['ref']).strip() == "":
+                continue
+            
+            ref = rel_tx['ref']
+            montant = rel_tx['montant']
+            
+            # ÉTAPE 1 : Recherche élargie dans TOUS les comptes GL
+            match_gl_all = gl_all_norm[
+                (gl_all_norm['ref'] == ref) |
+                (abs(gl_all_norm['montant'] - montant) <= self.config.get('amount_tolerance_absolute', 0.01))
+            ]
+            
+            if match_gl_all.empty:
+                # Transaction vraiment manquante
+                alerts.append({
+                    "id": self.alerts_counter,
+                    "type": "OPERATION_MANQUANTE_GRAND_LIVRE",
+                    "title": f"Transaction manquante dans le Grand Livre",
+                    "description": f"Réf: {ref} - Montant: {montant}€ - Transaction présente dans le relevé mais absente dans le Grand Livre",
+                    "source": "RELEVE",
+                    "montant": montant,
+                    "ref": ref,
+                    "name": rel_tx['name'],
+                    "date": rel_tx['date'],
+                    "priority": "high" if montant > self.config.get('suspicious_amount_threshold', 50000) else "medium",
+                    "commentaire": rel_tx['raw_text']
+                })
+                self.alerts_counter += 1
+            else:
+                # ÉTAPE 2 : Analyser les comptes impliqués
+                mask = (gl_all_norm['ref'] == ref) | (abs(gl_all_norm['montant'] - montant) <= self.config.get('amount_tolerance_absolute', 0.01))
+                matching_indices = gl_all_norm[mask].index
+                comptes_match = gl_all_df.loc[matching_indices, 'n° compte'].unique()
+                
+                bank_accounts = [str(acc) for acc in self.config.get('monitored_bank_accounts', ['512200'])]
+                other_accounts = self.config.get('fournisseur_accounts', ['401']) + self.config.get('client_accounts', ['411']) + self.config.get('charge_accounts', ['6'])
+                
+                # Vérifier présence dans comptes bancaires
+                in_bank_accounts = any(str(cpt).startswith(tuple(bank_accounts)) for cpt in comptes_match)
+                in_other_accounts = any(str(cpt).startswith(tuple(other_accounts)) for cpt in comptes_match)
+                
+                # ÉTAPE 3 : Classification des anomalies
+                if in_bank_accounts and not in_other_accounts:
+                    # Transaction incohérente : Présente en 512xxx mais pas dans autres comptes
+                    alerts.append({
+                        "id": self.alerts_counter,
+                        "type": "TRANSACTION_INCOHERENTE",
+                        "title": f"Transaction incohérente",
+                        "description": f"Réf: {ref} - Montant: {montant}€ - Présente uniquement dans les comptes bancaires sans contrepartie",
+                        "source": "RELEVE",
+                        "montant": montant,
+                        "ref": ref,
+                        "name": rel_tx['name'],
+                        "date": rel_tx['date'],
+                        "priority": "medium",
+                        "commentaire": rel_tx['raw_text'],
+                        "comptes_trouvés": list(comptes_match)
+                    })
+                    self.alerts_counter += 1
+                elif in_other_accounts and not in_bank_accounts:
+                    # Transaction non rapprochée : Présente en 401/411/6xxx mais pas en 512xxx
+                    alerts.append({
+                        "id": self.alerts_counter,
+                        "type": "TRANSACTION_NON_RAPPROCHEE",
+                        "title": f"Transaction non rapprochée",
+                        "description": f"Réf: {ref} - Montant: {montant}€ - Présente dans d'autres comptes mais pas dans les comptes bancaires surveillés",
+                        "source": "RELEVE",
+                        "montant": montant,
+                        "ref": ref,
+                        "name": rel_tx['name'],
+                        "date": rel_tx['date'],
+                        "priority": "low",
+                        "commentaire": rel_tx['raw_text'],
+                        "comptes_trouvés": list(comptes_match)
+                    })
+                    self.alerts_counter += 1
+        
+        return alerts
+    
+    def detect_missing_invoices_in_gl(self, documents: List[Dict[str, Any]], gl_all_norm: pd.DataFrame, gl_all_df: pd.DataFrame) -> List[Dict[str, Any]]:
+        """
+        Détecte les factures non trouvées dans GL avec logique améliorée
+        
+        Recherche élargie : 401xxx, 6xxx, 445xxx (TVA)
+        Vérification rapprochement : Présence dans 512xxx
+        Quatre types d'anomalies :
+        - Facture non comptabilisée : Absente de 401/6xxx/411
+        - Facture non rapprochée : Présente en 401/6xxx/411 mais pas en 512xxx
+        - Facture partiellement rapprochée : Montant différent entre 401/6xxx/411 et 512xxx
+        - Facture sur-rapprochée : Présente en 512xxx mais pas en 401/6xxx/411
+        """
+        alerts = []
+        
+        for doc in documents:
+            if doc.get('type') != 'facture' or doc.get('status') != 'completed':
+                continue
+            
+            processed_data = doc.get('processed_data', {})
+            if not processed_data:
+                continue
+            
+            try:
+                info_payment = processed_data.get('info payment', {})
+                numero_facture = info_payment.get('Numéro Facture', '').strip()
+                total_ttc = float(info_payment.get('Total TTC', 0))
+                
+                # Classification Fournisseur/Client
+                nom_client = info_payment.get('Nom du Client', '').strip()
+                nom_societe = processed_data.get('Nom Societe', '').strip()
+                
+                # Normalisation pour comparaison
+                nom_client_norm = nom_client.lower().replace(' ', '') if nom_client else ''
+                nom_societe_norm = nom_societe.lower().replace(' ', '') if nom_societe else ''
+                
+                # Déterminer le type de facture
+                if "gradiant" in nom_client_norm:
+                    type_facture = "Fournisseur"
+                    facture_label = "Facture Fournisseur"
+                else:
+                    type_facture = "Client"
+                    facture_label = "Facture Client"
+                
+                if not numero_facture:
+                    continue
+                
+                # Recherche élargie dans les comptes concernés
+                fournisseur_accounts = self.config.get('fournisseur_accounts', ['401'])
+                charge_accounts = self.config.get('charge_accounts', ['6'])
+                client_accounts = self.config.get('client_accounts', ['411'])
+                tva_accounts = self.config.get('tva_accounts', ['445'])
+                bank_accounts = self.config.get('monitored_bank_accounts', ['512200'])
+                
+                all_business_accounts = fournisseur_accounts + charge_accounts + client_accounts + tva_accounts
+                
+                # Recherche dans les comptes métier
+                business_matches = gl_all_norm[
+                    (gl_all_norm['ref'] == numero_facture) |
+                    (abs(gl_all_norm['montant'] - total_ttc) <= self.config.get('amount_tolerance_absolute', 0.01))
+                ]
+                
+                if not business_matches.empty:
+                    # Analyser les comptes impliqués
+                    mask = (gl_all_norm['ref'] == numero_facture) | (abs(gl_all_norm['montant'] - total_ttc) <= self.config.get('amount_tolerance_absolute', 0.01))
+                    matching_indices = gl_all_norm[mask].index
+                    comptes_match = gl_all_df.loc[matching_indices, 'n° compte'].unique()
+                    
+                    in_business_accounts = any(str(cpt).startswith(tuple(all_business_accounts)) for cpt in comptes_match)
+                    in_bank_accounts = any(str(cpt).startswith(tuple(bank_accounts)) for cpt in comptes_match)
+                    
+                    if in_business_accounts and not in_bank_accounts:
+                        # Facture non rapprochée
+                        alerts.append({
+                            "id": self.alerts_counter,
+                            "type": "FACTURE_NON_RAPPROCHEE_GL",
+                            "title": f"{facture_label} non rapprochée",
+                            "description": f"{facture_label} {numero_facture} - Client: {nom_client} - Montant: {total_ttc}€ - Présente dans les comptes métier mais pas rapprochée bancairement",
+                            "source": "FACTURE",
+                            "montant": total_ttc,
+                            "ref": numero_facture,
+                            "document_id": doc['id'],
+                            "priority": "medium",
+                            "date": datetime.now().strftime('%Y-%m-%d'),
+                            "comptes_trouvés": list(comptes_match),
+                            "type_facture": type_facture,
+                            "nom_client": nom_client,
+                            "nom_societe": nom_societe
+                        })
+                        self.alerts_counter += 1
+                    elif in_bank_accounts and not in_business_accounts:
+                        # Facture sur-rapprochée
+                        alerts.append({
+                            "id": self.alerts_counter,
+                            "type": "FACTURE_SUR_RAPPROCHEE_GL",
+                            "title": f"{facture_label} sur-rapprochée",
+                            "description": f"{facture_label} {numero_facture} - Client: {nom_client} - Montant: {total_ttc}€ - Présente dans les comptes bancaires mais pas dans les comptes métier",
+                            "source": "FACTURE",
+                            "montant": total_ttc,
+                            "ref": numero_facture,
+                            "document_id": doc['id'],
+                            "priority": "high",
+                            "date": datetime.now().strftime('%Y-%m-%d'),
+                            "comptes_trouvés": list(comptes_match),
+                            "type_facture": type_facture,
+                            "nom_client": nom_client,
+                            "nom_societe": nom_societe
+                        })
+                        self.alerts_counter += 1
+                    elif in_business_accounts and in_bank_accounts:
+                        # Vérifier les montants pour détecter un rapprochement partiel
+                        business_amounts = []
+                        bank_amounts = []
+                        
+                        for idx in matching_indices:
+                            compte = str(gl_all_df.loc[idx, 'n° compte'])
+                            montant = gl_all_norm.loc[idx, 'montant']
+                            
+                            if any(compte.startswith(acc) for acc in all_business_accounts):
+                                business_amounts.append(montant)
+                            elif any(compte.startswith(acc) for acc in bank_accounts):
+                                bank_amounts.append(montant)
+                        
+                        if business_amounts and bank_amounts:
+                            total_business = sum(business_amounts)
+                            total_bank = sum(bank_amounts)
+                            
+                else:
+                    # Facture non comptabilisée
+                    alerts.append({
+                        "id": self.alerts_counter,
+                        "type": "FACTURE_NON_COMPTABILISEE_GL",
+                        "title": f"{facture_label} non comptabilisée",
+                        "description": f"{facture_label} {numero_facture} - Client: {nom_client} - Montant: {total_ttc}€ - Absente des comptes métier (401/6xxx/411/445)",
+                        "source": "FACTURE",
+                        "montant": total_ttc,
+                        "ref": numero_facture,
+                        "document_id": doc['id'],
+                        "priority": "high",
+                        "date": datetime.now().strftime('%Y-%m-%d'),
+                        "type_facture": type_facture,
+                        "nom_client": nom_client,
+                        "nom_societe": nom_societe
+                    })
+                    self.alerts_counter += 1
+                    
+            except Exception as e:
+                logger.error(f"Erreur analyse facture {doc['id']}: {str(e)}")
+        
+        return alerts
+    
+    def extraire_info_cheque(self, processed_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Extrait les informations clés d'un chèque depuis processed_data
+        """
+        numero_cheque = str(processed_data.get('Numéro de Chèque', '')).strip()
+        montant_str = processed_data.get('Montant', '0')
+        
+        # Extraire le montant numérique
+        montant = 0
+        if montant_str:
+            montant_clean = re.sub(r'[^\d,.]', '', str(montant_str))
+            if montant_clean:
+                try:
+                    montant = float(montant_clean.replace(',', '.'))
+                except:
+                    montant = 0
         
         return {
-            'score': final_score,
-            'niveau': niveau,
-            'details': {
-                'total_alerts': len(alerts),
-                'total_documents': total_documents,
-                'weighted_score': weighted_score,
-                'normalized_score': normalized_score
-            }
-        }
-
-    def mettre_a_jour_statut(self, alertes, index, nouveau_statut, commentaire=''):
-        """Met à jour le statut d'une alerte"""
-        if 0 <= index < len(alertes):
-            alertes[index]['status'] = nouveau_statut.lower()
-            alertes[index]['commentaire'] = commentaire
-            alertes[index]['date_modification'] = datetime.now().isoformat()
-        return alertes
-
-    def generer_rapport_validation(self, alertes):
-        """Génère un rapport de validation des alertes"""
-        rapport = {
-            'date_rapport': datetime.now().isoformat(),
-            'nombre_total_alertes': len(alertes),
-            'repartition_statuts': {},
-            'alertes_par_severite': {}
-        }
-        
-        # Compter par statut
-        statuts = [alerte.get('status', 'active') for alerte in alertes]
-        rapport['repartition_statuts'] = dict(Counter(statuts))
-        
-        # Compter par sévérité
-        severites = [alerte.get('severite', 'FAIBLE') for alerte in alertes]
-        rapport['alertes_par_severite'] = dict(Counter(severites))
-        
-        return rapport
-
-class WorkflowValidation:
-    def __init__(self):
-        self.codes_couleur = {
-            'ACTIVE': {'couleur': '🔴', 'description': 'Actif'},
-            'VALIDE': {'couleur': '🟢', 'description': 'Validé'},
-            'CORRIGE': {'couleur': '🔵', 'description': 'Corrigé'},
-            'REJETE': {'couleur': '⚪', 'description': 'Rejeté'}
+            'numero_cheque': numero_cheque,
+            'montant': montant,
+            'banque': processed_data.get('Banque', ''),
+            'emetteur': processed_data.get('Emetteur', ''),
+            'destinataire': processed_data.get('Destinataire', ''),
+            'date': processed_data.get('Le', ''),
+            'numero_compte': processed_data.get('Numéro de Compte', '')
         }
     
-    def mettre_a_jour_statut(self, alertes, index, nouveau_statut, commentaire=''):
-        """Met à jour le statut d'une alerte"""
-        if 0 <= index < len(alertes):
-            alertes[index]['status'] = nouveau_statut.lower()
-            alertes[index]['commentaire'] = commentaire
-            alertes[index]['date_modification'] = datetime.now().isoformat()
-        return alertes
-
-    def generer_rapport_validation(self, alertes):
-        """Génère un rapport de validation des alertes"""
-        rapport = {
-            'date_rapport': datetime.now().isoformat(),
-            'nombre_total_alertes': len(alertes),
-            'repartition_statuts': {},
-            'alertes_par_severite': {}
-        }
+    def detect_missing_checks_in_gl(self, documents: List[Dict[str, Any]], gl_all_norm: pd.DataFrame, gl_all_df: pd.DataFrame) -> List[Dict[str, Any]]:
+        """
+        Analyse les chèques selon la logique corrigée basée sur le code Colab qui fonctionne
+        Recherche émission : Comptes de sortie (6xxx, 401xxx, 411xxx)
+        Recherche encaissement : Comptes bancaires (512xxx)
+        Quatre types d'anomalies selon la méthode corrigée
+        """
+        alerts = []
         
-        # Compter par statut
-        statuts = [alerte.get('status', 'active') for alerte in alertes]
-        rapport['repartition_statuts'] = dict(Counter(statuts))
+        # Filtrer les chèques
+        cheques = [doc for doc in documents if doc.get('type') == 'cheque' and doc.get('status') == 'completed']
         
-        # Compter par sévérité
-        severites = [alerte.get('severite', 'FAIBLE') for alerte in alertes]
-        rapport['alertes_par_severite'] = dict(Counter(severites))
+        logger.info(f"=== ANALYSE DE {len(cheques)} CHÈQUES ===")
         
-        return rapport
-
-def clean_numeric_column(series):
-    """
-    Nettoie une colonne numérique (supprime les caractères non numériques)
-    Basé sur votre code Colab
-    """
-    try:
-        # Convertir en string et nettoyer
-        cleaned = series.astype(str).str.replace(',', '.').str.replace('€', '').str.replace(' ', '').str.strip()
-        # Remplacer les valeurs vides par 0
-        cleaned = cleaned.replace('', '0').replace('nan', '0')
-        # Convertir en numérique
-        return pd.to_numeric(cleaned, errors='coerce').fillna(0.0)
-    except Exception as e:
-        logger.error(f"Erreur lors du nettoyage de la colonne numérique: {str(e)}")
-        return pd.Series([0.0] * len(series))
-
-def clean_grandlivre_dataframe(df):
-    """
-    Nettoie et standardise le DataFrame du grand livre
-    """
-    try:
-        # Mapping des noms de colonnes possibles
-        column_mapping = {
-            'n° compte': 'numero_compte',
-            'numero_compte': 'numero_compte',
-            'compte': 'numero_compte',
-            'libellé': 'libelle',
-            'libelle': 'libelle',
-            'description': 'libelle',
-            'débit': 'debit',
-            'debit': 'debit',
-            'crédit': 'credit',
-            'credit': 'credit',
-            'date': 'date',
-            'montant': 'montant'
-        }
+        if not cheques:
+            logger.info("Aucun chèque à analyser")
+            return alerts
         
-        # Renommer les colonnes
-        df_clean = df.copy()
-        for old_name, new_name in column_mapping.items():
-            if old_name in df_clean.columns:
-                df_clean = df_clean.rename(columns={old_name: new_name})
+        # Assurer que gl_all_df a les bonnes colonnes
+        if gl_all_df.empty:
+            logger.warning("Grand livre vide")
+            return alerts
         
-        # Vérifier les colonnes essentielles
-        required_columns = ['numero_compte', 'debit', 'credit']
-        missing_columns = [col for col in required_columns if col not in df_clean.columns]
+        # Normaliser les noms de colonnes
+        gl_all_df.columns = [col.strip().lower() for col in gl_all_df.columns]
         
-        if missing_columns:
-            logger.warning(f"Colonnes manquantes: {missing_columns}")
-            # Créer les colonnes manquantes avec des valeurs par défaut
-            for col in missing_columns:
-                if col in ['debit', 'credit']:
-                    df_clean[col] = 0.0
-                else:
-                    df_clean[col] = ''
+        # Vérifier que les colonnes nécessaires existent
+        required_cols = ['n° compte', 'libellé', 'débit', 'crédit']
+        missing_cols = [col for col in required_cols if col not in gl_all_df.columns]
+        if missing_cols:
+            logger.error(f"Colonnes manquantes dans le grand livre: {missing_cols}")
+            return alerts
         
-        # Nettoyer les colonnes débit et crédit (comme dans votre Colab)
-        for col in ['debit', 'credit']:
-            if col in df_clean.columns:
-                df_clean[col] = clean_numeric_column(df_clean[col])
+        # Filtrer les lignes d'en-tête si elles existent (comme dans Colab)
+        # Supprimer les lignes où 'débit' contient 'DÉBIT' (en-têtes)
+        gl_df_clean = gl_all_df.copy()
+        mask_header = gl_df_clean['débit'].astype(str).str.contains('DÉBIT|Débit', case=False, na=False)
+        if mask_header.any():
+            gl_df_clean = gl_df_clean[~mask_header].reset_index(drop=True)
+            logger.info(f"Lignes d'en-tête supprimées: {mask_header.sum()}")
         
-        # Nettoyer la colonne numero_compte
-        if 'numero_compte' in df_clean.columns:
-            df_clean['numero_compte'] = df_clean['numero_compte'].astype(str).str.strip()
-        
-        # Ajouter une colonne libelle si elle n'existe pas
-        if 'libelle' not in df_clean.columns:
-            df_clean['libelle'] = ''
-        
-        return df_clean
-        
-    except Exception as e:
-        logger.error(f"Erreur lors du nettoyage du DataFrame: {str(e)}")
-        return pd.DataFrame()
-
-def calculate_account_totals(df):
-    """
-    Calcule les totaux par type de compte selon votre logique Colab
-    """
-    totals = {
-        'solde_banque': 0.0,
-        'creances_clients': 0.0,
-        'dettes_fournisseurs': 0.0,
-        'tva_deductible': 0.0,
-        'tva_collectee': 0.0,
-        'chiffre_affaires': 0.0,
-        'charges': 0.0,
-        'encaissements': 0.0
-    }
-    
-    try:
-        # Comptes bancaires (512) - Logique de votre Colab
-        df_banque = df[df['numero_compte'].astype(str).str.startswith('512', na=False)]
-        if not df_banque.empty:
-            credit_512 = df_banque['credit'].sum()
-            debit_512 = df_banque['debit'].sum()
-            # Solde bancaire = Solde de départ + crédits - débits sur le compte 512
-            # Pour simplifier, on utilise debit - credit
-            totals['solde_banque'] = float(debit_512 - credit_512)
-            totals['encaissements'] = float(credit_512)
-        
-        # Créances clients (411) - Factures clients non encaissées
-        df_clients = df[df['numero_compte'].astype(str).str.startswith('411', na=False)]
-        if not df_clients.empty:
-            # Créances = débit - crédit sur comptes clients
-            totals['creances_clients'] = float(df_clients['debit'].sum() - df_clients['credit'].sum())
-        
-        # Dettes fournisseurs (401)
-        df_fournisseurs = df[df['numero_compte'].astype(str).str.startswith('401', na=False)]
-        if not df_fournisseurs.empty:
-            # Dettes = crédit - débit sur comptes fournisseurs
-            totals['dettes_fournisseurs'] = float(df_fournisseurs['credit'].sum() - df_fournisseurs['debit'].sum())
-        
-        # TVA déductible (4456) — débit
-        df_tva_ded = df[df['numero_compte'].astype(str).str.startswith('4456', na=False)]
-        if not df_tva_ded.empty:
-            totals['tva_deductible'] = float(df_tva_ded['debit'].sum())
-        
-        # TVA collectée (4457) — crédit
-        df_tva_col = df[df['numero_compte'].astype(str).str.startswith('4457', na=False)]
-        if not df_tva_col.empty:
-            totals['tva_collectee'] = float(df_tva_col['credit'].sum())
-        
-        # Chiffre d'affaires (706) — crédit
-        df_ca = df[df['numero_compte'].astype(str).str.startswith('706', na=False)]
-        if not df_ca.empty:
-            totals['chiffre_affaires'] = float(df_ca['credit'].sum())
-        
-        # Charges (comptes 6xx) — débit
-        df_charges = df[df['numero_compte'].astype(str).str.startswith('6', na=False)]
-        if not df_charges.empty:
-            totals['charges'] = float(df_charges['debit'].sum())
-        
-    except Exception as e:
-        logger.error(f"Erreur lors du calcul des totaux par compte: {str(e)}")
-    
-    return totals
-
-def extract_account_details(df):
-    """
-    Extrait les détails des comptes pour les dashboards spécialisés
-    """
-    details = {
-        'banque': [],
-        'clients': [],
-        'fournisseurs': [],
-        'tva': []
-    }
-    
-    try:
-        # Comptes bancaires (512)
-        df_banque = df[df['numero_compte'].astype(str).str.startswith('512', na=False)]
-        for compte in df_banque['numero_compte'].unique():
-            df_compte = df_banque[df_banque['numero_compte'] == compte]
-            solde = float(df_compte['debit'].sum() - df_compte['credit'].sum())
-            libelle = df_compte['libelle'].iloc[0] if not df_compte['libelle'].empty else f"Banque {compte}"
-            details['banque'].append({
-                'numero': compte,
-                'libelle': libelle,
-                'solde': solde
-            })
-        
-        # Comptes clients (411)
-        df_clients = df[df['numero_compte'].astype(str).str.startswith('411', na=False)]
-        for compte in df_clients['numero_compte'].unique():
-            df_compte = df_clients[df_clients['numero_compte'] == compte]
-            solde = float(df_compte['debit'].sum() - df_compte['credit'].sum())
-            libelle = df_compte['libelle'].iloc[0] if not df_compte['libelle'].empty else f"Client {compte}"
-            details['clients'].append({
-                'numero': compte,
-                'libelle': libelle,
-                'solde': solde
-            })
-        
-        # Comptes fournisseurs (401)
-        df_fournisseurs = df[df['numero_compte'].astype(str).str.startswith('401', na=False)]
-        for compte in df_fournisseurs['numero_compte'].unique():
-            df_compte = df_fournisseurs[df_fournisseurs['numero_compte'] == compte]
-            solde = float(df_compte['credit'].sum() - df_compte['debit'].sum())
-            libelle = df_compte['libelle'].iloc[0] if not df_compte['libelle'].empty else f"Fournisseur {compte}"
-            details['fournisseurs'].append({
-                'numero': compte,
-                'libelle': libelle,
-                'solde': solde
-            })
-        
-        # Comptes TVA (445)
-        df_tva = df[df['numero_compte'].astype(str).str.startswith('445', na=False)]
-        for compte in df_tva['numero_compte'].unique():
-            df_compte = df_tva[df_tva['numero_compte'] == compte]
-            solde = float(df_compte['debit'].sum() - df_compte['credit'].sum())
-            libelle = df_compte['libelle'].iloc[0] if not df_compte['libelle'].empty else f"TVA {compte}"
-            details['tva'].append({
-                'numero': compte,
-                'libelle': libelle,
-                'solde': solde
-            })
-        
-    except Exception as e:
-        logger.error(f"Erreur lors de l'extraction des détails des comptes: {str(e)}")
-    
-    return details
-
-
-def get_alerts_for_documents(documents_db):
-    """
-    Génère des alertes basées sur l'analyse des documents traités
-    """
-    alerts = []
-    alert_id = 1
-    
-    try:
-        
-        
-        # Calculer le score de risque
-        workflow = AnomalyDetectionWorkflow()
-        
-        # Analyser les documents pour générer des alertes spécifiques
-        document_alerts = workflow.analyze_json_files(documents_db)
-        alerts.extend(document_alerts)
-        
-        
-        
-        # Alertes sur les documents non traités
-        pending_docs = [d for d in documents_db if d.get('status') == 'pending']
-        if len(pending_docs) > 5:
-            alerts.append({
-                'id': len(alerts) + 1,
-                'title': 'Documents en attente de traitement',
-                'description': f'{len(pending_docs)} documents en attente de traitement OCR',
-                'priority': 'low',
-                'type': 'pending_documents',
-                'date': datetime.now().strftime('%Y-%m-%d'),
-                'status': 'active'
-            })
-        
-        # Alertes sur les échecs de traitement
-        failed_docs = [d for d in documents_db if d.get('status') == 'failed']
-        if failed_docs:
-            alerts.append({
-                'id': len(alerts) + 1,
-                'title': 'Échecs de traitement OCR',
-                'description': f'{len(failed_docs)} documents ont échoué lors du traitement',
-                'priority': 'medium',
-                'type': 'processing_failures',
-                'date': datetime.now().strftime('%Y-%m-%d'),
-                'status': 'active'
-            })
-        
-        # Calculer le score de risque
-        score_risque = workflow.calculate_risk_score(alerts, len(documents_db))
-        
-    except Exception as e:
-        logger.error(f"Erreur lors de la génération des alertes: {str(e)}")
-        alerts.append({
-            'id': 1,
-            'title': 'Erreur système',
-            'description': f'Erreur lors de l\'analyse: {str(e)}',
-            'priority': 'high',
-            'type': 'system_error',
-            'date': datetime.now().strftime('%Y-%m-%d'),
-            'status': 'active'
-        })
-        score_risque = {'score': 0, 'niveau': 'ERREUR'}
-    
-    return alerts, score_risque
-
-def pipeline_detection_anomalies(documents_db):
-    """Pipeline principal de détection d'anomalies"""
-    workflow = AnomalyDetectionWorkflow()
-    
-    # Analyser les documents
-    alertes = workflow.analyze_json_files(documents_db)
-    
-    # Calculer le score de risque
-    score_risque = workflow.calculate_risk_score(alertes, len(documents_db))
-    
-    return {
-        'alertes': alertes,
-        'score_risque': score_risque
-    }
-
-def exemple_complet(documents_db):
-    """Exemple complet d'utilisation du workflow"""
-    print("🔍 EXEMPLE COMPLET D'UTILISATION DU WORKFLOW")
-    print("=" * 60)
-
-    #Lancer l'analyse complète avec vos données réelles
-    print("\n🚀 Lancement de l'analyse complète...")
-
-    resultats = pipeline_detection_anomalies(documents_db)
-
-    if not resultats:
-        print("❌ Erreur lors de l'analyse")
-        return
-        
-    #Analyser les résultats
-    print("\n📊 ANALYSE DES RÉSULTATS")
-    print("=" * 40)
-
-    score_risque = resultats['score_risque']
-    alertes = resultats['alertes']
-
-    print(f"🎯 Score de risque global: {score_risque['score']}/100")
-    print(f"⚠️ Niveau de risque: {score_risque['niveau']}")
-    print(f"🔍 Nombre total d'alertes: {len(alertes)}")
-
-    # Analyser par type d'anomalie
-    types_anomalies = {}
-    for alerte in alertes:
-        type_alerte = alerte['type']
-        if type_alerte not in types_anomalies:
-            types_anomalies[type_alerte] = []
-        types_anomalies[type_alerte].append(alerte)
-
-    print(f"\n📋 Répartition des anomalies:")
-    for type_anomalie, alertes_type in types_anomalies.items():
-        print(f"  • {type_anomalie}: {len(alertes_type)} alertes")
-
-    # Démonstration du workflow de validation
-    print("\n🔧 DÉMONSTRATION DU WORKFLOW DE VALIDATION")
-    print("=" * 50)
-
-    workflow = WorkflowValidation()
-
-    # Simuler la validation de quelques alertes
-    if alertes:
-        print("Simulation de validation d'alertes...")
-
-        # Valider la première alerte
-        if len(alertes) > 0:
-            alertes = workflow.mettre_a_jour_statut(
-                alertes, 0, 'VALIDE',
-                'Anomalie confirmée après vérification manuelle'
-            )
-
-        # Corriger la deuxième alerte si elle existe
-        if len(alertes) > 1:
-            alertes = workflow.mettre_a_jour_statut(
-                alertes, 1, 'CORRIGE',
-                'Erreur de saisie corrigée dans le système'
-            )
-
-        # Rejeter la troisième alerte si elle existe
-        if len(alertes) > 2:
-            alertes = workflow.mettre_a_jour_statut(
-                alertes, 2, 'REJETE',
-                'Fausse alerte - opération normale'
-            )
-
-        print("✅ Statuts mis à jour pour les premières alertes")
-
-    # Générer le rapport final
-    rapport_final = workflow.generer_rapport_validation(alertes)
-
-    print(f"\n📈 RAPPORT FINAL DE VALIDATION")
-    print("=" * 35)
-    print(f"Date du rapport: {rapport_final['date_rapport']}")
-    print(f"Nombre total d'alertes: {rapport_final['nombre_total_alertes']}")
-
-    print(f"\nRépartition par statut:")
-    for statut, count in rapport_final['repartition_statuts'].items():
-        couleur = workflow.codes_couleur.get(statut.upper(), {}).get('couleur', '⚫')
-        description = workflow.codes_couleur.get(statut.upper(), {}).get('description', statut)
-        print(f"  {couleur} {description}: {count} alertes")
-
-    print(f"\nRépartition par sévérité:")
-    for severite, count in rapport_final['alertes_par_severite'].items():
-        print(f"  • {severite}: {count} alertes")
-
-    # Sauvegarder le rapport final
-    rapport_complet = {
-        'date_analyse': datetime.now().isoformat(),
-        'donnees_analysees': {
-            'total_documents': len(documents_db),
-            'documents_traites': len([d for d in documents_db if d['status'] == 'completed']),
-            'factures_ocr': len([d for d in documents_db if d['type'] == 'facture']),
-            'cheques_ocr': len([d for d in documents_db if d['type'] == 'cheque']),
-            'releves_ocr': len([d for d in documents_db if d['type'] == 'releve']),
-            'grandlivre_ocr': len([d for d in documents_db if d['type'] == 'grandlivre'])
-        },
-        'score_risque': score_risque,
-        'alertes': alertes,
-        'rapport_validation': rapport_final,
-        'recommandations': generer_recommandations(score_risque, alertes)
-    }
-
-    return rapport_complet
-
-def generer_recommandations(score_risque: dict, alertes: list) -> list:
-    """Génère des recommandations basées sur l'analyse"""
-    recommandations = []
-
-    # Recommandations basées sur le score
-    if score_risque['score'] >= 50:
-        recommandations.append("🚨 URGENT: Score de risque très élevé - Audit complet recommandé")
-    elif score_risque['score'] >= 30:
-        recommandations.append("⚠️ Score de risque élevé - Vérification approfondie nécessaire")
-    elif score_risque['score'] >= 15:
-        recommandations.append("🔍 Score de risque moyen - Contrôles renforcés suggérés")
-
-    # Recommandations basées sur les types d'alertes
-    types_alertes = [alerte['type'] for alerte in alertes]
-
-    if 'DOUBLON_GRAND_LIVRE' in types_alertes:
-        recommandations.append("📋 Réviser les procédures de saisie comptable")
-
-    if 'SEQUENCE_ILLOGIQUE' in types_alertes:
-        recommandations.append("🔄 Vérifier les flux de traitement des écritures")
-
-    if 'ECART_MONTANT' in types_alertes:
-        recommandations.append("💰 Rapprochement bancaire à effectuer")
-
-    if 'JOUR_NON_OUVRABLE' in types_alertes:
-        recommandations.append("📅 Contrôler les autorisations d'accès aux systèmes")
-
-    if 'ARRONDI_SUSPECT' in types_alertes:
-        recommandations.append("🔍 Investigation approfondie sur les montants suspects")
-
-    if 'OPERATION_MANQUANTE_GRAND_LIVRE' in types_alertes:
-        recommandations.append("🏦 Vérifier la complétude des écritures bancaires")
-
-    if 'INCOHERENCE_MONTANT_FACTURE' in types_alertes:
-        recommandations.append("📄 Contrôler la cohérence des factures OCR")
-
-    return recommandations
-
-def analyser_tendances_temporelles(alertes: list):
-    """Analyse les tendances temporelles des anomalies"""
-    print("\n📈 ANALYSE DES TENDANCES TEMPORELLES")
-    print("=" * 40)
-
-    # Extraire les dates des alertes
-    dates_alertes = []
-    for alerte in alertes:
-        if 'date' in alerte and alerte['date'] != 'N/A':
-            try:
-                date_obj = datetime.strptime(alerte['date'], '%Y-%m-%d')
-                dates_alertes.append(date_obj)
-            except:
+        for doc in cheques:
+            processed_data = doc.get('processed_data', {})
+            if not processed_data:
                 continue
-
-    if not dates_alertes:
-        print("❌ Aucune date valide trouvée dans les alertes")
-        return
-
-    # Analyser la distribution
-    dates_alertes.sort()
-
-    print(f"📅 Période d'analyse: {dates_alertes[0].strftime('%d/%m/%Y')} à {dates_alertes[-1].strftime('%d/%m/%Y')}")
-    print(f"📊 Nombre de dates avec anomalies: {len(set(dates_alertes))}")
-
-    # Identifier les pics d'anomalies
-    compteur_dates = Counter([date.strftime('%d/%m/%Y') for date in dates_alertes])
-
-    print(f"\n🎯 Dates avec le plus d'anomalies:")
-    for date, count in compteur_dates.most_common(5):
-        print(f"  • {date}: {count} anomalies")
-
-def afficher_alertes_par_severite(alertes: list):
-    """Affiche les alertes groupées par sévérité"""
-    print("\n🚨 ALERTES PAR SÉVÉRITÉ")
-    print("=" * 30)
-
-    alertes_par_severite = {'HAUTE': [], 'MOYENNE': [], 'FAIBLE': []}
-
-    for alerte in alertes:
-        severite = alerte.get('severite', 'FAIBLE')
-        if severite in alertes_par_severite:
-            alertes_par_severite[severite].append(alerte)
-
-    for severite in ['HAUTE', 'MOYENNE', 'FAIBLE']:
-        alertes_sev = alertes_par_severite[severite]
-        if alertes_sev:
-            emoji = {'HAUTE': '🔴', 'MOYENNE': '🟡', 'FAIBLE': '🟢'}[severite]
-            print(f"\n{emoji} SÉVÉRITÉ {severite} ({len(alertes_sev)} alertes)")
-            print("-" * 40)
-
-            for i, alerte in enumerate(alertes_sev[:5], 1):  # Afficher les 5 premières
-                print(f"{i}. {alerte.get('description', 'N/A')}")
-                if 'montant' in alerte:
-                    print(f"   💰 Montant: {alerte['montant']}€")
-                if 'compte' in alerte:
-                    print(f"   🏦 Compte: {alerte['compte']}")
-                print()
-
-            if len(alertes_sev) > 5:
-                print(f"   ... et {len(alertes_sev) - 5} autres alertes")
+            
+            try:
+                # Extraire les informations du chèque
+                info = self.extraire_info_cheque(processed_data)
+                numero_cheque = info['numero_cheque']
+                montant = info['montant']
+                
+                if not numero_cheque:
+                    logger.warning(f"Chèque {doc['id']}: Numéro manquant, ignoré")
+                    continue
+                
+                logger.info(f"--- Chèque {doc['id']}: {numero_cheque} - Montant: {montant}€ ---")
+                
+                # Recherche dans les comptes d'émission (6xxx, 401xxx, 411xxx) - comme dans Colab
+                ecritures_emission = gl_df_clean[
+                    gl_df_clean['n° compte'].apply(lambda x: self.est_compte_concerne(x, ['6', '401', '411'])) &
+                    gl_df_clean['libellé'].str.contains(numero_cheque, case=False, na=False)
+                ]
+                
+                # Recherche dans les comptes bancaires d'encaissement (512xxx) - comme dans Colab
+                ecritures_encaissement = gl_df_clean[
+                    gl_df_clean['n° compte'].apply(lambda x: self.est_compte_concerne(x, ['512'])) &
+                    gl_df_clean['libellé'].str.contains(numero_cheque, case=False, na=False)
+                ]
+                
+                # Calcul des montants - exactement comme dans Colab
+                montant_emis = 0
+                if not ecritures_emission.empty:
+                    debits = pd.to_numeric(ecritures_emission['débit'], errors='coerce').fillna(0)
+                    montant_emis = float(debits.sum())
+                
+                montant_encaisse = 0
+                if not ecritures_encaissement.empty:
+                    credits = pd.to_numeric(ecritures_encaissement['crédit'], errors='coerce').fillna(0)
+                    montant_encaisse = float(credits.sum())
+                
+                logger.info(f"  Écritures émission (6/401/411): {len(ecritures_emission)} lignes, montant: {montant_emis}€")
+                logger.info(f"  Écritures encaissement (512): {len(ecritures_encaissement)} lignes, montant: {montant_encaisse}€")
+                
+                # Classification selon les 4 types d'anomalies - exactement comme dans Colab
+                if ecritures_emission.empty and ecritures_encaissement.empty:
+                    # Chèque complètement absent du GL
+                    logger.info("  ❌ CHÈQUE NON COMPTABILISÉ")
+                    alerts.append({
+                        "id": self.alerts_counter,
+                        "type": "CHEQUE_NON_COMPTABILISE_GL",
+                        "title": "Chèque non comptabilisé",
+                        "description": f"Chèque {numero_cheque} - Montant: {montant}€ - Absent de tout le Grand Livre",
+                        "source": "CHEQUE",
+                        "montant": montant,
+                        "ref": numero_cheque,
+                        "document_id": doc['id'],
+                        "priority": "high",
+                        "date": datetime.now().strftime('%Y-%m-%d')
+                    })
+                    self.alerts_counter += 1
+                    
+                elif not ecritures_emission.empty and ecritures_encaissement.empty:
+                    # Chèque émis mais pas encaissé
+                    logger.info("  ⚠️ CHÈQUE ÉMIS NON ENCAISSÉ")
+                    alerts.append({
+                        "id": self.alerts_counter,
+                        "type": "CHEQUE_EMIS_NON_ENCAISSE_GL",
+                        "title": "Chèque émis non encaissé",
+                        "description": f"Chèque {numero_cheque} - Montant: {montant}€ - Présent dans les comptes d'émission mais pas encaissé",
+                        "source": "CHEQUE",
+                        "montant": montant,
+                        "ref": numero_cheque,
+                        "document_id": doc['id'],
+                        "priority": "medium",
+                        "date": datetime.now().strftime('%Y-%m-%d'),
+                        "montant_emis": montant_emis
+                    })
+                        #"difference": float(montant_emis - montant_encaisse)
+                    
+                elif ecritures_emission.empty and not ecritures_encaissement.empty:
+                    # Chèque encaissé mais émission non trouvée
+                    logger.info("  ❌ CHÈQUE ENCAISSÉ NON ÉMIS")
+                    alerts.append({
+                        "id": self.alerts_counter,
+                        "type": "CHEQUE_ENCAISSE_NON_EMIS_GL",
+                        "title": "Chèque encaissé non émis",
+                        "description": f"Chèque {numero_cheque} - Montant: {montant}€ - Présent dans les comptes bancaires mais pas d'émission correspondante",
+                        "source": "CHEQUE",
+                        "montant": montant,
+                        "ref": numero_cheque,
+                        "document_id": doc['id'],
+                        "priority": "high",
+                        "date": datetime.now().strftime('%Y-%m-%d'),
+                        "montant_encaisse": montant_encaisse
+                    })
+                    self.alerts_counter += 1
+                    
+                elif not ecritures_emission.empty and not ecritures_encaissement.empty:
+                    # Chèque présent dans les deux - vérifier cohérence des montants
+                    if abs(montant_emis - montant_encaisse) > self.config.get('amount_tolerance_absolute', 0.01):
+                        logger.info(f"  ⚠️ CHÈQUE INCOHÉRENT (diff: {montant_emis - montant_encaisse:.2f}€)")
+                        alerts.append({
+                            "id": self.alerts_counter,
+                            "type": "CHEQUE_INCOHERENT_GL",
+                            "title": "Chèque incohérent",
+                            "description": f"Chèque {numero_cheque} - Écart: {abs(montant_emis - montant_encaisse):.2f}€ - Montants différents entre émission et encaissement",
+                            "source": "CHEQUE",
+                            "montant": montant,
+                            "ref": numero_cheque,
+                            "document_id": doc['id'],
+                            "priority": "medium",
+                            "date": datetime.now().strftime('%Y-%m-%d'),
+                            "montant_emis": montant_emis,
+                            "montant_encaisse": montant_encaisse,
+                            "difference": montant_emis - montant_encaisse
+                        })
+                        self.alerts_counter += 1
+                    else:
+                        logger.info("  ✅ CHÈQUE COHÉRENT")
+                    
+            except Exception as e:
+                logger.error(f"❌ Erreur sur chèque {doc['id']}: {str(e)}")
+        
+        logger.info(f"=== FIN ANALYSE CHÈQUES: {len(alerts)} anomalies détectées ===")
+        return alerts
+    
+    def detect_duplicates(self, releve_norm: pd.DataFrame, gl_norm: pd.DataFrame) -> List[Dict[str, Any]]:
+        """Détecte les transactions dupliquées"""
+        alerts = []
+        
+        if not self.config.get('alert_on_duplicate_transactions', True):
+            return alerts
+        
+        for source_df, label in [(releve_norm, "RELEVE"), (gl_norm, "GL")]:
+            # Filtrer les lignes avec ref non nulle
+            df_filtered = source_df[pd.notnull(source_df['ref']) & (source_df['ref'].astype(str).str.strip() != "")]
+            
+            # Trouver les doublons
+            duplicated_mask = df_filtered.duplicated(subset=['montant', 'ref'], keep=False)
+            df_dups = df_filtered[duplicated_mask]
+            df_unique_dups = df_dups.drop_duplicates(subset=['montant', 'ref'], keep='first')
+            
+            for _, row in df_unique_dups.iterrows():
+                alerts.append({
+                    "id": self.alerts_counter,
+                    "type": f"DOUBLON_{label}",
+                    "title": f"Transaction dupliquée dans {label}",
+                    "description": f"Réf: {row['ref']} - Montant: {row['montant']}€ - Transaction présente plusieurs fois",
+                    "source": label,
+                    "montant": row['montant'],
+                    "ref": row['ref'],
+                    "date": row['date'],
+                    "priority": "medium"
+                })
+                self.alerts_counter += 1
+        
+        return alerts
+    
+    def detect_weekend_transactions(self, releve_norm: pd.DataFrame, gl_norm: pd.DataFrame) -> List[Dict[str, Any]]:
+        """Détecte les transactions sur jours non ouvrables"""
+        alerts = []
+        
+        if not self.config.get('alert_on_weekend_transactions', True):
+            return alerts
+        
+        non_ouvrables = pd.concat([releve_norm, gl_norm])
+        non_ouvrables = non_ouvrables[non_ouvrables['non_ouvrable']]
+        
+        for _, row in non_ouvrables.iterrows():
+            alerts.append({
+                "id": self.alerts_counter,
+                "type": "TRANSACTION_JOUR_NON_OUVRABLE",
+                "title": f"Transaction sur jour non ouvrable",
+                "description": f"Réf: {row['ref']} - Montant: {row['montant']}€ - Transaction effectuée un jour non ouvrable",
+                "source": row['source'],
+                "montant": row['montant'],
+                "ref": row['ref'],
+                "date": row['date'],
+                "priority": "low",
+                "commentaire": row['raw_text']
+            })
+            self.alerts_counter += 1
+        
+        return alerts
+    
+    def detect_large_transactions(self, releve_norm: pd.DataFrame, gl_norm: pd.DataFrame) -> List[Dict[str, Any]]:
+        """Détecte les transactions de montants élevés"""
+        alerts = []
+        
+        if not self.config.get('alert_on_large_transactions', True):
+            return alerts
+        
+        seuil = self.config.get('suspicious_amount_threshold', 50000)
+        all_tx = pd.concat([releve_norm, gl_norm], ignore_index=True)
+        grosses = all_tx[(all_tx['montant'] > seuil) & (all_tx['ref'].notnull()) & (all_tx['ref'] != '')]
+        
+        for _, row in grosses.iterrows():
+            priority = "high" if row['montant'] > self.config.get('critical_amount_threshold', 10000) else "medium"
+            alerts.append({
+                "id": self.alerts_counter,
+                "type": "TRANSACTION_MONTANT_ELEVE",
+                "title": f"Transaction de montant élevé",
+                "description": f"Réf: {row['ref']} - Montant: {row['montant']}€ - Montant supérieur au seuil de surveillance",
+                "source": row['source'],
+                "montant": row['montant'],
+                "ref": row['ref'],
+                "date": row['date'],
+                "priority": priority,
+                "commentaire": row['raw_text']
+            })
+            self.alerts_counter += 1
+        
+        return alerts
+    
+    def detect_amount_date_discrepancies(self, releve_norm: pd.DataFrame, gl_norm: pd.DataFrame) -> List[Dict[str, Any]]:
+        """Détecte les écarts de montants et de dates"""
+        alerts = []
+        
+        seen_refs = set()
+        
+        for _, rel_tx in releve_norm.iterrows():
+            ref = rel_tx['ref']
+            name = rel_tx['name']
+            
+            # Ne traiter que si ref et name sont présents
+            if not ref or not name or ref in seen_refs:
+                continue
+            seen_refs.add(ref)
+            
+            matched_gl = gl_norm[gl_norm['ref'] == ref]
+            if matched_gl.empty:
+                continue
+            
+            for _, gl_tx in matched_gl.iterrows():
+                delta_days = abs((rel_tx['date_obj'] - gl_tx['date_obj']).days)
+                delta_amount = abs(rel_tx['montant'] - gl_tx['montant'])
+                
+                # Écart de date
+                if self.config.get('alert_on_date_discrepancy', True):
+                    if delta_days > self.config.get('max_date_delay_days', 30):
+                        priority = "high" if delta_days > self.config.get('high_priority_delay_days', 15) else "medium"
+                        alerts.append({
+                            "id": self.alerts_counter,
+                            "type": "ECART_DATE",
+                            "title": f"Écart de date important",
+                            "description": f"Réf: {ref} - Écart de {delta_days} jours entre GL et Relevé",
+                            "source": "RELEVE",
+                            "ref": ref,
+                            "montant": rel_tx['montant'],
+                            "delta_jours": int(delta_days),
+                            "date_releve": rel_tx['date'],
+                            "date_gl": gl_tx['date'],
+                            "priority": priority,
+                            "commentaire": gl_tx['raw_text'],
+                            "name": name
+                        })
+                        self.alerts_counter += 1
+                
+                # Écart de montant
+                if self.config.get('alert_on_amount_discrepancy', True):
+                    seuil = max(
+                        self.config.get('amount_tolerance_absolute', 0.01),
+                        self.config.get('amount_tolerance_percentage', 0.01) * abs(rel_tx['montant'])
+                    )
+                    if delta_amount > seuil:
+                        alerts.append({
+                            "id": self.alerts_counter,
+                            "type": "ECART_MONTANT",
+                            "title": f"Écart de montant",
+                            "description": f"Réf: {ref} - Écart de {delta_amount:.2f}€ entre GL et Relevé",
+                            "source": "RELEVE",
+                            "ref": ref,
+                            "montant_releve": rel_tx['montant'],
+                            "montant_gl": gl_tx['montant'],
+                            "delta": float(round(delta_amount, 2)),
+                            "date": rel_tx['date'],
+                            "priority": "medium",
+                            "name": name,
+                            "commentaire": gl_tx['raw_text']
+                        })
+                        self.alerts_counter += 1
+        
+        return alerts
+    
+    def _analyze_facture(self, doc: Dict[str, Any], processed_data: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Analyse une facture spécifique"""
+        alerts = []
+        
+        try:
+            # Extraire les informations de la facture
+            info_payment = processed_data.get('info payment', {})
+            numero_facture = info_payment.get('Numéro Facture', '').strip()
+            total_ttc = float(info_payment.get('Total TTC', 0))
+            
+            if not numero_facture:
+                alerts.append({
+                    "id": self.alerts_counter,
+                    "type": "FACTURE_NUMERO_MANQUANT",
+                    "title": "Numéro de facture manquant",
+                    "description": f"Facture {doc['name']} sans numéro identifiable",
+                    "source": "FACTURE",
+                    "document_id": doc['id'],
+                    "priority": "medium",
+                    "date": datetime.now().strftime('%Y-%m-%d')
+                })
+                self.alerts_counter += 1
+            
+            if total_ttc > self.config.get('suspicious_amount_threshold', 50000):
+                alerts.append({
+                    "id": self.alerts_counter,
+                    "type": "FACTURE_MONTANT_ELEVE",
+                    "title": "Facture de montant élevé",
+                    "description": f"Facture {numero_facture} - Montant: {total_ttc}€ - Montant supérieur au seuil",
+                    "source": "FACTURE",
+                    "montant": total_ttc,
+                    "ref": numero_facture,
+                    "document_id": doc['id'],
+                    "priority": "high" if total_ttc > self.config.get('critical_amount_threshold', 10000) else "medium",
+                    "date": datetime.now().strftime('%Y-%m-%d')
+                })
+                self.alerts_counter += 1
+                
+        except Exception as e:
+            logger.error(f"Erreur analyse facture {doc['id']}: {str(e)}")
+        
+        return alerts
+    
+    def _analyze_cheque(self, doc: Dict[str, Any], processed_data: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Analyse un chèque spécifique"""
+        alerts = []
+        
+        try:
+            info = self.extraire_info_cheque(processed_data)
+            numero_cheque = info['numero_cheque']
+            montant = info['montant']
+            
+            if not numero_cheque:
+                alerts.append({
+                    "id": self.alerts_counter,
+                    "type": "CHEQUE_NUMERO_MANQUANT",
+                    "title": "Numéro de chèque manquant",
+                    "description": f"Chèque {doc['name']} sans numéro identifiable",
+                    "source": "CHEQUE",
+                    "document_id": doc['id'],
+                    "priority": "medium",
+                    "date": datetime.now().strftime('%Y-%m-%d')
+                })
+                self.alerts_counter += 1
+            
+            if montant > self.config.get('suspicious_amount_threshold', 50000):
+                alerts.append({
+                    "id": self.alerts_counter,
+                    "type": "CHEQUE_MONTANT_ELEVE",
+                    "title": "Chèque de montant élevé",
+                    "description": f"Chèque {numero_cheque} - Montant: {montant}€ - Montant supérieur au seuil",
+                    "source": "CHEQUE",
+                    "montant": montant,
+                    "ref": numero_cheque,
+                    "document_id": doc['id'],
+                    "priority": "high" if montant > self.config.get('critical_amount_threshold', 10000) else "medium",
+                    "date": datetime.now().strftime('%Y-%m-%d')
+                })
+                self.alerts_counter += 1
+                
+        except Exception as e:
+            logger.error(f"Erreur analyse chèque {doc['id']}: {str(e)}")
+        
+        return alerts
+    
+    def analyze_factures_cheques(self, documents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """
+        Analyse spécifique des factures et chèques
+        """
+        alerts = []
+        
+        for doc in documents:
+            if doc.get('status') != 'completed' or not doc.get('processed_data'):
+                continue
+            
+            doc_type = doc.get('type', '')
+            processed_data = doc.get('processed_data', {})
+            
+            if doc_type == 'facture':
+                # Analyser les factures
+                facture_alerts = self._analyze_facture(doc, processed_data)
+                alerts.extend(facture_alerts)
+            elif doc_type == 'cheque':
+                # Analyser les chèques
+                cheque_alerts = self._analyze_cheque(doc, processed_data)
+                alerts.extend(cheque_alerts)
+        
+        return alerts
+    
+    def _calculate_risk_score(self, alerts: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        Calcule le score de risque basé sur les alertes
+        Utilise les seuils configurés dans DEFAULT_ANOMALY_CONFIG
+        """
+        if not alerts:
+            return {'score': 0, 'niveau': 'AUCUN RISQUE'}
+        
+        score = 0
+        for alert in alerts:
+            priority = alert.get('priority', 'low')
+            if priority == 'high':
+                score += 3
+            elif priority == 'medium':
+                score += 1
+            else:
+                score += 0.5
+        
+        # Limiter le score à 100
+        score = min(score, 100)
+        
+        # Déterminer le niveau basé sur la configuration
+        if score >= self.config.get('critical_threshold', 80):
+            niveau = 'CRITIQUE'
+        elif score >= self.config.get('high_threshold', 60):
+            niveau = 'ÉLEVÉ'
+        elif score >= self.config.get('medium_threshold', 30):
+            niveau = 'MOYEN'
+        elif score >= self.config.get('low_threshold', 10):
+            niveau = 'FAIBLE'
+        else:
+            niveau = 'TRÈS FAIBLE'
+        
+        return {'score': int(score), 'niveau': niveau}
+    
+    def get_alerts_for_documents(self, documents: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+        """
+        Point d'entrée principal pour générer toutes les alertes basées sur les documents
+        
+        Args:
+            documents: Liste des documents de la base de données
+            
+        Returns:
+            Tuple (alertes, score_risque)
+        """
+        self.alerts_counter = 1
+        all_alerts = []
+        
+        try:
+            # Analyser les factures et chèques directement
+            facture_cheque_alerts = self.analyze_factures_cheques(documents)
+            all_alerts.extend(facture_cheque_alerts)
+            
+            # Rechercher les fichiers de relevé bancaire et grand livre
+            releve_files = []
+            gl_files = []
+            
+            for doc in documents:
+                if doc.get('status') == 'completed' and doc.get('output_path'):
+                    doc_type = doc.get('type', '')
+                    if doc_type == 'releve':
+                        releve_files.append(doc)
+                    elif doc_type == 'grandlivre':
+                        gl_files.append(doc)
+            
+            # Si on a des relevés et des grands livres, effectuer l'analyse de rapprochement
+            if releve_files and gl_files:
+                rapprochement_alerts = self._analyze_rapprochement(releve_files, gl_files, documents)
+                all_alerts.extend(rapprochement_alerts)
+            
+            # Calculer le score de risque
+            score_risque = self._calculate_risk_score(all_alerts)
+            
+            logger.info(f"Workflow terminé: {len(all_alerts)} alertes générées avec score de risque {score_risque['score']} ({score_risque['niveau']})")
+            
+            return all_alerts, score_risque
+            
+        except Exception as e:
+            logger.error(f"Erreur dans get_alerts_for_documents: {str(e)}")
+            # Retourner au moins les alertes de factures/chèques en cas d'erreur
+            score_risque = self._calculate_risk_score(all_alerts)
+            return all_alerts, score_risque
+    
+    def _analyze_rapprochement(self, releve_files: List[Dict[str, Any]], gl_files: List[Dict[str, Any]], documents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """
+        Effectue l'analyse de rapprochement entre relevés bancaires et grand livre
+        Inclut maintenant les nouvelles analyses pour factures et chèques
+        """
+        alerts = []
+        
+        try:
+            # Charger le premier relevé et grand livre disponibles
+            releve_data = None
+            gl_data = None
+            
+            for releve_file in releve_files:
+                if os.path.exists(releve_file['output_path']):
+                    with open(releve_file['output_path'], 'r', encoding='utf-8') as f:
+                        releve_data = json.load(f)
+                    break
+            
+            for gl_file in gl_files:
+                if os.path.exists(gl_file['output_path']):
+                    with open(gl_file['output_path'], 'r', encoding='utf-8') as f:
+                        gl_data = json.load(f)
+                    break
+            
+            if not releve_data or not gl_data:
+                return alerts
+            
+            # Normaliser les données
+            releve_df = pd.DataFrame(releve_data.get("operations", []))
+            gl_all_df = pd.DataFrame(gl_data.get("ecritures_comptables", []))
+            
+            if releve_df.empty or gl_all_df.empty:
+                return alerts
+            
+            # Nettoyer les colonnes du GL
+            gl_all_df.columns = [col.strip().lower() for col in gl_all_df.columns]
+            
+            # Filtrer le GL pour les comptes bancaires surveillés
+            bank_accounts = self.config.get('monitored_bank_accounts', ['512200'])
+            gl_bank_df = gl_all_df[gl_all_df['n° compte'].apply(lambda x: self.est_compte_concerne(x, bank_accounts))]
+            
+            # Normaliser les entrées
+            releve_norm = self.normalize_entry(releve_df)
+            gl_norm = self.normalize_entry(gl_bank_df, is_gl=True)
+            gl_all_norm = self.normalize_entry(gl_all_df, is_gl=True)
+            
+            # Effectuer les différentes analyses
+            if not releve_norm.empty and not gl_all_norm.empty:
+                # 1. Transactions manquantes Relevé-GL (CORRIGÉE)
+                #missing_alerts = self.detect_missing_transactions(releve_norm, gl_norm, gl_all_norm, gl_all_df)
+                #alerts.extend(missing_alerts)
+                
+                # 2. Factures non trouvées dans GL (CORRIGÉE)
+                invoice_alerts = self.detect_missing_invoices_in_gl(documents, gl_all_norm, gl_all_df)
+                alerts.extend(invoice_alerts)
+                
+                # 3. Chèques non trouvés dans GL (CORRIGÉE AVEC LA MÉTHODE COLAB)
+                check_alerts = self.detect_missing_checks_in_gl(documents, gl_all_norm, gl_all_df)
+                alerts.extend(check_alerts)
+                
+                # Analyses existantes
+                duplicate_alerts = self.detect_duplicates(releve_norm, gl_norm)
+                alerts.extend(duplicate_alerts)
+                
+                weekend_alerts = self.detect_weekend_transactions(releve_norm, gl_norm)
+                alerts.extend(weekend_alerts)
+                
+                large_alerts = self.detect_large_transactions(releve_norm, gl_norm)
+                alerts.extend(large_alerts)
+                
+                discrepancy_alerts = self.detect_amount_date_discrepancies(releve_norm, gl_norm)
+                alerts.extend(discrepancy_alerts)
+                
+        except Exception as e:
+            logger.error(f"Erreur dans l'analyse de rapprochement: {str(e)}")
+        
+        return alerts

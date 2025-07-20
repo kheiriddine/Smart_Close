@@ -1,0 +1,22 @@
+{
+  "Nom Societe": "Platform.sh",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025011704",
+    "Date Facturation": "31/01/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "PaaS pour Data Apps",
+    "Total TTC": 2003.3
+  },
+  "table": [
+    {
+      "Description": "Environnement pour applications",
+      "Date": "31/01/2025",
+      "TVA": 20.0,
+      "Montant HT": 1669.42,
+      "Total TTC": 2003.3
+    }
+  ],
+  "ocr_accuracy": 86.22756992397225
+}

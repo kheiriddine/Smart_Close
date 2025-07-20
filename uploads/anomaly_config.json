@@ -1,0 +1,23 @@
+{
+  "max_date_delay_days": 29,
+  "high_priority_delay_days": 28,
+  "medium_priority_delay_days": 28,
+  "amount_tolerance_percentage": 1,
+  "amount_tolerance_absolute": 0.01,
+  "critical_amount_threshold": 50000,
+  "suspicious_amount_threshold": 10000,
+  "alert_on_missing_transactions": true,
+  "alert_on_duplicate_transactions": true,
+  "alert_on_amount_discrepancy": true,
+  "alert_on_date_discrepancy": true,
+  "alert_on_unmatched_transactions": true,
+  "alert_on_weekend_transactions": true,
+  "alert_on_large_transactions": true,
+  "monitored_bank_accounts": [
+    "512200"
+  ],
+  "critical_threshold": 3,
+  "high_threshold": 10,
+  "medium_threshold": 3,
+  "low_threshold": 1
+}

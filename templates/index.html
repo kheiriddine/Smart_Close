@@ -22,7 +22,7 @@
         }
 
         .dashboard {
-            padding: 20px;
+            padding: 0px;
             max-width: 100%;
             margin: 0 auto;
         }
@@ -32,7 +32,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             background: rgba(255, 255, 255, 0.95);
             padding: 8px 15px;
             border-radius: 8px;
@@ -1873,6 +1873,17 @@
             
             modal.show();
         }
+        
+        function formatJSON() {
+	    const editor = document.getElementById('jsonEditor');
+	    try {
+		const jsonObj = JSON.parse(editor.value);
+		editor.value = JSON.stringify(jsonObj, null, 2);
+		showMessage('JSON formaté avec succès', 'success');
+	    } catch (error) {
+		showMessage('JSON invalide - impossible de formater', 'error');
+	    }
+	}
 
         async function viewJSON(docId) {
             const doc = documents.find(d => d.id === docId);
@@ -1903,18 +1914,8 @@
             }
         }
 
-        function formatJSON() {
-            const editor = document.getElementById('jsonEditor');
-            try {
-                const jsonObj = JSON.parse(editor.value);
-                editor.value = JSON.stringify(jsonObj, null, 2);
-                showMessage('JSON formaté avec succès', 'success');
-            } catch (error) {
-                showMessage('JSON invalide - impossible de formater', 'error');
-            }
-        }
-
-        async function saveJSON() {
+       
+	async function saveJSON() {
             if (!currentEditingDocument) return;
             
             const editor = document.getElementById('jsonEditor');
@@ -1923,9 +1924,25 @@
                 // Valider le JSON
                 const jsonData = JSON.parse(editor.value);
                 
-                // Note: Ici vous devriez implémenter l'endpoint pour sauvegarder le JSON modifié
-                // Pour l'instant, on simule la sauvegarde
-                showMessage('JSON sauvegardé avec succès', 'success');
+                // Sauvegarder via l'API
+                const response = await fetch(`${API_BASE}save_json/${currentEditingDocument}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        json_content: editor.value
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showMessage(result.message, 'success');
+                } else {
+                    showMessage(result.error || 'Erreur lors de la sauvegarde', 'error');
+                    return;
+                }
                 
                 // Fermer le modal
                 const modal = bootstrap.Modal.getInstance(document.getElementById('jsonEditorModal'));
@@ -1934,10 +1951,19 @@
                 // Actualiser les données
                 loadDocuments();
                 
+                // Recharger les alertes et données grand livre après modification
+                setTimeout(() => {
+                    loadGrandLivreData();
+                    loadAlerts();
+                }, 1000);
+                
             } catch (error) {
-                showMessage('JSON invalide - impossible de sauvegarder', 'error');
+                console.error('Erreur sauvegarde JSON:', error);
+                showMessage('Erreur lors de la sauvegarde du JSON', 'error');
             }
         }
+
+
 
         // Fonctions de gestion des documents
         async function processDocument(docId) {

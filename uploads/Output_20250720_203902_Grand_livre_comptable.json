@@ -1,0 +1,6505 @@
+{
+  "ecritures_comptables": [
+    {
+      "crédit": "CRÉDIT",
+      "date": "",
+      "débit": "DÉBIT",
+      "libellé": "Libellé",
+      "n° compte": "N° Compte"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 4445.71,
+      "libellé": "Facture FAC2025010102 - InfoVista Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 3704.76,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010102",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 740.95,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010102",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 10965.54,
+      "libellé": "Facture FAC2025010104 - NexusMetrics Solutions",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 9137.95,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010104",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1827.59,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010104",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 10965.54,
+      "libellé": "Encaissement FAC2025010104 - NexusMetrics Solutions",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 10965.54,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010104 - NexusMetrics Solutions",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 8575.3,
+      "libellé": "Facture FAC2025010107 - OptiFlow Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 7146.08,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010107",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1429.22,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010107",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 8575.3,
+      "libellé": "Encaissement FAC2025010107 - OptiFlow Ltd",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8575.3,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010107 - OptiFlow Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 16170.56,
+      "libellé": "Facture FAC2025010110 - NeuralMind Solutions",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 13475.46,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010110",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2695.1,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010110",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 16170.56,
+      "libellé": "Encaissement FAC2025010110 - NeuralMind Solutions",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 16170.56,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010110 - NeuralMind Solutions",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 18297.7,
+      "libellé": "Facture FAC2025010116 - NeuroTech Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 15248.08,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010116",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 3049.62,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010116",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 18297.7,
+      "libellé": "Encaissement FAC2025010116 - NeuroTech Ltd",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 18297.7,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010116 - NeuroTech Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 10768.32,
+      "libellé": "Facture FAC2025010119 - CloudNest Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 8973.6,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010119",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1794.72,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010119",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 10768.32,
+      "libellé": "Encaissement FAC2025010119 - CloudNest Technologies",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 10768.32,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010119 - CloudNest Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 9866.1,
+      "libellé": "Facture FAC2025010122 - DataSphere Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 8221.75,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010122",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1644.35,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010122",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 9866.1,
+      "libellé": "Encaissement FAC2025010122 - DataSphere Consulting",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 9866.1,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010122 - DataSphere Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 7548.35,
+      "libellé": "Facture FAC2025010128 - AI Ventures Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 6290.29,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010128",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1258.06,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010128",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 7548.35,
+      "libellé": "Encaissement FAC2025010128 - AI Ventures Ltd",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 7548.35,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010128 - AI Ventures Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 8716.74,
+      "libellé": "Facture FAC2025010131 - NexusMetrics Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 7263.95,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010131",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1452.79,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010131",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 8716.74,
+      "libellé": "Encaissement FAC2025010131 - NexusMetrics Ltd",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8716.74,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010131 - NexusMetrics Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 18325.87,
+      "libellé": "Facture FAC2025010134 - AlgoVision Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 15271.56,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010134",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 3054.31,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010134",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 18325.87,
+      "libellé": "Encaissement FAC2025010134 - AlgoVision Group",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 18325.87,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010134 - AlgoVision Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 6398.1,
+      "libellé": "Facture FAC2025010137 - DataPulse Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 5331.75,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010137",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1066.35,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010137",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 6398.1,
+      "libellé": "Encaissement FAC2025010137 - DataPulse Group",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 6398.1,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010137 - DataPulse Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 9437.22,
+      "libellé": "Facture FAC2025010140 - AnalytiCorp Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 7864.36,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010140",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1572.86,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010140",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 9437.22,
+      "libellé": "Encaissement FAC2025010140 - AnalytiCorp Group",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 9437.22,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010140 - AnalytiCorp Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 12840.49,
+      "libellé": "Facture FAC2025010143 - NexusMetrics Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 10700.41,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010143",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2140.08,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010143",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 12840.49,
+      "libellé": "Encaissement FAC2025010143 - NexusMetrics Consulting",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 12840.49,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010143 - NexusMetrics Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 8273.3,
+      "libellé": "Facture FAC2025010146 - DataSphere Solutions",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 6894.42,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010146",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1378.88,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010146",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 8273.3,
+      "libellé": "Encaissement FAC2025010146 - DataSphere Solutions",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8273.3,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010146 - DataSphere Solutions",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 9566.9,
+      "libellé": "Facture FAC2025010149 - AlgoVision Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 7972.41,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010149",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1594.49,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010149",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 9566.9,
+      "libellé": "Encaissement FAC2025010149 - AlgoVision Consulting",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 9566.9,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010149 - AlgoVision Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 9329.9,
+      "libellé": "Facture FAC2025010152 - ByteCraft Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 7774.92,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010152",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1554.98,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010152",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 9329.9,
+      "libellé": "Encaissement FAC2025010152 - ByteCraft Technologies",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 9329.9,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010152 - ByteCraft Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 28101.07,
+      "libellé": "Facture FAC2025010155 - StratAlytix Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 23417.57,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010155",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 4683.5,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010155",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 28101.07,
+      "libellé": "Encaissement FAC2025010155 - StratAlytix Technologies",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 28101.07,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010155 - StratAlytix Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 8013.34,
+      "libellé": "Facture FAC2025010159 - AXA PARTNERS",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 6677.78,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010159",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1335.56,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010159",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 8013.34,
+      "libellé": "Encaissement FAC2025010159 - AXA PARTNERS",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8013.34,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010159 - AXA PARTNERS",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 3399.91,
+      "libellé": "Facture FAC2025010162 - StratAlytix Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 2833.26,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010162",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 566.65,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010162",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 3399.91,
+      "libellé": "Encaissement FAC2025010162 - StratAlytix Consulting",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 3399.91,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010162 - StratAlytix Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 8198.12,
+      "libellé": "Facture FAC2025010164 - NeuralMind Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 6831.76,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010164",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1366.36,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010164",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 8198.12,
+      "libellé": "Encaissement FAC2025010164 - NeuralMind Ltd",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8198.12,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010164 - NeuralMind Ltd",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 8301.64,
+      "libellé": "Facture FAC2025010167 - NeuralMind Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 6918.03,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010167",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1383.61,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010167",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 8301.64,
+      "libellé": "Encaissement FAC2025010167 - NeuralMind Group",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8301.64,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010167 - NeuralMind Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 9808.95,
+      "libellé": "Facture FAC2025010173 - InfoVista Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 8174.13,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010173",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1634.82,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010173",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 9808.95,
+      "libellé": "Encaissement FAC2025010173 - InfoVista Group",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 9808.95,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010173 - InfoVista Group",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 6830.03,
+      "libellé": "Facture FAC2025010176 - NexusMetrics Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 5691.69,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010176",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1138.34,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010176",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 6830.03,
+      "libellé": "Encaissement FAC2025010176 - NexusMetrics Technologies",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 6830.03,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010176 - NexusMetrics Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 7410.47,
+      "libellé": "Facture FAC2025010179 - Fnac Darty",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 6175.39,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010179",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1235.08,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010179",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 7410.47,
+      "libellé": "Encaissement FAC2025010179 - Fnac Darty",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 7410.47,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010179 - Fnac Darty",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 8618.97,
+      "libellé": "Facture FAC2025010182 - Zalando",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 7182.48,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010182",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1436.49,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010182",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 8618.97,
+      "libellé": "Encaissement FAC2025010182 - Zalando",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8618.97,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010182 - Zalando",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 8987.14,
+      "libellé": "Facture FAC2025010185 - Boulanger",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 7489.28,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010185",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1497.86,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010185",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 8987.14,
+      "libellé": "Encaissement FAC2025010185 - Boulanger",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8987.14,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010185 - Boulanger",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 9856.55,
+      "libellé": "Facture FAC2025010188 - Dell FR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 8213.79,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010188",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1642.76,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010188",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 9856.55,
+      "libellé": "Encaissement FAC2025010188 - Dell FR",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 9856.55,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010188 - Dell FR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 8398.63,
+      "libellé": "Facture FAC2025010191 - Free",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 6998.86,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010191",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1399.77,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010191",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 8398.63,
+      "libellé": "Encaissement FAC2025010191 - Free",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8398.63,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010191 - Free",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 10502.73,
+      "libellé": "Facture FAC2025010194 - Capgemini",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 8752.27,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010194",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1750.46,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010194",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 10502.73,
+      "libellé": "Encaissement FAC2025010194 - Capgemini",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 10502.73,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010194 - Capgemini",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 7620.54,
+      "libellé": "Facture FAC2025010197 - Dassault Aviation",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 6350.46,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010197",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1270.08,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010197",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 7620.54,
+      "libellé": "Encaissement FAC2025010197 - Dassault Aviation",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 7620.54,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010197 - Dassault Aviation",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 6319.3,
+      "libellé": "Facture FAC2025010200 - Amazon FR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 5266.09,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010200",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1053.21,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010200",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 6319.3,
+      "libellé": "Encaissement FAC2025010200 - Amazon FR",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 6319.3,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010200 - Amazon FR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 16968.22,
+      "libellé": "Facture FAC2025010121 - Sopra Steria",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 14140.18,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010121",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2828.04,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010121",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 16968.22,
+      "libellé": "Encaissement FAC2025010121 - Sopra Steria",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 16968.22,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010121 - Sopra Steria",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 13010.44,
+      "libellé": "Facture FAC2025010125 - SCOR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 10842.03,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010125",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2168.41,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010125",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 13010.44,
+      "libellé": "Encaissement FAC2025010125 - SCOR",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 13010.44,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010125 - SCOR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 7290.19,
+      "libellé": "Facture FAC2025010129 - Veepee",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 6075.16,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010129",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1215.03,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010129",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 7290.19,
+      "libellé": "Encaissement FAC2025010129 - Veepee",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 7290.19,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010129 - Veepee",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 9903.08,
+      "libellé": "Facture FAC2025010131 - Ubisoft",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 8252.57,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010131",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1650.51,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010131",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 9903.08,
+      "libellé": "Encaissement FAC2025010131 - Ubisoft",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 9903.08,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010131 - Ubisoft",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 9160.11,
+      "libellé": "Facture FAC2025010134 - Criteo",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 7633.42,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010134",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1526.69,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010134",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 9160.11,
+      "libellé": "Encaissement FAC2025010134 - Criteo",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 9160.11,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010134 - Criteo",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 13828.68,
+      "libellé": "Facture FAC2025010137 -  Veepee TLS",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 11523.89,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010137",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2304.79,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010137",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 13828.68,
+      "libellé": "Encaissement FAC2025010137 -  Veepee TLS",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 13828.68,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010137 -  Veepee TLS",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 18295.5,
+      "libellé": "Facture FAC2025010141 - La Redoute",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 15246.25,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010141",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 3049.25,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010141",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 18295.5,
+      "libellé": "Encaissement FAC2025010141 - La Redoute",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 18295.5,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010141 - La Redoute",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 12774.18,
+      "libellé": "Facture FAC2025010147 - QuantumSoft Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 10645.15,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010147",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2129.03,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010147",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 12774.18,
+      "libellé": "Encaissement FAC2025010147 - QuantumSoft Consulting",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 12774.18,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010147 - QuantumSoft Consulting",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 12533.56,
+      "libellé": "Facture FAC2025010151 - OptiFlow Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 10444.63,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010151",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2088.93,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010151",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 12533.56,
+      "libellé": "Encaissement FAC2025010151 - OptiFlow Technologies",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 12533.56,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010151 - OptiFlow Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 17360.09,
+      "libellé": "Facture FAC2025010156 - Pulse Solution",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 14466.74,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010156",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2893.35,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010156",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 17360.09,
+      "libellé": "Encaissement FAC2025010156 - Pulse Solution",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 17360.09,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010156 - Pulse Solution",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 5822.49,
+      "libellé": "Facture FAC2025010161 - AnalytiCorp Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 4852.07,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010161",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 970.42,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010161",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 5822.49,
+      "libellé": "Encaissement FAC2025010161 - AnalytiCorp Technologies",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 5822.49,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010161 - AnalytiCorp Technologies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 10852.25,
+      "libellé": "Facture FAC2025010163 - AON FRANCE",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 9043.54,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010163",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 1808.71,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010163",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 10852.25,
+      "libellé": "Encaissement FAC2025010163 - AON FRANCE",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 10852.25,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010163 - AON FRANCE",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 15792.83,
+      "libellé": "Facture FAC2025010171 - BNP Paribas",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 13160.69,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010171",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2632.14,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010171",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 15792.83,
+      "libellé": "Encaissement FAC2025010171 - BNP Paribas",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 15792.83,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010171 - BNP Paribas",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 12612.59,
+      "libellé": "Facture FAC2025010175 - VINCI",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 10510.49,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Prestations de services - Facture FAC2025010175",
+      "n° compte": "706"
+    },
+    {
+      "crédit": 2102.1,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "TVA 20% - FAC2025010175",
+      "n° compte": "44571"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 12612.59,
+      "libellé": "Encaissement FAC2025010175 - VINCI",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 12612.59,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025010175 - VINCI",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 22805.69,
+      "libellé": "Chèque reçu N°2685339 - BNP Paribas",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 22805.69,
+      "date": "02/10/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2685339 - BNP Paribas",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 22805.69,
+      "libellé": "Chèque encaissé N°2685339 - BNP Paribas",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 22805.69,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2685339 - BNP Paribas",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 22306.02,
+      "libellé": "Chèque reçu N°7760998 - Société Générale",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 22306.02,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7760998 - Société Générale",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 22306.02,
+      "libellé": "Chèque encaissé N°7760998 - Société Générale",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 22306.02,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7760998 - Société Générale",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 49572.31,
+      "libellé": "Chèque reçu N°3408910 - Crédit Agricole",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 49572.31,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°3408910 - Crédit Agricole",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "05/03/2025",
+      "débit": 49572.31,
+      "libellé": "Chèque encaissé N°3408910 - Crédit Agricole",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 49572.31,
+      "date": "05/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°3408910 - Crédit Agricole",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 29273.07,
+      "libellé": "Chèque reçu N°9872510 - LCL",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 29273.07,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9872510 - LCL",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 29273.07,
+      "libellé": "Chèque encaissé N°9872510 - LCL",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 29273.07,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9872510 - LCL",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 14577.22,
+      "libellé": "Chèque reçu N°7190699 - Klépierre",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 14577.22,
+      "date": "02/10/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7190699 - Klépierre",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 14577.22,
+      "libellé": "Chèque encaissé N°7190699 - Klépierre",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 14577.22,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7190699 - Klépierre",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 20405.3,
+      "libellé": "Chèque reçu N°7140368 - Amundi",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 20405.3,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7140368 - Amundi",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 20405.3,
+      "libellé": "Chèque encaissé N°7140368 - Amundi",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 20405.3,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7140368 - Amundi",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 36084.33,
+      "libellé": "Chèque reçu N°7678153 - Boursorama",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 36084.33,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7678153 - Boursorama",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 36084.33,
+      "libellé": "Chèque encaissé N°7678153 - Boursorama",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 36084.33,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7678153 - Boursorama",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "14/02/2025",
+      "débit": 46571.09,
+      "libellé": "Chèque reçu N°4662339 - Natixis",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 46571.09,
+      "date": "14/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4662339 - Natixis",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 46571.09,
+      "libellé": "Chèque encaissé N°4662339 - Natixis",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 46571.09,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4662339 - Natixis",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "07/02/2025",
+      "débit": 36976.68,
+      "libellé": "Chèque reçu N°1961659 - CIC",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 36976.68,
+      "date": "07/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°1961659 - CIC",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 36976.68,
+      "libellé": "Chèque encaissé N°1961659 - CIC",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 36976.68,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°1961659 - CIC",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 32020.73,
+      "libellé": "Chèque reçu N°3599022 - La Banque Postale",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 32020.73,
+      "date": "05/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°3599022 - La Banque Postale",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 32020.73,
+      "libellé": "Chèque encaissé N°3599022 - La Banque Postale",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 32020.73,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°3599022 - La Banque Postale",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 4967.91,
+      "libellé": "Chèque reçu N°9554388 - HSBC France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 4967.91,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9554388 - HSBC France",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 4967.91,
+      "libellé": "Chèque encaissé N°9554388 - HSBC France",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 4967.91,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9554388 - HSBC France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 36087.59,
+      "libellé": "Chèque reçu N°6593816 - Crédit Mutuel",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 36087.59,
+      "date": "05/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°6593816 - Crédit Mutuel",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 36087.59,
+      "libellé": "Chèque encaissé N°6593816 - Crédit Mutuel",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 36087.59,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°6593816 - Crédit Mutuel",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 9715.99,
+      "libellé": "Chèque reçu N°4179374 - BPCE",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 9715.99,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4179374 - BPCE",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 9715.99,
+      "libellé": "Chèque encaissé N°4179374 - BPCE",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 9715.99,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4179374 - BPCE",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "06/02/2025",
+      "débit": 35110.94,
+      "libellé": "Chèque reçu N°9615372 - Commerzbank",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 35110.94,
+      "date": "06/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9615372 - Commerzbank",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 35110.94,
+      "libellé": "Chèque encaissé N°9615372 - Commerzbank",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 35110.94,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9615372 - Commerzbank",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 35982.25,
+      "libellé": "Chèque reçu N°3998976 - AXA Banque",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 35982.25,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°3998976 - AXA Banque",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 35982.25,
+      "libellé": "Chèque encaissé N°3998976 - AXA Banque",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 35982.25,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°3998976 - AXA Banque",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 33329.23,
+      "libellé": "Chèque reçu N°9121445 - ING France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 33329.23,
+      "date": "02/10/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9121445 - ING France",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 33329.23,
+      "libellé": "Chèque encaissé N°9121445 - ING France",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 33329.23,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9121445 - ING France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "10/02/2025",
+      "débit": 43886.7,
+      "libellé": "Chèque reçu N°1318323 - Caisse des Dépôts",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 43886.7,
+      "date": "10/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°1318323 - Caisse des Dépôts",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 43886.7,
+      "libellé": "Chèque encaissé N°1318323 - Caisse des Dépôts",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 43886.7,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°1318323 - Caisse des Dépôts",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "07/02/2025",
+      "débit": 2392.42,
+      "libellé": "Chèque reçu N°7250574 - Euler Hermes",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 2392.42,
+      "date": "07/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7250574 - Euler Hermes",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 2392.42,
+      "libellé": "Chèque encaissé N°7250574 - Euler Hermes",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 2392.42,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7250574 - Euler Hermes",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "12/02/2025",
+      "débit": 12400.16,
+      "libellé": "Chèque reçu N°7880458 - Rothschild & Co",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 12400.16,
+      "date": "12/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7880458 - Rothschild & Co",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 12400.16,
+      "libellé": "Chèque encaissé N°7880458 - Rothschild & Co",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 12400.16,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7880458 - Rothschild & Co",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 48147.83,
+      "libellé": "Chèque reçu N°7582148 - Oddo BHF",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 48147.83,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7582148 - Oddo BHF",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 48147.83,
+      "libellé": "Chèque encaissé N°7582148 - Oddo BHF",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 48147.83,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7582148 - Oddo BHF",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 14712.78,
+      "libellé": "Chèque reçu N°4905768 - Milleis Banque",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 14712.78,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4905768 - Milleis Banque",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 14712.78,
+      "libellé": "Chèque encaissé N°4905768 - Milleis Banque",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 14712.78,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4905768 - Milleis Banque",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 24346.62,
+      "libellé": "Chèque reçu N°3552818 - Arkéa Banque",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 24346.62,
+      "date": "02/10/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°3552818 - Arkéa Banque",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 24346.62,
+      "libellé": "Chèque encaissé N°3552818 - Arkéa Banque",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 24346.62,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°3552818 - Arkéa Banque",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "07/02/2025",
+      "débit": 27857.64,
+      "libellé": "Chèque reçu N°8711911 - Banque de France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 27857.64,
+      "date": "07/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8711911 - Banque de France",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 27857.64,
+      "libellé": "Chèque encaissé N°8711911 - Banque de France",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 27857.64,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8711911 - Banque de France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 43376.76,
+      "libellé": "Chèque reçu N°8203391 - Crédit Foncier",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 43376.76,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8203391 - Crédit Foncier",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 43376.76,
+      "libellé": "Chèque encaissé N°8203391 - Crédit Foncier",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 43376.76,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8203391 - Crédit Foncier",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 4676.29,
+      "libellé": "Chèque reçu N°6216222 - Deutsche Bank FR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 4676.29,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°6216222 - Deutsche Bank FR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 4676.29,
+      "libellé": "Chèque encaissé N°6216222 - Deutsche Bank FR",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 4676.29,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°6216222 - Deutsche Bank FR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "10/02/2025",
+      "débit": 26281.1,
+      "libellé": "Chèque reçu N°8970993 - AXA",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 26281.1,
+      "date": "10/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8970993 - AXA",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 26281.1,
+      "libellé": "Chèque encaissé N°8970993 - AXA",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 26281.1,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8970993 - AXA",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 7781.02,
+      "libellé": "Chèque reçu N°2635002 - Allianz",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 7781.02,
+      "date": "02/10/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2635002 - Allianz",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 7781.02,
+      "libellé": "Chèque encaissé N°2635002 - Allianz",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 7781.02,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2635002 - Allianz",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "11/02/2025",
+      "débit": 30711.82,
+      "libellé": "Chèque reçu N°6569892 - Generali",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 30711.82,
+      "date": "11/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°6569892 - Generali",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 30711.82,
+      "libellé": "Chèque encaissé N°6569892 - Generali",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 30711.82,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°6569892 - Generali",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 8903.64,
+      "libellé": "Chèque reçu N°1235342 - CNP Assurances",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 8903.64,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°1235342 - CNP Assurances",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "04/03/2025",
+      "débit": 8903.64,
+      "libellé": "Chèque encaissé N°1235342 - CNP Assurances",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 8903.64,
+      "date": "04/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°1235342 - CNP Assurances",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "10/02/2025",
+      "débit": 17787.72,
+      "libellé": "Chèque reçu N°7070255 - MAIF",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 17787.72,
+      "date": "10/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7070255 - MAIF",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 17787.72,
+      "libellé": "Chèque encaissé N°7070255 - MAIF",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 17787.72,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7070255 - MAIF",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 42760.66,
+      "libellé": "Chèque reçu N°8196070 - MACIF",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 42760.66,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8196070 - MACIF",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 42760.66,
+      "libellé": "Chèque encaissé N°8196070 - MACIF",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 42760.66,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8196070 - MACIF",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 11879.75,
+      "libellé": "Chèque reçu N°5692020 - Groupama",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 11879.75,
+      "date": "05/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5692020 - Groupama",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 11879.75,
+      "libellé": "Chèque encaissé N°5692020 - Groupama",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 11879.75,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5692020 - Groupama",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 31072.54,
+      "libellé": "Chèque reçu N°7748781 - Matmut",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 31072.54,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7748781 - Matmut",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 31072.54,
+      "libellé": "Chèque encaissé N°7748781 - Matmut",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 31072.54,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7748781 - Matmut",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "11/02/2025",
+      "débit": 28660.33,
+      "libellé": "Chèque reçu N°9398055 - AG2R La Mondiale",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 28660.33,
+      "date": "11/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9398055 - AG2R La Mondiale",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 28660.33,
+      "libellé": "Chèque encaissé N°9398055 - AG2R La Mondiale",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 28660.33,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9398055 - AG2R La Mondiale",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 31791.39,
+      "libellé": "Chèque reçu N°4124840 - Swiss Life",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 31791.39,
+      "date": "02/10/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4124840 - Swiss Life",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 31791.39,
+      "libellé": "Chèque encaissé N°4124840 - Swiss Life",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 31791.39,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4124840 - Swiss Life",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "07/02/2025",
+      "débit": 17578.04,
+      "libellé": "Chèque reçu N°5746452 - Aéma Groupe",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 17578.04,
+      "date": "07/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5746452 - Aéma Groupe",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 17578.04,
+      "libellé": "Chèque encaissé N°5746452 - Aéma Groupe",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 17578.04,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5746452 - Aéma Groupe",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "10/02/2025",
+      "débit": 46212.64,
+      "libellé": "Chèque reçu N°8095212 - Malakoff Humanis",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 46212.64,
+      "date": "10/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8095212 - Malakoff Humanis",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 46212.64,
+      "libellé": "Chèque encaissé N°8095212 - Malakoff Humanis",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 46212.64,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8095212 - Malakoff Humanis",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 45622.8,
+      "libellé": "Chèque reçu N°3136004 - April",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 45622.8,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°3136004 - April",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 45622.8,
+      "libellé": "Chèque encaissé N°3136004 - April",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 45622.8,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°3136004 - April",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 47227.32,
+      "libellé": "Chèque reçu N°7530834 - Gras Savoye",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 47227.32,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7530834 - Gras Savoye",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 47227.32,
+      "libellé": "Chèque encaissé N°7530834 - Gras Savoye",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 47227.32,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7530834 - Gras Savoye",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 48296.99,
+      "libellé": "Chèque reçu N°3656116 - Harmonie Mutuelle",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 48296.99,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°3656116 - Harmonie Mutuelle",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 48296.99,
+      "libellé": "Chèque encaissé N°3656116 - Harmonie Mutuelle",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 48296.99,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°3656116 - Harmonie Mutuelle",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 5161.72,
+      "libellé": "Chèque reçu N°5887233 - Generali France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 5161.72,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5887233 - Generali France",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 5161.72,
+      "libellé": "Chèque encaissé N°5887233 - Generali France",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 5161.72,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5887233 - Generali France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 16865.61,
+      "libellé": "Chèque reçu N°6438155 - Axa Partners",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 16865.61,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°6438155 - Axa Partners",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 16865.61,
+      "libellé": "Chèque encaissé N°6438155 - Axa Partners",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 16865.61,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°6438155 - Axa Partners",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 29752.62,
+      "libellé": "Chèque reçu N°5464623 - Cardif",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 29752.62,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5464623 - Cardif",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "04/03/2025",
+      "débit": 29752.62,
+      "libellé": "Chèque encaissé N°5464623 - Cardif",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 29752.62,
+      "date": "04/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5464623 - Cardif",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 12734.01,
+      "libellé": "Chèque reçu N°8255151 - Allianz Travel",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 12734.01,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8255151 - Allianz Travel",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 12734.01,
+      "libellé": "Chèque encaissé N°8255151 - Allianz Travel",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 12734.01,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8255151 - Allianz Travel",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "06/02/2025",
+      "débit": 3866.8,
+      "libellé": "Chèque reçu N°2766058 - MMA",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 3866.8,
+      "date": "06/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2766058 - MMA",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 3866.8,
+      "libellé": "Chèque encaissé N°2766058 - MMA",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 3866.8,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2766058 - MMA",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 7631.66,
+      "libellé": "Chèque reçu N°7826060 - Aon France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 7631.66,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7826060 - Aon France",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 7631.66,
+      "libellé": "Chèque encaissé N°7826060 - Aon France",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 7631.66,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7826060 - Aon France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 7826.02,
+      "libellé": "Chèque reçu N°7792123 - Swiss Re",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 7826.02,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7792123 - Swiss Re",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 7826.02,
+      "libellé": "Chèque encaissé N°7792123 - Swiss Re",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 7826.02,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7792123 - Swiss Re",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 35560.16,
+      "libellé": "Chèque reçu N°4980605 - SCOR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 35560.16,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4980605 - SCOR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 35560.16,
+      "libellé": "Chèque encaissé N°4980605 - SCOR",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 35560.16,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4980605 - SCOR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 45197.42,
+      "libellé": "Chèque reçu N°9147740 - Covéa",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 45197.42,
+      "date": "05/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9147740 - Covéa",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "12/02/2025",
+      "débit": 45197.42,
+      "libellé": "Chèque encaissé N°9147740 - Covéa",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 45197.42,
+      "date": "12/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9147740 - Covéa",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "11/02/2025",
+      "débit": 36708.26,
+      "libellé": "Chèque reçu N°2789949 - TotalEnergies",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 36708.26,
+      "date": "11/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2789949 - TotalEnergies",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 36708.26,
+      "libellé": "Chèque encaissé N°2789949 - TotalEnergies",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 36708.26,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2789949 - TotalEnergies",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 2961.17,
+      "libellé": "Chèque reçu N°2544359 - EDF",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 2961.17,
+      "date": "05/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2544359 - EDF",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 2961.17,
+      "libellé": "Chèque encaissé N°2544359 - EDF",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 2961.17,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2544359 - EDF",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "10/02/2025",
+      "débit": 28846.52,
+      "libellé": "Chèque reçu N°9418470 - Engie",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 28846.52,
+      "date": "10/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9418470 - Engie",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 28846.52,
+      "libellé": "Chèque encaissé N°9418470 - Engie",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 28846.52,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9418470 - Engie",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 31579.35,
+      "libellé": "Chèque reçu N°3167490 - Schneider Electric",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 31579.35,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°3167490 - Schneider Electric",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 31579.35,
+      "libellé": "Chèque encaissé N°3167490 - Schneider Electric",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 31579.35,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°3167490 - Schneider Electric",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "10/02/2025",
+      "débit": 28614.8,
+      "libellé": "Chèque reçu N°2339715 - Saint-Gobain",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 28614.8,
+      "date": "10/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2339715 - Saint-Gobain",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 28614.8,
+      "libellé": "Chèque encaissé N°2339715 - Saint-Gobain",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 28614.8,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2339715 - Saint-Gobain",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 27081.83,
+      "libellé": "Chèque reçu N°2250841 - Vinci",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 27081.83,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2250841 - Vinci",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 27081.83,
+      "libellé": "Chèque encaissé N°2250841 - Vinci",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 27081.83,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2250841 - Vinci",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "11/02/2025",
+      "débit": 47505.46,
+      "libellé": "Chèque reçu N°5712638 - Air Liquide",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 47505.46,
+      "date": "11/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5712638 - Air Liquide",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 47505.46,
+      "libellé": "Chèque encaissé N°5712638 - Air Liquide",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 47505.46,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5712638 - Air Liquide",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 27238.33,
+      "libellé": "Chèque reçu N°9351674 - Renault",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 27238.33,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9351674 - Renault",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 27238.33,
+      "libellé": "Chèque encaissé N°9351674 - Renault",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 27238.33,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9351674 - Renault",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 13392.17,
+      "libellé": "Chèque reçu N°8092783 - Stellantis",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 13392.17,
+      "date": "02/10/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8092783 - Stellantis",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 13392.17,
+      "libellé": "Chèque encaissé N°8092783 - Stellantis",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 13392.17,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8092783 - Stellantis",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 32109.77,
+      "libellé": "Chèque reçu N°1458942 - Danone",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 32109.77,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°1458942 - Danone",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 32109.77,
+      "libellé": "Chèque encaissé N°1458942 - Danone",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 32109.77,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°1458942 - Danone",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 24688.54,
+      "libellé": "Chèque reçu N°9409219 - L'Oréal",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 24688.54,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9409219 - L'Oréal",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 24688.54,
+      "libellé": "Chèque encaissé N°9409219 - L'Oréal",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 24688.54,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9409219 - L'Oréal",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 20924.31,
+      "libellé": "Chèque reçu N°8264082 - LVMH",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 20924.31,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8264082 - LVMH",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 20924.31,
+      "libellé": "Chèque encaissé N°8264082 - LVMH",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 20924.31,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8264082 - LVMH",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "06/02/2025",
+      "débit": 43605.48,
+      "libellé": "Chèque reçu N°4616901 - Sanofi",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 43605.48,
+      "date": "06/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4616901 - Sanofi",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 43605.48,
+      "libellé": "Chèque encaissé N°4616901 - Sanofi",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 43605.48,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4616901 - Sanofi",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "06/02/2025",
+      "débit": 10818.65,
+      "libellé": "Chèque reçu N°3470013 - Airbus",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 10818.65,
+      "date": "06/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°3470013 - Airbus",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 10818.65,
+      "libellé": "Chèque encaissé N°3470013 - Airbus",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 10818.65,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°3470013 - Airbus",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "12/02/2025",
+      "débit": 10996.39,
+      "libellé": "Chèque reçu N°9756500 - Safran",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 10996.39,
+      "date": "12/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9756500 - Safran",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 10996.39,
+      "libellé": "Chèque encaissé N°9756500 - Safran",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 10996.39,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9756500 - Safran",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "14/02/2025",
+      "débit": 18242.6,
+      "libellé": "Chèque reçu N°5659321 - Thales",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 18242.6,
+      "date": "14/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5659321 - Thales",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 18242.6,
+      "libellé": "Chèque encaissé N°5659321 - Thales",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 18242.6,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5659321 - Thales",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 3184.49,
+      "libellé": "Chèque reçu N°4344394 - Dassault Systèmes",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 3184.49,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4344394 - Dassault Systèmes",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 3184.49,
+      "libellé": "Chèque encaissé N°4344394 - Dassault Systèmes",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 3184.49,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4344394 - Dassault Systèmes",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 30793.49,
+      "libellé": "Chèque reçu N°5846447 - Legrand",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 30793.49,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5846447 - Legrand",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 30793.49,
+      "libellé": "Chèque encaissé N°5846447 - Legrand",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 30793.49,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5846447 - Legrand",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "07/02/2025",
+      "débit": 42184.83,
+      "libellé": "Chèque reçu N°6905543 - Pernod Ricard",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 42184.83,
+      "date": "07/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°6905543 - Pernod Ricard",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 42184.83,
+      "libellé": "Chèque encaissé N°6905543 - Pernod Ricard",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 42184.83,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°6905543 - Pernod Ricard",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 3386.06,
+      "libellé": "Chèque reçu N°4857617 - Michelin",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 3386.06,
+      "date": "02/10/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4857617 - Michelin",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 3386.06,
+      "libellé": "Chèque encaissé N°4857617 - Michelin",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 3386.06,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4857617 - Michelin",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "12/02/2025",
+      "débit": 23815.77,
+      "libellé": "Chèque reçu N°3959984 - Suez",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 23815.77,
+      "date": "12/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°3959984 - Suez",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 23815.77,
+      "libellé": "Chèque encaissé N°3959984 - Suez",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 23815.77,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°3959984 - Suez",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 37286.24,
+      "libellé": "Chèque reçu N°8763115 - Veolia",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 37286.24,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8763115 - Veolia",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 37286.24,
+      "libellé": "Chèque encaissé N°8763115 - Veolia",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 37286.24,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8763115 - Veolia",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 26554.76,
+      "libellé": "Chèque reçu N°2966338 - Alstom",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 26554.76,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2966338 - Alstom",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 26554.76,
+      "libellé": "Chèque encaissé N°2966338 - Alstom",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 26554.76,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2966338 - Alstom",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 48051.9,
+      "libellé": "Chèque reçu N°5991640 - EssilorLuxottica",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 48051.9,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5991640 - EssilorLuxottica",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "04/03/2025",
+      "débit": 48051.9,
+      "libellé": "Chèque encaissé N°5991640 - EssilorLuxottica",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 48051.9,
+      "date": "04/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5991640 - EssilorLuxottica",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "12/02/2025",
+      "débit": 3505.93,
+      "libellé": "Chèque reçu N°1235439 - Publicis Groupe",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 3505.93,
+      "date": "12/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°1235439 - Publicis Groupe",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 3505.93,
+      "libellé": "Chèque encaissé N°1235439 - Publicis Groupe",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 3505.93,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°1235439 - Publicis Groupe",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 41417.87,
+      "libellé": "Chèque reçu N°7514669 - Carrefour",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 41417.87,
+      "date": "02/10/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7514669 - Carrefour",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 41417.87,
+      "libellé": "Chèque encaissé N°7514669 - Carrefour",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 41417.87,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7514669 - Carrefour",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "11/02/2025",
+      "débit": 39046.88,
+      "libellé": "Chèque reçu N°1062886 - Amazon FR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 39046.88,
+      "date": "11/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°1062886 - Amazon FR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 39046.88,
+      "libellé": "Chèque encaissé N°1062886 - Amazon FR",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 39046.88,
+      "date": "19/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°1062886 - Amazon FR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 4138.85,
+      "libellé": "Chèque reçu N°7001910 - Cdiscount",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 4138.85,
+      "date": "05/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7001910 - Cdiscount",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 4138.85,
+      "libellé": "Chèque encaissé N°7001910 - Cdiscount",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 4138.85,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7001910 - Cdiscount",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "10/02/2025",
+      "débit": 36732.66,
+      "libellé": "Chèque reçu N°2032961 - Fnac Darty",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 36732.66,
+      "date": "10/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2032961 - Fnac Darty",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 36732.66,
+      "libellé": "Chèque encaissé N°2032961 - Fnac Darty",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 36732.66,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2032961 - Fnac Darty",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "06/02/2025",
+      "débit": 2799.87,
+      "libellé": "Chèque reçu N°6793482 - Decathlon",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 2799.87,
+      "date": "06/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°6793482 - Decathlon",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 2799.87,
+      "libellé": "Chèque encaissé N°6793482 - Decathlon",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 2799.87,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°6793482 - Decathlon",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 43446.95,
+      "libellé": "Chèque reçu N°6836728 - Leroy Merlin",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 43446.95,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°6836728 - Leroy Merlin",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 43446.95,
+      "libellé": "Chèque encaissé N°6836728 - Leroy Merlin",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 43446.95,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°6836728 - Leroy Merlin",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "14/02/2025",
+      "débit": 19951.2,
+      "libellé": "Chèque reçu N°2562856 - Zalando",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 19951.2,
+      "date": "14/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2562856 - Zalando",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 19951.2,
+      "libellé": "Chèque encaissé N°2562856 - Zalando",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 19951.2,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2562856 - Zalando",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "06/02/2025",
+      "débit": 11624.95,
+      "libellé": "Chèque reçu N°7142901 - Veepee",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 11624.95,
+      "date": "06/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7142901 - Veepee",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 11624.95,
+      "libellé": "Chèque encaissé N°7142901 - Veepee",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 11624.95,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7142901 - Veepee",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 21498.66,
+      "libellé": "Chèque reçu N°8092673 - La Redoute",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 21498.66,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8092673 - La Redoute",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 21498.66,
+      "libellé": "Chèque encaissé N°8092673 - La Redoute",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 21498.66,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8092673 - La Redoute",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 47562.85,
+      "libellé": "Chèque reçu N°9567374 - Boulanger",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 47562.85,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9567374 - Boulanger",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 47562.85,
+      "libellé": "Chèque encaissé N°9567374 - Boulanger",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 47562.85,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9567374 - Boulanger",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "10/02/2025",
+      "débit": 2090.28,
+      "libellé": "Chèque reçu N°6325630 - Sephora",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 2090.28,
+      "date": "10/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°6325630 - Sephora",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 2090.28,
+      "libellé": "Chèque encaissé N°6325630 - Sephora",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 2090.28,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°6325630 - Sephora",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "07/02/2025",
+      "débit": 41330.27,
+      "libellé": "Chèque reçu N°8621555 - IKEA",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 41330.27,
+      "date": "07/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8621555 - IKEA",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 41330.27,
+      "libellé": "Chèque encaissé N°8621555 - IKEA",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 41330.27,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8621555 - IKEA",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 7307.39,
+      "libellé": "Chèque reçu N°4543299 - Dell FR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 7307.39,
+      "date": "05/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4543299 - Dell FR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 7307.39,
+      "libellé": "Chèque encaissé N°4543299 - Dell FR",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 7307.39,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4543299 - Dell FR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "07/02/2025",
+      "débit": 4121.6,
+      "libellé": "Chèque reçu N°1301607 - HP France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 4121.6,
+      "date": "07/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°1301607 - HP France",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 4121.6,
+      "libellé": "Chèque encaissé N°1301607 - HP France",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 4121.6,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°1301607 - HP France",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "14/02/2025",
+      "débit": 2146.86,
+      "libellé": "Chèque reçu N°7864024 - Orange",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 2146.86,
+      "date": "14/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7864024 - Orange",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 2146.86,
+      "libellé": "Chèque encaissé N°7864024 - Orange",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 2146.86,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7864024 - Orange",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 36140.36,
+      "libellé": "Chèque reçu N°1338526 - Free",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 36140.36,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°1338526 - Free",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 36140.36,
+      "libellé": "Chèque encaissé N°1338526 - Free",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 36140.36,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°1338526 - Free",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 23723.86,
+      "libellé": "Chèque reçu N°8466407 - SFR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 23723.86,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°8466407 - SFR",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "05/03/2025",
+      "débit": 23723.86,
+      "libellé": "Chèque encaissé N°8466407 - SFR",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 23723.86,
+      "date": "05/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°8466407 - SFR",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "10/02/2025",
+      "débit": 32967.11,
+      "libellé": "Chèque reçu N°5028116 - Bouygues Telecom",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 32967.11,
+      "date": "10/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5028116 - Bouygues Telecom",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 32967.11,
+      "libellé": "Chèque encaissé N°5028116 - Bouygues Telecom",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 32967.11,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5028116 - Bouygues Telecom",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 12012.67,
+      "libellé": "Chèque reçu N°2150378 - Capgemini",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 12012.67,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°2150378 - Capgemini",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 12012.67,
+      "libellé": "Chèque encaissé N°2150378 - Capgemini",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 12012.67,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°2150378 - Capgemini",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 15481.47,
+      "libellé": "Chèque reçu N°6089626 - Atos",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 15481.47,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°6089626 - Atos",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "06/03/2025",
+      "débit": 15481.47,
+      "libellé": "Chèque encaissé N°6089626 - Atos",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 15481.47,
+      "date": "06/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°6089626 - Atos",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 49375.1,
+      "libellé": "Chèque reçu N°1939069 - Sopra Steria",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 49375.1,
+      "date": "05/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°1939069 - Sopra Steria",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 49375.1,
+      "libellé": "Chèque encaissé N°1939069 - Sopra Steria",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 49375.1,
+      "date": "18/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°1939069 - Sopra Steria",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 42586.5,
+      "libellé": "Chèque reçu N°4480574 - Dassault Aviation",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 42586.5,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°4480574 - Dassault Aviation",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 42586.5,
+      "libellé": "Chèque encaissé N°4480574 - Dassault Aviation",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 42586.5,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°4480574 - Dassault Aviation",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "14/02/2025",
+      "débit": 19440.39,
+      "libellé": "Chèque reçu N°5479553 - Ubisoft",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 19440.39,
+      "date": "14/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°5479553 - Ubisoft",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 19440.39,
+      "libellé": "Chèque encaissé N°5479553 - Ubisoft",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 19440.39,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°5479553 - Ubisoft",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 49152.46,
+      "libellé": "Chèque reçu N°7676469 - Criteo",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 49152.46,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°7676469 - Criteo",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "04/03/2025",
+      "débit": 49152.46,
+      "libellé": "Chèque encaissé N°7676469 - Criteo",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 49152.46,
+      "date": "04/03/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°7676469 - Criteo",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 15221.41,
+      "libellé": "Chèque reçu N°9074797 - Doctolib",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 15221.41,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Chèque reçu N°9074797 - Doctolib",
+      "n° compte": "411"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 15221.41,
+      "libellé": "Chèque encaissé N°9074797 - Doctolib",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 15221.41,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Chèque encaissé N°9074797 – Doctolib",
+      "n° compte": "513000"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 1634.12,
+      "libellé": "Facture Fournisseur FAC2025012091 - Talend",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 326.82,
+      "libellé": "TVA 20% - FAC2025012091 - Talend",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1960.94,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012091 - Talend",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 1960.94,
+      "libellé": "Encaissement FAC2025012091 - Talend",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1960.94,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012091 - Talend",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 3741.26,
+      "libellé": "Facture Fournisseur FAC2025011547 - Dataiku",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 748.25,
+      "libellé": "TVA 20% - FAC2025011547 - Dataiku",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4489.51,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011547 - Dataiku",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 4489.51,
+      "libellé": "Encaissement FAC2025011547 - Dataiku",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4489.51,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011547 - Dataiku",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 1369.94,
+      "libellé": "Facture Fournisseur FAC2025012850 - Qlik France",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 273.99,
+      "libellé": "TVA 20% - FAC2025012850 - Qlik France",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1643.93,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012850 - Qlik France",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 1643.93,
+      "libellé": "Encaissement FAC2025012850 - Qlik France",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1643.93,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012850 - Qlik France",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 1552.15,
+      "libellé": "Facture Fournisseur FAC2025011888 - Sinequa",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 310.43,
+      "libellé": "TVA 20% - FAC2025011888 - Sinequa",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1862.58,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011888 - Sinequa",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 1862.58,
+      "libellé": "Encaissement FAC2025011888 - Sinequa",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1862.58,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011888 - Sinequa",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 3430.43,
+      "libellé": "Facture Fournisseur FAC2025012625 - Tinyclues",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 686.09,
+      "libellé": "TVA 20% - FAC2025012625 - Tinyclues",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4116.52,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012625 - Tinyclues",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 4116.52,
+      "libellé": "Encaissement FAC2025012625 - Tinyclues",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4116.52,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012625 - Tinyclues",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 2106.24,
+      "libellé": "Facture Fournisseur FAC2025012692 - OVHcloud",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 421.25,
+      "libellé": "TVA 20% - FAC2025012692 - OVHcloud",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2527.49,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012692 - OVHcloud",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 2527.49,
+      "libellé": "Encaissement FAC2025012692 - OVHcloud",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2527.49,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012692 - OVHcloud",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 2003.3,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011704 - Platform.sh",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 2686.96,
+      "libellé": "Facture Fournisseur FAC2025012102 - Clever Cloud",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 537.39,
+      "libellé": "TVA 20% - FAC2025012102 - Clever Cloud",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 3224.35,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012102 - Clever Cloud",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 3224.35,
+      "libellé": "Encaissement FAC2025012102 - Clever Cloud",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3224.35,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012102 - Clever Cloud",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 1314.59,
+      "libellé": "Facture Fournisseur FAC2025012124 - Datalakes",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 262.92,
+      "libellé": "TVA 20% - FAC2025012124 - Datalakes",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1577.51,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012124 - Datalakes",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 1577.51,
+      "libellé": "Encaissement FAC2025012124 - Datalakes",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1577.51,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012124 - Datalakes",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 3581.7,
+      "libellé": "Facture Fournisseur FAC2025012655 - Zeenea",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 716.34,
+      "libellé": "TVA 20% - FAC2025012655 - Zeenea",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4298.04,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012655 - Zeenea",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 4298.04,
+      "libellé": "Encaissement FAC2025012655 - Zeenea",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4298.04,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012655 - Zeenea",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 2003.53,
+      "libellé": "Facture Fournisseur FAC2025012687 - Sigfox",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 400.71,
+      "libellé": "TVA 20% - FAC2025012687 - Sigfox",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2404.24,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012687 - Sigfox",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 2404.24,
+      "libellé": "Encaissement FAC2025012687 - Sigfox",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2404.24,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012687 - Sigfox",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 3206.46,
+      "libellé": "Facture Fournisseur FAC2025012726 - Wizata",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 641.29,
+      "libellé": "TVA 20% - FAC2025012726 - Wizata",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 3847.75,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012726 - Wizata",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 3847.75,
+      "libellé": "Encaissement FAC2025012726 - Wizata",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3847.75,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012726 - Wizata",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 1106.81,
+      "libellé": "Facture Fournisseur FAC2025011878 - Hiveo",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "31/01/2025",
+      "débit": 221.36,
+      "libellé": "TVA 20% - FAC2025011878 - Hiveo",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1328.17,
+      "date": "31/01/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011878 - Hiveo",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 1328.17,
+      "libellé": "Encaissement FAC2025011878 - Hiveo",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1328.17,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011878 - Hiveo",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2681.06,
+      "libellé": "Facture Fournisseur FAC2025012013 - Predictron",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 536.21,
+      "libellé": "TVA 20% - FAC2025012013 - Predictron",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 3217.27,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012013 - Predictron",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 3217.27,
+      "libellé": "Encaissement FAC2025012013 - Predictron",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3217.27,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012013 - Predictron",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2429.01,
+      "libellé": "Facture Fournisseur FAC2025011609 - Ubigreen",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 485.8,
+      "libellé": "TVA 20% - FAC2025011609 - Ubigreen",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2914.81,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011609 - Ubigreen",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 2914.81,
+      "libellé": "Encaissement FAC2025011609 - Ubigreen",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2914.81,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011609 - Ubigreen",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2732.82,
+      "libellé": "Facture Fournisseur FAC2025012990 - Vade Secure",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 546.56,
+      "libellé": "TVA 20% - FAC2025012990 - Vade Secure",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 3279.38,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012990 - Vade Secure",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 3279.38,
+      "libellé": "Encaissement FAC2025012990 - Vade Secure",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3279.38,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012990 - Vade Secure",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2153.1,
+      "libellé": "Facture Fournisseur FAC2025012292 - HarfangLab",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 430.62,
+      "libellé": "TVA 20% - FAC2025012292 - HarfangLab",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2583.72,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012292 - HarfangLab",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 2583.72,
+      "libellé": "Encaissement FAC2025012292 - HarfangLab",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2583.72,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012292 - HarfangLab",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3440.22,
+      "libellé": "Facture Fournisseur FAC2025012044 - Trustelem",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 688.04,
+      "libellé": "TVA 20% - FAC2025012044 - Trustelem",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4128.26,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012044 - Trustelem",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 4128.26,
+      "libellé": "Encaissement FAC2025012044 - Trustelem",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4128.26,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012044 - Trustelem",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3152.33,
+      "libellé": "Facture Fournisseur FAC2025012437 - Didomi",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 630.47,
+      "libellé": "TVA 20% - FAC2025012437 - Didomi",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 3782.8,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012437 - Didomi",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 3782.8,
+      "libellé": "Encaissement FAC2025012437 - Didomi",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3782.8,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012437 - Didomi",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2463.23,
+      "libellé": "Facture Fournisseur FAC2025012041 - DPOrganizer",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 492.65,
+      "libellé": "TVA 20% - FAC2025012041 - DPOrganizer",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2955.88,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012041 - DPOrganizer",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 2955.88,
+      "libellé": "Encaissement FAC2025012041 - DPOrganizer",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2955.88,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012041 - DPOrganizer",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3817.81,
+      "libellé": "Facture Fournisseur FAC2025011912 - Critizr",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 763.56,
+      "libellé": "TVA 20% - FAC2025011912 - Critizr",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4581.37,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011912 - Critizr",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 4581.37,
+      "libellé": "Encaissement FAC2025011912 - Critizr",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4581.37,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011912 - Critizr",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3013.64,
+      "libellé": "Facture Fournisseur FAC2025012216 - Lengow",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 602.73,
+      "libellé": "TVA 20% - FAC2025012216 - Lengow",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 3616.37,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012216 - Lengow",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 3616.37,
+      "libellé": "Encaissement FAC2025012216 - Lengow",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3616.37,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012216 - Lengow",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2155.98,
+      "libellé": "Facture Fournisseur FAC2025011658 - Ysance",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 431.2,
+      "libellé": "TVA 20% - FAC2025011658 - Ysance",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2587.18,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011658 - Ysance",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 2587.18,
+      "libellé": "Encaissement FAC2025011658 - Ysance",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2587.18,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011658 - Ysance",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2982.48,
+      "libellé": "Facture Fournisseur FAC2025012883 - Splio",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 596.5,
+      "libellé": "TVA 20% - FAC2025012883 - Splio",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 3578.98,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012883 - Splio",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 3578.98,
+      "libellé": "Encaissement FAC2025012883 - Splio",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3578.98,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012883 - Splio",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2403.15,
+      "libellé": "Facture Fournisseur FAC2025012716 - Kameleoon",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 480.63,
+      "libellé": "TVA 20% - FAC2025012716 - Kameleoon",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2883.78,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012716 - Kameleoon",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 2883.78,
+      "libellé": "Encaissement FAC2025012716 - Kameleoon",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2883.78,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012716 - Kameleoon",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1138.41,
+      "libellé": "Facture Fournisseur FAC2025011991 - Contentsquare",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 227.68,
+      "libellé": "TVA 20% - FAC2025011991 - Contentsquare",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1366.09,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011991 - Contentsquare",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 1366.09,
+      "libellé": "Encaissement FAC2025011991 - Contentsquare",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1366.09,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011991 - Contentsquare",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1613.75,
+      "libellé": "Facture Fournisseur FAC2025011761 - AB Tasty",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 322.75,
+      "libellé": "TVA 20% - FAC2025011761 - AB Tasty",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1936.5,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011761 - AB Tasty",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 1936.5,
+      "libellé": "Encaissement FAC2025011761 - AB Tasty",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1936.5,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011761 - AB Tasty",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3678.24,
+      "libellé": "Facture Fournisseur FAC2025011549 - Criteo",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 735.65,
+      "libellé": "TVA 20% - FAC2025011549 - Criteo",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4413.89,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011549 - Criteo",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 4413.89,
+      "libellé": "Encaissement FAC2025011549 - Criteo",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4413.89,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011549 - Criteo",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1260.93,
+      "libellé": "Facture Fournisseur FAC2025012506 - Hivency",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 252.19,
+      "libellé": "TVA 20% - FAC2025012506 - Hivency",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1513.12,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012506 - Hivency",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 1513.12,
+      "libellé": "Encaissement FAC2025012506 - Hivency",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1513.12,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012506 - Hivency",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3849.35,
+      "libellé": "Facture Fournisseur FAC2025012954 - Alsid",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 769.87,
+      "libellé": "TVA 20% - FAC2025012954 - Alsid",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4619.22,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012954 - Alsid",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 4619.22,
+      "libellé": "Encaissement FAC2025012954 - Alsid",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4619.22,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012954 - Alsid",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3705.9,
+      "libellé": "Facture Fournisseur FAC2025012868 - SAS France",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 741.18,
+      "libellé": "TVA 20% - FAC2025012868 - SAS France",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4447.08,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012868 - SAS France",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 4447.08,
+      "libellé": "Encaissement FAC2025012868 - SAS France",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4447.08,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012868 - SAS France",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2055.15,
+      "libellé": "Facture Fournisseur FAC2025012531 - MicroStrategy",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 411.03,
+      "libellé": "TVA 20% - FAC2025012531 - MicroStrategy",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2466.18,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012531 - MicroStrategy",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 2466.18,
+      "libellé": "Encaissement FAC2025012531 - MicroStrategy",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2466.18,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012531 - MicroStrategy",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3456.9,
+      "libellé": "Facture Fournisseur FAC2025012679 - TIBCO",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 691.38,
+      "libellé": "TVA 20% - FAC2025012679 - TIBCO",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4148.28,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012679 - TIBCO",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 4148.28,
+      "libellé": "Encaissement FAC2025012679 - TIBCO",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4148.28,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012679 - TIBCO",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1455.12,
+      "libellé": "Facture Fournisseur FAC2025012739 - Alteryx",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 291.02,
+      "libellé": "TVA 20% - FAC2025012739 - Alteryx",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1746.14,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012739 - Alteryx",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 1746.14,
+      "libellé": "Encaissement FAC2025012739 - Alteryx",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1746.14,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012739 - Alteryx",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1565.58,
+      "libellé": "Facture Fournisseur FAC2025012459 - Looker",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 313.12,
+      "libellé": "TVA 20% - FAC2025012459 - Looker",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1878.7,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012459 - Looker",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 1878.7,
+      "libellé": "Encaissement FAC2025012459 - Looker",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1878.7,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012459 - Looker",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2078.6,
+      "libellé": "Facture Fournisseur FAC2025012717 - Fivetran",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 415.72,
+      "libellé": "TVA 20% - FAC2025012717 - Fivetran",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2494.32,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012717 - Fivetran",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 2494.32,
+      "libellé": "Encaissement FAC2025012717 - Fivetran",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2494.32,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012717 - Fivetran",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1760.26,
+      "libellé": "Facture Fournisseur FAC2025011995 - Matillion",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 352.05,
+      "libellé": "TVA 20% - FAC2025011995 - Matillion",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2112.31,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011995 - Matillion",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 2112.31,
+      "libellé": "Encaissement FAC2025011995 - Matillion",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2112.31,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011995 - Matillion",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3760.26,
+      "libellé": "Facture Fournisseur FAC2025011605 - Stitch",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 752.05,
+      "libellé": "TVA 20% - FAC2025011605 - Stitch",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4512.31,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011605 - Stitch",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 4512.31,
+      "libellé": "Encaissement FAC2025011605 - Stitch",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4512.31,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011605 - Stitch",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3446,
+      "libellé": "Facture Fournisseur FAC2025012458 - Collibra",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 689.2,
+      "libellé": "TVA 20% - FAC2025012458 - Collibra",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4135.2,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012458 - Collibra",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 4135.2,
+      "libellé": "Encaissement FAC2025012458 - Collibra",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4135.2,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012458 - Collibra",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3184.67,
+      "libellé": "Facture Fournisseur FAC2025011748 - Informatica",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 636.93,
+      "libellé": "TVA 20% - FAC2025011748 - Informatica",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 3821.6,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011748 - Informatica",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 3821.6,
+      "libellé": "Encaissement FAC2025011748 - Informatica",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3821.6,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011748 - Informatica",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1842.98,
+      "libellé": "Facture Fournisseur FAC2025012255 - Exasol",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 368.6,
+      "libellé": "TVA 20% - FAC2025012255 - Exasol",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2211.58,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012255 - Exasol",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 2211.58,
+      "libellé": "Encaissement FAC2025012255 - Exasol",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2211.58,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012255 - Exasol",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1158.56,
+      "libellé": "Facture Fournisseur FAC2025012827 - Neo4j",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 231.71,
+      "libellé": "TVA 20% - FAC2025012827 - Neo4j",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1390.27,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012827 - Neo4j",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 1390.27,
+      "libellé": "Encaissement FAC2025012827 - Neo4j",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1390.27,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012827 - Neo4j",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3880.3,
+      "libellé": "Facture Fournisseur FAC2025012035 - Elastic",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 776.06,
+      "libellé": "TVA 20% - FAC2025012035 - Elastic",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 4656.36,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012035 - Elastic",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 4656.36,
+      "libellé": "Encaissement FAC2025012035 - Elastic",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 4656.36,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012035 - Elastic",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1192.34,
+      "libellé": "Facture Fournisseur FAC2025012133 - MongoDB",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 238.47,
+      "libellé": "TVA 20% - FAC2025012133 - MongoDB",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1430.81,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012133 - MongoDB",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 1430.81,
+      "libellé": "Encaissement FAC2025012133 - MongoDB",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1430.81,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012133 - MongoDB",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1604,
+      "libellé": "Facture Fournisseur FAC2025011516 - DataRobot",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 320.8,
+      "libellé": "TVA 20% - FAC2025011516 - DataRobot",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1924.8,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025011516 - DataRobot",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "03/03/2025",
+      "débit": 1924.8,
+      "libellé": "Encaissement FAC2025011516 - DataRobot",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1924.8,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025011516 - DataRobot",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1168.62,
+      "libellé": "Facture Fournisseur FAC2025012710 - Domino Data Lab",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 233.72,
+      "libellé": "TVA 20% - FAC2025012710 - Domino Data Lab",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1402.34,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012710 - Domino Data Lab",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 1402.34,
+      "libellé": "Encaissement FAC2025012710 - Domino Data Lab",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1402.34,
+      "date": "26/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012710 - Domino Data Lab",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1800.04,
+      "libellé": "Facture Fournisseur FAC2025012079 - H2O.ai",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 360.01,
+      "libellé": "TVA 20% - FAC2025012079 - H2O.ai",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2160.05,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012079 - H2O.ai",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 2160.05,
+      "libellé": "Encaissement FAC2025012079 - H2O.ai",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2160.05,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012079 - H2O.ai",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 3202.15,
+      "libellé": "Facture Fournisseur FAC2025012031 - RapidMiner",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 640.43,
+      "libellé": "TVA 20% - FAC2025012031 - RapidMiner",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 3842.58,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012031 - RapidMiner",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 3842.58,
+      "libellé": "Encaissement FAC2025012031 - RapidMiner",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3842.58,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012031 - RapidMiner",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 1085.74,
+      "libellé": "Facture Fournisseur FAC2025012021 - KNIME",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 217.15,
+      "libellé": "TVA 20% - FAC2025012021 - KNIME",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 1302.89,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012021 - KNIME",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 1302.89,
+      "libellé": "Encaissement FAC2025012021 - KNIME",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 1302.89,
+      "date": "21/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012021 - KNIME",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 2060.88,
+      "libellé": "Facture Fournisseur FAC2025012798 - Altair",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 412.18,
+      "libellé": "TVA 20% - FAC2025012798 - Altair",
+      "n° compte": "44566"
+    },
+    {
+      "crédit": 2473.06,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Facture Fournisseur FAC2025012798 - Altair",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 0,
+      "date": "27/02/2025",
+      "débit": 2473.06,
+      "libellé": "Encaissement FAC2025012798 - Altair",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2473.06,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Encaissement FAC2025012798 - Altair",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/10/2025",
+      "débit": 7879,
+      "libellé": "Paiement chèque 2457416 à PYXIS ANALYTICS",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 7879,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 2457416 à PYXIS ANALYTICS (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "26/02/2025",
+      "débit": 565.81,
+      "libellé": "Paiement chèque 4809222 à DATAFORGE",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 565.81,
+      "date": "03/10/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 4809222 à DATAFORGE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 7507.88,
+      "libellé": "Paiement chèque 5672300 à SILICONCORE",
+      "n° compte": "607"
+    },
+    {
+      "crédit": 7507.88,
+      "date": "06/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 5672300 à SILICONCORE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "14/02/2025",
+      "débit": 642.11,
+      "libellé": "Paiement chèque 3968560 à NEXASTORAGE",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 642.11,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 3968560 à NEXASTORAGE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "12/02/2025",
+      "débit": 2165.48,
+      "libellé": "Paiement chèque 8145480 à SECURENODE",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2165.48,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 8145480 à SECURENODE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "13/02/2025",
+      "débit": 2349.51,
+      "libellé": "Paiement chèque 7978258 à QUANTUMLINK",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 2349.51,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 7978258 à QUANTUMLINK (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "06/02/2025",
+      "débit": 7723.3,
+      "libellé": "Paiement chèque 5855855 à GREENDATA",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 7723.3,
+      "date": "20/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 5855855 à GREENDATA (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "02/03/2025",
+      "débit": 7687.94,
+      "libellé": "Paiement chèque 8305046 à OMNIDATA",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 7687.94,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 8305046 à OMNIDATA (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 3911.38,
+      "libellé": "Paiement chèque 5313682 à DATACRAFT",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3911.38,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 5313682 à DATACRAFT (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 8670.25,
+      "libellé": "Paiement chèque 8017375 à CYBERPLANT",
+      "n° compte": "607"
+    },
+    {
+      "crédit": 8670.25,
+      "date": "06/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 8017375 à CYBERPLANT (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 9011.44,
+      "libellé": "Paiement chèque 3987246 à ECOPOWER ANALYTICS",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 9011.44,
+      "date": "07/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 3987246 à ECOPOWER ANALYTICS (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "03/02/2025",
+      "débit": 2669.24,
+      "libellé": "Paiement chèque 3433902 à HYDRODATA",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 2669.24,
+      "date": "12/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 3433902 à HYDRODATA (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "24/02/2025",
+      "débit": 8328.15,
+      "libellé": "Paiement chèque 7001782 à SAINT-GOBAIN ANALYTICS",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 8328.15,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 7001782 à SAINT-GOBAIN ANALYTICS (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 11324.91,
+      "libellé": "Paiement chèque 6117085 à GOVDATA COMPLIANCE",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 11324.91,
+      "date": "13/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 6117085 à GOVDATA COMPLIANCE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 11367.81,
+      "libellé": "Paiement chèque 9763974 à GOVDATA COMPLIANCE",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 11367.81,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 9763974 à GOVDATA COMPLIANCE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 5497.3,
+      "libellé": "Paiement chèque 8489601 à PYXIS ANALYTICS",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 5497.3,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 8489601 à PYXIS ANALYTICS (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 6677.01,
+      "libellé": "Paiement chèque 9510102 à DATAFORGE",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 6677.01,
+      "date": "27/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 9510102 à DATAFORGE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "03/02/2025",
+      "débit": 6257.96,
+      "libellé": "Paiement chèque 7528488 à SILICONCORE",
+      "n° compte": "607"
+    },
+    {
+      "crédit": 6257.96,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 7528488 à SILICONCORE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "18/02/2025",
+      "débit": 10862.66,
+      "libellé": "Paiement chèque 3891214 à NEXASTORAGE",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 10862.66,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 3891214 à NEXASTORAGE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "05/02/2025",
+      "débit": 8452.29,
+      "libellé": "Paiement chèque 2892743 à SECURENODE",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 8452.29,
+      "date": "12/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 2892743 à SECURENODE (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 3316.93,
+      "libellé": "Paiement chèque 3502975 à QUANTUMLINK",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3316.93,
+      "date": "25/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 3502975 à QUANTUMLINK (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "07/02/2025",
+      "débit": 9939.27,
+      "libellé": "Paiement chèque 3145116 à GREENDATA",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 9939.27,
+      "date": "17/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 3145116 à GREENDATA (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "20/02/2025",
+      "débit": 8997.7,
+      "libellé": "Paiement chèque 8253607 à OMNIDATA",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 8997.7,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 8253607 à OMNIDATA (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 9954.64,
+      "libellé": "Paiement chèque 5517468 à DATACRAFT",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 9954.64,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 5517468 à DATACRAFT (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "25/02/2025",
+      "débit": 1761.82,
+      "libellé": "Paiement chèque 1887923 à CYBERPLANT",
+      "n° compte": "607"
+    },
+    {
+      "crédit": 1761.82,
+      "date": "05/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 1887923 à CYBERPLANT (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 9358.31,
+      "libellé": "Paiement chèque 9470024 à ECOPOWER ANALYTICS",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 9358.31,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 9470024 à ECOPOWER ANALYTICS (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "19/02/2025",
+      "débit": 964.76,
+      "libellé": "Paiement chèque 7628755 à HYDRODATA",
+      "n° compte": "606"
+    },
+    {
+      "crédit": 964.76,
+      "date": "03/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 7628755 à HYDRODATA (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "17/02/2025",
+      "débit": 3770.71,
+      "libellé": "Paiement chèque 4738256 à SAINT-GOBAIN ANALYTICS",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 3770.71,
+      "date": "24/02/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 4738256 à SAINT-GOBAIN ANALYTICS (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "21/02/2025",
+      "débit": 7202.25,
+      "libellé": "Paiement chèque 4787924 à SAINT-GOBAIN ANALYTICS",
+      "n° compte": "401"
+    },
+    {
+      "crédit": 7202.25,
+      "date": "02/03/2025",
+      "débit": 0,
+      "libellé": "Paiement chèque 4787924 à SAINT-GOBAIN ANALYTICS (encaissement)",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 25,
+      "libellé": "Services bancaires: Tenue de compte mensuelle",
+      "n° compte": "627"
+    },
+    {
+      "crédit": 25,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Banque: Tenue de compte mensuelle",
+      "n° compte": "512200"
+    },
+    {
+      "crédit": 0,
+      "date": "28/02/2025",
+      "débit": 118.8,
+      "libellé": "Services bancaires: Frais encaissement chèques",
+      "n° compte": "627"
+    },
+    {
+      "crédit": 118.8,
+      "date": "28/02/2025",
+      "débit": 0,
+      "libellé": "Banque: Frais encaissement chèques",
+      "n° compte": "512200"
+    }
+  ],
+  "informations_generales": {
+    "nom_banque": "BNP PARIBAS",
+    "solde_depart": 250000
+  },
+  "ocr_accuracy": 85
+}
