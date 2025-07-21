@@ -1,0 +1,22 @@
+{
+  "Nom Societe": "Domino Data Lab",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025012710",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Plateforme MLops",
+    "Total TTC": 1402.34
+  },
+  "table": [
+    {
+      "Description": "Gestion du cycle de vie des modèles ML.",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 1168.62,
+      "Total TTC": 1402.34
+    }
+  ],
+  "ocr_accuracy": 85.707033239344
+}

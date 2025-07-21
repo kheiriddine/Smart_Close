@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Correction : Transaction sur jour non ouvrable</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+    fieldset { margin-bottom: 25px; border: 1px solid #ccc; padding: 15px; border-radius: 5px; }
+    legend { font-weight: bold; }
+    label { display: block; margin-bottom: 10px; }
+    .form-container { display: flex; gap: 40px; margin-top: 20px; }
+    .formulaire { background: #eef; padding: 15px; border-radius: 5px; width: 300px; }
+    input, select { width: 100%; padding: 5px; margin-top: 5px; }
+    .anomalie { background: #ffe5e5; border: 1px solid red; padding: 10px; border-radius: 5px; margin-top: 20px; }
+    .save-btn { background: #e53935; color: #fff; border: none; border-radius: 4px; padding: 12px 22px; font-size: 1.1rem; cursor: pointer; margin-top: 18px; }
+    .save-btn:active { background: #b71c1c; }
+    .success { color: #4CAF50; margin-top: 10px; }
+    .error { color: #f44336; margin-top: 10px; }
+    .json-viewer { background: #f7f7f7; border: 1px solid #ddd; border-radius: 6px; padding: 10px; font-family: 'Fira Mono', 'Consolas', monospace; font-size: 0.95em; margin-bottom: 16px; max-height: 220px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>⚙️ Paramètres d’analyse</legend>
+    <label>
+      Type d’écriture :
+      <select id="typeEcriture" disabled>
+        <option value="facture">Facture</option>
+        <option value="cheque">Chèque</option>
+      </select>
+    </label>
+    <label>
+      Fichier source :
+      <select id="sourceFichier" disabled>
+        <option value="GL">Grand Livre (GL)</option>
+        <option value="RL">Relevé Bancaire (RL)</option>
+      </select>
+    </label>
+  </fieldset>
+
+  <div id="anomalieContainer"></div>
+
+  <div class="form-container">
+    <div class="formulaire" id="formGL" style="display:none;">
+      <h3>📘 Formulaire GL</h3>
+      <label>Date : <input type="date" id="dateGL"></label>
+      <label>N° compte : <input type="text" id="compteGL"></label>
+      <label>Libellé : <input type="text" id="libelleGL"></label>
+      <label>Débit : <input type="number" id="debitGL" step="0.01"></label>
+      <label>Crédit : <input type="number" id="creditGL" step="0.01"></label>
+    </div>
+    <div class="formulaire" id="formRL" style="display:none;">
+      <h3>🏦 Formulaire RL</h3>
+      <label>Date : <input type="date" id="dateRB"></label>
+      <label>Nature : <input type="text" id="natureRB"></label>
+      <label>Montant : <input type="number" id="montantRB" step="0.01"></label>
+      <label>Type : <input type="text" id="typeRB"></label>
+    </div>
+  </div>
+
+  <button class="save-btn" onclick="enregistrerCorrection()">Enregistrer la correction</button>
+  <div id="message"></div>
+  <div class="json-viewer" id="jsonOriginal">Chargement...</div>
+
+  <script>
+    const API_BASE = '/';
+    let alertData = null;
+    let docData = null;
+    let documentId = null;
+    let ecritureIndex = null;
+    let source = null;
+    let originalEcriture = null;
+
+    function getParam() {
+      const url = new URL(window.location.href);
+      return url.pathname.split('/').pop();
+    }
+
+    window.onload = async function() {
+      const alertId = getParam();
+      if (!alertId) return;
+      try {
+        // Charger l'alerte
+        const alertResp = await fetch(`${API_BASE}alert_data/${alertId}`);
+        if (!alertResp.ok) throw new Error('Alerte non trouvée');
+        alertData = await alertResp.json();
+        console.log(alertData); // debug
+        if (!alertData.document_id) {
+          document.getElementById('message').innerHTML = '<span class="error">Impossible de retrouver le document associé à cette alerte (document_id manquant).</span>';
+          document.getElementById('jsonOriginal').textContent = 'Erreur : document_id manquant';
+          return;
+        }
+        documentId = alertData.document_id;
+        // Charger le JSON du document
+        const docResp = await fetch(`${API_BASE}download_json/${documentId}`);
+        if (!docResp.ok) throw new Error('Fichier JSON non trouvé');
+        docData = await docResp.json();
+        // Déterminer la source (GL ou RL)
+        source = (alertData.source || '').toUpperCase();
+        document.getElementById('sourceFichier').value = source;
+        // Déterminer le type d'écriture (facture/cheque)
+        let typeEcriture = 'facture';
+        if (alertData.type && alertData.type.toLowerCase().includes('cheque')) typeEcriture = 'cheque';
+        document.getElementById('typeEcriture').value = typeEcriture;
+        // Trouver l'écriture concernée
+        let ecriture = null;
+        let ecritures = [];
+        if (source === 'GL') {
+          ecritures = docData['ecritures_comptables'] || [];
+          function normalizeAmount(val) {
+            if (typeof val === 'string') val = val.replace(',', '.');
+            return parseFloat(val);
+          }
+          function normalizeDate(val) {
+            if (!val) return '';
+            let d = val.replace(/-/g, '/');
+            let parts = d.split('/');
+            if (parts.length === 3) {
+              if (parts[2].length === 4) return `${parts[0].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[2]}`;
+              if (parts[0].length === 4) return `${parts[2].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[0]}`;
+            }
+            return d;
+          }
+          ecritureIndex = ecritures.findIndex(e => {
+            const dateMatch = alertData.date && normalizeDate(e['date']) === normalizeDate(alertData.date);
+            const refMatch = alertData.ref && String(e['libellé'] || '').includes(alertData.ref);
+            const montantMatch = alertData.montant && (
+              normalizeAmount(e['débit']) === normalizeAmount(alertData.montant) ||
+              normalizeAmount(e['crédit']) === normalizeAmount(alertData.montant)
+            );
+            console.log('Test écriture:', {
+              ecriture: e,
+              dateEcriture: normalizeDate(e['date']),
+              dateAlerte: normalizeDate(alertData.date),
+              dateMatch,
+              ref: alertData.ref,
+              libelle: e['libellé'],
+              refMatch,
+              montantEcritureDebit: normalizeAmount(e['débit']),
+              montantEcritureCredit: normalizeAmount(e['crédit']),
+              montantAlerte: normalizeAmount(alertData.montant),
+              montantMatch
+            });
+            return dateMatch && refMatch && montantMatch;
+          });
+          if (ecritureIndex >= 0) {
+            ecriture = ecritures[ecritureIndex];
+            originalEcriture = { ...ecriture };
+            document.getElementById('formGL').style.display = 'block';
+            document.getElementById('dateGL').value = '';
+            document.getElementById('compteGL').value = ecriture['n° compte'] || '';
+            document.getElementById('libelleGL').value = ecriture['libellé'] || '';
+            document.getElementById('debitGL').value = ecriture['débit'] || '';
+            document.getElementById('creditGL').value = ecriture['crédit'] || '';
+            document.getElementById('anomalieContainer').innerHTML = `
+              <div class="anomalie">
+                📘 <strong>Grand Livre – transaction un jour non ouvrable</strong><br>
+                <strong>Date :</strong> ${ecriture.date}<br>
+                <strong>N° Compte :</strong> ${ecriture["n° compte"]}<br>
+                <strong>Libellé :</strong> ${ecriture["libellé"]}<br>
+                <strong>Débit :</strong> ${ecriture["débit"]} €<br>
+                <strong>Crédit :</strong> ${ecriture["crédit"]} €<br>
+              </div>
+            `;
+          } else {
+            document.getElementById('anomalieContainer').innerHTML = `<span class='error'>Aucune écriture GL correspondante trouvée (date, montant et référence doivent matcher exactement). Vérifiez le format des données.</span>`;
+          }
+        } else if (source === 'RL') {
+          ecritures = docData['operations'] || [];
+          ecritureIndex = ecritures.findIndex(e => {
+            // Match strict sur date, montant, nature/ref
+            return (
+              alertData.date && (e['date'] === alertData.date || e['date'] === alertData.date.replace(/\//g, '-')) &&
+              alertData.ref && String(e['nature'] || '').includes(alertData.ref) &&
+              alertData.montant && parseFloat(e['montant'] || 0) === parseFloat(alertData.montant)
+            );
+          });
+          if (ecritureIndex >= 0) {
+            ecriture = ecritures[ecritureIndex];
+            originalEcriture = { ...ecriture };
+            document.getElementById('formRL').style.display = 'block';
+            document.getElementById('dateRB').value = '';
+            document.getElementById('natureRB').value = ecriture['nature'] || '';
+            document.getElementById('montantRB').value = ecriture['montant'] || '';
+            document.getElementById('typeRB').value = ecriture['type'] || '';
+            document.getElementById('anomalieContainer').innerHTML = `
+              <div class="anomalie">
+                🏦 <strong>Relevé Bancaire – transaction un jour non ouvrable</strong><br>
+                <strong>Date :</strong> ${ecriture.date}<br>
+                <strong>Nature :</strong> ${ecriture["nature"]}<br>
+                <strong>Montant :</strong> ${ecriture["montant"]} €<br>
+                <strong>Type :</strong> ${ecriture["type"]}<br>
+              </div>
+            `;
+          } else {
+            document.getElementById('anomalieContainer').innerHTML = `<span class='error'>Aucune écriture RL correspondante trouvée (date, montant et référence doivent matcher).</span>`;
+          }
+        }
+        document.getElementById('jsonOriginal').textContent = JSON.stringify(ecriture || {}, null, 2);
+      } catch (e) {
+        document.getElementById('message').innerHTML = `<span class='error'>${e.message}</span>`;
+        document.getElementById('jsonOriginal').textContent = 'Erreur de chargement';
+      }
+    };
+
+    async function enregistrerCorrection() {
+      if (!documentId || ecritureIndex === null) return;
+      let newDate = null;
+      let newDocData = JSON.parse(JSON.stringify(docData));
+      let nouvelleEcriture = null;
+      if (source === 'GL') {
+        newDate = document.getElementById('dateGL').value;
+        if (!newDate) {
+          document.getElementById('message').innerHTML = '<span class="error">Veuillez saisir une nouvelle date.</span>';
+          return;
+        }
+        // Forcer le format JJ/MM/AAAA
+        function toFrDate(d) {
+          if (!d) return '';
+          let parts = d.includes('-') ? d.split('-') : d.split('/');
+          if (parts[0].length === 4) { // AAAA-MM-JJ
+            return `${parts[2].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[0]}`;
+          } else { // JJ/MM/AAAA ou J/M/AAAA
+            return `${parts[0].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[2]}`;
+          }
+        }
+        const frDate = toFrDate(newDate);
+        newDocData['ecritures_comptables'][ecritureIndex]['date'] = frDate;
+        nouvelleEcriture = newDocData['ecritures_comptables'][ecritureIndex];
+      } else if (source === 'RL') {
+        newDate = document.getElementById('dateRB').value;
+        if (!newDate) {
+          document.getElementById('message').innerHTML = '<span class="error">Veuillez saisir une nouvelle date.</span>';
+          return;
+        }
+        function toFrDate(d) {
+          if (!d) return '';
+          let parts = d.includes('-') ? d.split('-') : d.split('/');
+          if (parts[0].length === 4) {
+            return `${parts[2].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[0]}`;
+          } else {
+            return `${parts[0].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[2]}`;
+          }
+        }
+        const frDate = toFrDate(newDate);
+        newDocData['operations'][ecritureIndex]['date'] = frDate;
+        nouvelleEcriture = newDocData['operations'][ecritureIndex];
+      }
+      // Sauvegarder le JSON corrigé
+      try {
+        const resp = await fetch(`${API_BASE}save_json/${documentId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ json_content: JSON.stringify(newDocData) })
+        });
+        const result = await resp.json();
+        if (resp.ok) {
+          document.getElementById('message').innerHTML = `<span class='success'>Correction enregistrée !</span>`;
+          document.getElementById('jsonOriginal').textContent = JSON.stringify(nouvelleEcriture, null, 2);
+          // Ne plus afficher le bloc rouge de la nouvelle écriture
+        } else {
+          document.getElementById('message').innerHTML = `<span class='error'>${result.error || 'Erreur lors de la sauvegarde'}</span>`;
+        }
+      } catch (e) {
+        document.getElementById('message').innerHTML = `<span class='error'>${e.message}</span>`;
+      }
+    }
+  </script>
+</body>
+</html>
+

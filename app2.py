@@ -17,6 +17,7 @@ from infos_gl import (
     get_tva_details,
     find_grandlivre_json_files
 )
+import glob
 app = Flask(__name__)
 
 # Configuration
@@ -659,25 +660,24 @@ def save_json(doc_id):
         doc = next((d for d in documents_db if d['id'] == doc_id), None)
         if not doc:
             return jsonify({'error': 'Document non trouvé'}), 404
-        
+
         if doc['status'] != 'completed':
             return jsonify({'error': 'Document non traité'}), 400
-        
+
         data = request.get_json()
         if not data or 'json_content' not in data:
             return jsonify({'error': 'Contenu JSON manquant'}), 400
-        
+
         json_content = data['json_content']
-        
+
         # Valider le JSON
         try:
             parsed_json = json.loads(json_content)
         except json.JSONDecodeError as e:
             return jsonify({'error': f'JSON invalide: {str(e)}'}), 400
-        
-        # Déterminer le chemin du fichier JSON
+
+        # Écraser le fichier existant
         if doc.get('output_path') and os.path.exists(doc['output_path']):
-            # Utiliser le fichier existant
             json_file_path = doc['output_path']
         else:
             # Créer un nouveau fichier JSON dans uploads
@@ -685,24 +685,22 @@ def save_json(doc_id):
             json_filename = f"edited_{timestamp}_{doc['name']}.json"
             json_file_path = os.path.join(app.config['UPLOAD_FOLDER'], json_filename)
             doc['output_path'] = json_file_path
-        
-        # Sauvegarder le fichier JSON
+
         with open(json_file_path, 'w', encoding='utf-8') as f:
             f.write(json_content)
-        
+
         # Mettre à jour les données du document
         doc['processed_data'] = parsed_json
         doc['last_modified'] = datetime.now().isoformat()
-        
-        logger.info(f"JSON sauvegardé pour document {doc_id}: {json_file_path}")
-        
+
+        # Forcer le recalcul des alertes (optionnel, mais recommandé)
+        # anomaly_workflow.get_alerts_for_documents(documents_db)
+
         return jsonify({
-            'message': f'JSON sauvegardé avec succès pour {doc["name"]}',
+            'message': f"JSON sauvegardé avec succès pour {doc['name']}",
             'file_path': json_file_path
         })
-        
     except Exception as e:
-        logger.error(f"Erreur sauvegarde JSON {doc_id}: {str(e)}")
         return jsonify({'error': f'Erreur lors de la sauvegarde: {str(e)}'}), 500
 
 @app.route('/delete_document/<int:doc_id>', methods=['DELETE'])
@@ -797,5 +795,127 @@ def get_stats():
         'matching_stats': matching_stats
     })
 
+@app.route('/correction/<int:alert_id>')
+def correction_fenetre(alert_id):
+    """Affiche la fenêtre de correction pour une alerte spécifique."""
+    return render_template('fenetre.html', alert_id=alert_id)
+
+@app.route('/correction_jno/<int:alert_id>')
+def correction_jno_fenetre(alert_id):
+    """Affiche la fenêtre de correction pour une transaction sur jour non ouvrable."""
+    return render_template('fenetre_jno.html', alert_id=alert_id)
+
+@app.route('/correction_ecart/<int:alert_id>')
+def correction_ecart_fenetre(alert_id):
+    """Affiche la fenêtre de correction pour un écart de montant."""
+    return render_template('fenetre_ecart.html', alert_id=alert_id)
+
+@app.route('/invoice_data/<invoice_ref>')
+def get_invoice_data(invoice_ref):
+    """Trouve les données d'une facture à partir de sa référence (Numéro Facture)."""
+    for doc in documents_db:
+        if doc.get('type') == 'facture' and doc.get('status') == 'completed' and doc.get('processed_data'):
+            processed_data = doc.get('processed_data', {})
+            info_payment = processed_data.get('info payment', {})
+            numero_facture = info_payment.get('Numéro Facture') or processed_data.get('Numéro Facture')
+            if numero_facture and numero_facture.strip() == invoice_ref.strip():
+                return jsonify({
+                    'document_id': doc['id'],
+                    'file_name': doc['name'],
+                    'total_ttc': info_payment.get('Total TTC') or processed_data.get('Total TTC'),
+                    'json_content': processed_data
+                })
+    return jsonify({'error': 'Facture non trouvée'}), 404
+
+@app.route('/check_data/<check_ref>')
+def get_check_data(check_ref):
+    """Trouve les données d'un chèque à partir de son numéro."""
+    for doc in documents_db:
+        if doc.get('type') == 'cheque' and doc.get('status') == 'completed' and doc.get('processed_data'):
+            processed_data = doc.get('processed_data', {})
+            check_number = processed_data.get('Numéro de Chèque')
+            if check_number and check_number.strip() == check_ref.strip():
+                return jsonify({
+                    'document_id': doc['id'],
+                    'file_name': doc['name'],
+                    'montant_cheque': processed_data.get('Montant du Chèque'),
+                    'json_content': processed_data
+                })
+    return jsonify({'error': 'Chèque non trouvé'}), 404
+
+@app.route('/latest_doc_json/<doc_type>')
+def get_latest_doc_json(doc_type):
+    """Renvoie le contenu JSON du document le plus récent du type spécifié (grandlivre ou releve)."""
+    doc_id = find_latest_doc_id_by_type(doc_type)
+    if not doc_id:
+        return jsonify({'error': f'Aucun document de type {doc_type} trouvé'}), 404
+    
+    doc = next((d for d in documents_db if d['id'] == doc_id), None)
+    if not doc or not doc.get('output_path') or not os.path.exists(doc['output_path']):
+        return jsonify({'error': 'Fichier JSON non trouvé pour le document le plus récent'}), 404
+    
+    with open(doc['output_path'], 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        
+    return jsonify({
+        'document_id': doc_id,
+        'json_content': data
+    })
+    
+def find_latest_doc_id_by_type(doc_type):
+    # doc_type: 'grandlivre' ou 'releve'
+    pattern = 'Grand_livre_comptable' if doc_type == 'grandlivre' else 'Generateur_de_Releve_Bancaire_BNP_Paribas'
+    files = sorted(
+        glob.glob(os.path.join(UPLOAD_FOLDER, f'Output_*_{pattern}.json')),
+        key=os.path.getmtime,
+        reverse=True
+    )
+    if not files:
+        return None
+    latest_file = os.path.basename(files[0])
+    for d in documents_db:
+        if d.get('output_path') and latest_file in d['output_path']:
+            return d['id']
+    return None
+
+@app.route('/alert_data/<int:alert_id>')
+def get_alert_data(alert_id):
+    alert = next((a for a in getattr(app, 'alerts', []) if a['id'] == alert_id), None)
+    if not alert:
+        try:
+            alerts, _ = anomaly_workflow.get_alerts_for_documents(documents_db)
+            alert = next((a for a in alerts if a['id'] == alert_id), None)
+        except Exception as e:
+            return jsonify({'error': str(e)}), 404
+    if not alert:
+        return jsonify({'error': 'Alerte non trouvée'}), 404
+    # S'assurer que document_id et type sont présents
+    if 'document_id' not in alert or not alert.get('document_id'):
+        doc = None
+        ref = alert.get('ref')
+        alert_type = alert.get('type', '').lower()
+        for d in documents_db:
+            if d.get('status') == 'completed':
+                if ref and ref in str(d.get('name', '')):
+                    doc = d
+                    break
+                if alert_type and alert_type in str(d.get('type', '')).lower():
+                    doc = d
+        if doc:
+            alert['document_id'] = doc['id']
+            alert['doc_type'] = doc['type']
+        # Fallback : prendre le plus récent GL ou RL si rien trouvé
+        if not alert.get('document_id'):
+            if 'grandlivre' in alert_type or 'gl' in alert.get('source', '').lower():
+                doc_id = find_latest_doc_id_by_type('grandlivre')
+                if doc_id:
+                    alert['document_id'] = doc_id
+            elif 'releve' in alert_type or 'rl' in alert.get('source', '').lower():
+                doc_id = find_latest_doc_id_by_type('releve')
+                if doc_id:
+                    alert['document_id'] = doc_id
+    return jsonify(alert)
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+

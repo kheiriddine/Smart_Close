@@ -1,0 +1,22 @@
+{
+  "Nom Societe": "KNIME",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025012021",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Analytique visuelle",
+    "Total TTC": 1302.89
+  },
+  "table": [
+    {
+      "Description": "Analyse via interfaces glisser-déposer",
+      "Date": "01/02/2025",
+      "TVA": 20.0,
+      "Montant HT": 1085.74,
+      "Total TTC": 1302.89
+    }
+  ],
+  "ocr_accuracy": 84.12792124442169
+}

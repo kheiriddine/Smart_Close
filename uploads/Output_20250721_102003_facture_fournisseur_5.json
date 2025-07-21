@@ -1,0 +1,22 @@
+{
+  "Nom Societe": "Tinyclues",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025012625",
+    "Date Facturation": "31/01/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Marketing prédictif",
+    "Total TTC": 4116.52
+  },
+  "table": [
+    {
+      "Description": "Ciblage client basé sur l'IA",
+      "Date": "31/01/2025",
+      "TVA": 20.0,
+      "Montant HT": 3430.43,
+      "Total TTC": 4116.52
+    }
+  ],
+  "ocr_accuracy": 84.93119751107923
+}

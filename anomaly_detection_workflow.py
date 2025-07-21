@@ -623,31 +623,35 @@ class AnomalyDetectionWorkflow:
         return alerts
     
     def detect_weekend_transactions(self, releve_norm: pd.DataFrame, gl_norm: pd.DataFrame) -> List[Dict[str, Any]]:
-        """Détecte les transactions sur jours non ouvrables"""
+        """Détecte les transactions effectuées un jour non ouvrable dans le relevé bancaire (RL) ou le grand livre (GL)"""
         alerts = []
-        
+    
         if not self.config.get('alert_on_weekend_transactions', True):
             return alerts
-        
+    
+        # Fusion des deux sources pour détection globale
         non_ouvrables = pd.concat([releve_norm, gl_norm])
         non_ouvrables = non_ouvrables[non_ouvrables['non_ouvrable']]
-        
+    
         for _, row in non_ouvrables.iterrows():
+            source_label = "RL" if row['source'] == 'releve' else "GL"
+        
             alerts.append({
-                "id": self.alerts_counter,
-                "type": "TRANSACTION_JOUR_NON_OUVRABLE",
-                "title": f"Transaction sur jour non ouvrable",
-                "description": f"Réf: {row['ref']} - Montant: {row['montant']}€ - Transaction effectuée un jour non ouvrable",
-                "source": row['source'],
-                "montant": row['montant'],
-                "ref": row['ref'],
-                "date": row['date'],
-                "priority": "low",
-                "commentaire": row['raw_text']
+		    "id": self.alerts_counter,
+		    "type": "TRANSACTION_JOUR_NON_OUVRABLE",
+		    "title": f"Transaction sur jour non ouvrable dans {source_label}",
+		    "description": f"Réf: {row['ref']} - Montant: {row['montant']}€ - Transaction un jour non ouvrable dans {source_label}",
+		    "source": row['source'],
+		    "montant": row['montant'],
+		    "ref": row['ref'],
+		    "date": row['date'],
+		    "priority": "low",
+		    "commentaire": row['raw_text']
             })
             self.alerts_counter += 1
-        
+    
         return alerts
+
     
     def detect_large_transactions(self, releve_norm: pd.DataFrame, gl_norm: pd.DataFrame) -> List[Dict[str, Any]]:
         """Détecte les transactions de montants élevés"""

@@ -1,0 +1,22 @@
+{
+  "Nom Societe": "SAS France",
+  "info payment": {
+    "Nom du Client": "Gradiant (Groupe RAINBOW PARTNERS)",
+    "Adresse Client": "8 PI. du Marché, 92200 Neuilly-sur-Seine, France",
+    "Numéro Facture": "FAC2025012868",
+    "Date Facturation": "01/02/2025",
+    "Date Echeance": "31/04/2025",
+    "Type d'opération": "Logiciel statistique",
+    "Total TTC": 4447.08
+  },
+  "table": [
+    {
+      "Description": "Logiciel d'analyse statistique",
+      "Date": "01/02/2025",
+      "TVA": 20,
+      "Montant HT": 3705.9,
+      "Total TTC": 4447.08
+    }
+  ],
+  "ocr_accuracy": 86.6606800426716
+}
