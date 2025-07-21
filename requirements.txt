@@ -1,0 +1,11 @@
+Flask
+pandas
+numpy
+Pillow
+PyPDF2
+easyocr
+paddleocr
+opencv-python
+together
+werkzeug
+openpyxl 
