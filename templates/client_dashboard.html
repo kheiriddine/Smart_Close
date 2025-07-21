@@ -2976,36 +2976,31 @@
         }
 
         async function correctAlert(alertId) {
-            // Chercher l'alerte dans la liste locale
             const alert = alerts.find(a => a.id === alertId);
-            // Types d'alertes autorisés pour correction
-            const allowedTitles = [
-                'Numéro de chèque manquant',
-                'Numéro de facture manquant'
-            ];
-            const allowedTypes = [
-                'CHEQUE_NUMERO_MANQUANT',
-                'FACTURE_NUMERO_MANQUANT'
-            ];
-            const allowedJNO = [
-                'TRANSACTION_JOUR_NON_OUVRABLE',
-                'Transaction sur jour non ouvrable dans GL',
-                'Transaction sur jour non ouvrable dans RL'
-            ];
-            if (
-                (alert && allowedTitles.includes(alert.title)) ||
-                (alert && allowedTypes.includes(alert.type))
-            ) {
+            if (!alert) {
+                alert("Impossible de trouver l'alerte.");
+                return;
+            }
+
+            // Listes des types et titres pour chaque fenêtre de correction
+            const numeroManquant = { types: ['CHEQUE_NUMERO_MANQUANT', 'FACTURE_NUMERO_MANQUANT'], titles: ['Numéro de chèque manquant', 'Numéro de facture manquant'] };
+            const jno = { types: ['TRANSACTION_JOUR_NON_OUVRABLE'], titles: ['Transaction sur jour non ouvrable', 'Transaction sur jour non ouvrable dans GL', 'Transaction sur jour non ouvrable dans RL'] };
+            const ecart = { types: ['ECART_MONTANT'], titles: ["Écart de montant"] };
+            const ajoutGl = { 
+                types: ['FACTURE_NON_RAPPROCHEE_GL', 'CHEQUE_NON_COMPTABILISE_GL', 'CHEQUE_EMIS_NON_ENCAISSE_GL', 'CHEQUE_ENCAISSE_NON_EMIS_GL', 'CHEQUE_INCOHERENT_GL'],
+                titles: ["Facture non rapprochée", "Chèque non comptabilisé", "Chèque émis non encaissé", "Chèque encaissé non émis", "Chèque incohérent"]
+            };
+
+            if (numeroManquant.types.includes(alert.type) || numeroManquant.titles.includes(alert.title)) {
                 window.open(`/correction/${alertId}`, '_blank', 'width=800,height=700');
-            } else if (
-                (alert && allowedJNO.includes(alert.type)) ||
-                (alert && allowedJNO.includes(alert.title))
-            ) {
+            } else if (jno.types.includes(alert.type) || jno.titles.includes(alert.title)) {
                 window.open(`/correction_jno/${alertId}`, '_blank', 'width=900,height=750');
-            } else if (alert && alert.type === 'ECART_MONTANT') {
+            } else if (ecart.types.includes(alert.type) || ecart.titles.includes(alert.title)) {
                 window.open(`/correction_ecart/${alertId}`, '_blank', 'width=1200,height=800');
+            } else if (ajoutGl.types.includes(alert.type) || ajoutGl.titles.includes(alert.title)) {
+                window.open(`/correction_ajout_gl/${alertId}`, '_blank', 'width=1200,height=900');
             } else {
-                alert('La correction n\'est disponible que pour les alertes de type "Numéro manquant", "Jour non ouvrable" ou "Écart de montant".');
+                alert('La correction pour ce type d\'alerte n\'est pas encore implémentée.');
             }
         }
 

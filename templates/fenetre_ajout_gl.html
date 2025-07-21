@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajout d'écriture au Grand Livre</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+    fieldset { margin-bottom: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 8px; background: #fff; }
+    legend { font-weight: bold; font-size: 1.2em; color: #333; }
+    .container { display: flex; gap: 20px; }
+    .col { flex: 1; }
+    .anomalie, .guidance { background: #eef; border: 1px solid #d1d1ff; padding: 10px; border-radius: 5px; margin-top: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f0f0f0; }
+    td[contenteditable="true"], input, select { background-color: #fffbe6; }
+    .btn { padding: 8px 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; margin-top: 10px; }
+    .btn-add { background: #2196F3; color: white; }
+    .btn-save { background: #4CAF50; color: white; }
+    #message, #messageRL, #messageGLExistant { margin-top: 10px; font-weight: bold; }
+    .success { color: #4CAF50; } .error { color: #f44336; }
+  </style>
+</head>
+<body>
+
+  <fieldset>
+    <legend>Contexte de l'Anomalie</legend>
+    <div id="anomalieContainer">Chargement...</div>
+    <div id="guidanceContainer" class="guidance" style="display:none;"></div>
+  </fieldset>
+
+  <div class="container">
+    <div class="col">
+      <fieldset>
+        <legend>Écritures du Relevé Bancaire (RL)</legend>
+        <table id="tableRL">
+          <thead>
+            <tr><th>Date</th><th>Nature</th><th>Montant</th><th>Type</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div id="messageRL"></div>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Écritures Existantes du GL</legend>
+        <table id="tableGLExistantes">
+           <thead>
+            <tr><th>Date</th><th>Compte</th><th>Libellé</th><th>Débit</th><th>Crédit</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div id="messageGLExistant"></div>
+      </fieldset>
+    </div>
+    <div class="col">
+      <fieldset>
+        <legend>Nouvelles Écritures GL</legend>
+        <form id="glForm">
+            <label>Date: <input type="date" id="dateGL" required></label>
+            <label>Compte: <input type="text" id="compteGL" required></label>
+            <label>Libellé: <input type="text" id="libelleGL" required></label>
+            <label>Débit: <input type="number" id="debitGL" step="0.01"></label>
+            <label>Crédit: <input type="number" id="creditGL" step="0.01"></label>
+            <button type="button" class="btn btn-add" onclick="ajouterLigneGL()">Ajouter Ligne</button>
+        </form>
+        <table id="tableGL">
+          <thead>
+            <tr><th>Date</th><th>Compte</th><th>Libellé</th><th>Débit</th><th>Crédit</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div id="message"></div>
+      </fieldset>
+    </div>
+  </div>
+
+  <button class="btn btn-save" style="width:100%; padding: 15px; font-size: 1.2em;" onclick="enregistrerTout()">Enregistrer Toutes les Modifications</button>
+  <div id="messageGlobal" style="text-align:center; margin-top:15px; font-weight: bold;"></div>
+
+<script>
+    const API_BASE = '/';
+    let alertData, glData, rlData, glDocumentId, rlDocumentId;
+    let nouvellesEcrituresGL = [];
+
+    const guides = {
+        'FACTURE_NON_RAPPROCHEE_GL': {
+            titre: "Facture non rapprochée",
+            action: "Enregistrer le paiement/encaissement.",
+            compte_suggere: "512200",
+            libelle_suggere: (ref, nom) => `Règlement facture ${ref} - ${nom}`,
+            contrepartie: "Contrepasser le compte 411xxx ou 401xxx."
+        },
+        'CHEQUE_NON_COMPTABILISE_GL': {
+            titre: "Chèque non comptabilisé",
+            action: "Comptabiliser le chèque (émission + encaissement).",
+            compte_suggere: "512200",
+            libelle_suggere: (ref) => `Chèque n°${ref}`,
+            contrepartie: "Contrepartie selon nature (411xxx, 401xxx, 6xxx)."
+        },
+        'CHEQUE_EMIS_NON_ENCAISSE_GL': {
+            titre: "Chèque émis non encaissé",
+            action: "Enregistrer l'encaissement du chèque.",
+            compte_suggere: "512200",
+            libelle_suggere: (ref) => `Encaissement chèque n°${ref}`,
+            contrepartie: "Contre-passer le compte d'attente."
+        },
+        'CHEQUE_ENCAISSE_NON_EMIS_GL': {
+            titre: "Chèque encaissé non émis",
+            action: "Comptabiliser l'origine du chèque.",
+            compte_suggere: "411000",
+            libelle_suggere: (ref) => `Origine chèque n°${ref}`,
+            contrepartie: "Compte de produit (7xxx) et TVA (445xxx)."
+        },
+        'CHEQUE_INCOHERENT_GL': {
+            titre: "Chèque incohérent",
+            action: "Corriger l'écart de montant.",
+            compte_suggere: "658000",
+            libelle_suggere: (ref) => `Écart encaissement chèque n°${ref}`,
+            contrepartie: "Ajuster le compte 512xxx si nécessaire."
+        },
+
+        // --- Fallbacks par titre ---
+        "Facture non rapprochée": 'FACTURE_NON_RAPPROCHEE_GL',
+        "Chèque non comptabilisé": 'CHEQUE_NON_COMPTABILISE_GL',
+        "Chèque émis non encaissé": 'CHEQUE_EMIS_NON_ENCAISSE_GL',
+        "Chèque encaissé non émis": 'CHEQUE_ENCAISSE_NON_EMIS_GL',
+        "Chèque incohérent": 'CHEQUE_INCOHERENT_GL'
+    };
+
+    function getGuide(alert) {
+        let guide = guides[alert.type];
+        if (!guide) {
+            const guideKey = guides[alert.title];
+            if(guideKey) guide = guides[guideKey];
+        }
+        return guide;
+    }
+
+    // --- Fonctions utilitaires ---
+    function toISODate(frDate) {
+        const [day, month, year] = frDate.split('/');
+        return `${year}-${month}-${day}`;
+    }
+    function fromISODate(isoDate) {
+        const [year, month, day] = isoDate.split('-');
+        return `${day}/${month}/${year}`;
+    }
+
+    async function loadData() {
+        const alertId = window.location.pathname.split('/').pop();
+        try {
+            const [alertResp, glResp, rlResp] = await Promise.all([
+                fetch(`${API_BASE}alert_data/${alertId}`),
+                fetch(`${API_BASE}latest_doc_json/grandlivre`),
+                fetch(`${API_BASE}latest_doc_json/releve`)
+            ]);
+            alertData = await alertResp.json();
+            const glJson = await glResp.json();
+            const rlJson = await rlResp.json();
+            glDocumentId = glJson.document_id;
+            glData = glJson.json_content;
+            rlData = rlJson.json_content;
+            rlDocumentId = rlJson.document_id; // Assuming rlDocumentId is available in rlJson
+
+            // Afficher alerte et guide
+            const guide = getGuide(alertData);
+            if (!guide) {
+                document.getElementById('anomalieContainer').textContent = "Pas de guide disponible pour cette alerte.";
+                return;
+            }
+            document.getElementById('anomalieContainer').innerHTML = `<strong>${guide.titre}:</strong> ${alertData.description}`;
+            document.getElementById('guidanceContainer').innerHTML = `<strong>Guide:</strong> ${guide.action} Compte suggéré: <strong>${guide.compte_suggere}</strong>. ${guide.contrepartie}`;
+            document.getElementById('guidanceContainer').style.display = 'block';
+
+            // Pré-remplir formulaire basé sur le guide
+            document.getElementById('compteGL').value = guide.compte_suggere;
+            document.getElementById('libelleGL').value = guide.libelle_suggere(alertData.ref, alertData.nom_client || 'Client');
+            
+            if(alertData.montant) {
+                // Pour une facture client non rapprochée ou un chèque non comptabilisé, le montant va au débit du compte de banque/caisse
+                if( (alertData.type === 'FACTURE_NON_RAPPROCHEE_GL' && alertData.type_facture === 'client') || alertData.type === 'CHEQUE_NON_COMPTABILISE_GL') {
+                    document.getElementById('debitGL').value = alertData.montant;
+                    document.getElementById('creditGL').value = '';
+                } else { // Facture fournisseur
+                    document.getElementById('creditGL').value = alertData.montant;
+                    document.getElementById('debitGL').value = '';
+                }
+            }
+
+            // Afficher écritures RL (éditables)
+            const ecrituresRL = rlData.operations.filter(e => String(e.nature).includes(alertData.ref));
+            const tableRLBody = document.querySelector("#tableRL tbody");
+            ecrituresRL.forEach(e => {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td><input type="date" value="${toISODate(e.date)}"></td><td><input type="text" value="${e.nature}"></td><td><input type="number" value="${e.montant}"></td><td><input type="text" value="${e.type}"></td>`;
+                tableRLBody.appendChild(row);
+            });
+            
+            // Afficher écritures GL existantes (éditables)
+            const ecrituresGLExistantes = glData.ecritures_comptables.filter(e => String(e.libellé).includes(alertData.ref));
+            const tableGLExistantesBody = document.querySelector("#tableGLExistantes tbody");
+            ecrituresGLExistantes.forEach(e => {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td contenteditable="true">${e.date}</td><td contenteditable="true">${e['n° compte']}</td><td contenteditable="true">${e.libellé}</td><td contenteditable="true">${e.débit}</td><td contenteditable="true">${e.crédit}</td>`;
+                tableGLExistantesBody.appendChild(row);
+            });
+
+        } catch (e) {
+            document.getElementById('anomalieContainer').textContent = `Erreur: ${e.message}`;
+        }
+    }
+
+    function ajouterLigneGL() {
+        const nouvelleLigne = {
+            date: document.getElementById('dateGL').value,
+            'n° compte': document.getElementById('compteGL').value,
+            libellé: document.getElementById('libelleGL').value,
+            débit: parseFloat(document.getElementById('debitGL').value) || 0,
+            crédit: parseFloat(document.getElementById('creditGL').value) || 0
+        };
+        nouvellesEcrituresGL.push(nouvelleLigne);
+        afficherNouvellesLignesGL();
+        document.getElementById('glForm').reset();
+    }
+
+    function afficherNouvellesLignesGL() {
+        const tableBody = document.querySelector("#tableGL tbody");
+        tableBody.innerHTML = "";
+        nouvellesEcrituresGL.forEach(e => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${e.date}</td><td>${e['n° compte']}</td><td>${e.libellé}</td><td>${e.débit}</td><td>${e.crédit}</td>`;
+            tableBody.appendChild(row);
+        });
+    }
+
+    async function enregistrerTout() {
+        const messageGlobalEl = document.getElementById('messageGlobal');
+        try {
+            // 1. Sauvegarder les modifications du RL
+            const rlRows = document.querySelectorAll("#tableRL tbody tr");
+            const updatedOperations = Array.from(rlRows).map(row => {
+                const cells = row.querySelectorAll("input");
+                return { date: fromISODate(cells[0].value), nature: cells[1].value, montant: parseFloat(cells[2].value) || 0, type: cells[3].value };
+            });
+            const ref = alertData.ref;
+            let updatedRlData = { ...rlData };
+            // Remplacer uniquement les opérations modifiées
+            updatedRlData.operations = rlData.operations.filter(op => !String(op.nature).includes(ref));
+            updatedRlData.operations.push(...updatedOperations);
+            await saveData(rlDocumentId, updatedRlData);
+
+            // 2. Sauvegarder les modifications du GL (existant + ajouts)
+            const glRows = document.querySelectorAll("#tableGLExistantes tbody tr");
+            const updatedEcritures = Array.from(glRows).map(row => {
+                const cells = row.querySelectorAll("td");
+                return { date: cells[0].textContent, 'n° compte': cells[1].textContent, libellé: cells[2].textContent, débit: parseFloat(cells[3].textContent) || 0, crédit: parseFloat(cells[4].textContent) || 0 };
+            });
+            let updatedGlData = { ...glData };
+            updatedGlData.ecritures_comptables = glData.ecritures_comptables.filter(e => !String(e.libellé).includes(ref));
+            updatedGlData.ecritures_comptables.push(...updatedEcritures);
+            updatedGlData.ecritures_comptables.push(...nouvellesEcrituresGL); // Ajouter les nouvelles lignes
+            await saveData(glDocumentId, updatedGlData);
+            
+            messageGlobalEl.className = 'success';
+            messageGlobalEl.textContent = 'Toutes les modifications ont été enregistrées avec succès !';
+            
+            // Recharger la page pour voir les données à jour
+            setTimeout(() => window.location.reload(), 1500);
+
+        } catch (e) {
+            messageGlobalEl.className = 'error';
+            messageGlobalEl.textContent = `Une erreur est survenue : ${e.message}`;
+        }
+    }
+
+    async function saveData(docId, data) {
+        const resp = await fetch(`${API_BASE}save_json/${docId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ json_content: JSON.stringify(data, null, 2) })
+        });
+        if (!resp.ok) {
+            const result = await resp.json();
+            throw new Error(result.error || 'Sauvegarde échouée');
+        }
+    }
+
+    window.onload = loadData;
+</script>
+</body>
+</html> 

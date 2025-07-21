@@ -2,27 +2,27 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Correction d'écriture</title>
+    <title>Correction : Numéro manquant</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
-        .container { max-width: 650px; margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 24px; }
-        fieldset { border: 1px solid #ccc; border-radius: 6px; padding: 18px; }
-        legend { font-weight: bold; }
-        label { display: block; margin: 10px 0 6px; }
-        input, select { width: 100%; padding: 6px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #bbb; }
-        button { background: #2196F3; color: #fff; border: none; border-radius: 4px; padding: 10px 18px; font-size: 1rem; cursor: pointer; }
-        button:disabled { background: #ccc; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #0002; padding: 32px; }
+        fieldset { border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; background: #fafbfc; }
+        legend { font-weight: bold; font-size: 1.1em; color: #2196F3; }
+        label { display: block; margin: 12px 0 6px; font-weight: 500; }
+        input, select { width: 100%; padding: 7px; margin-bottom: 12px; border-radius: 5px; border: 1px solid #bbb; font-size: 1em; }
+        button { background: #2196F3; color: #fff; border: none; border-radius: 5px; padding: 12px 22px; font-size: 1.1em; cursor: pointer; margin-top: 10px; transition: background 0.2s; }
+        button:hover { background: #1769aa; }
         .success { color: #4CAF50; margin-top: 10px; }
         .error { color: #f44336; margin-top: 10px; }
-        .json-viewer { background: #f7f7f7; border: 1px solid #ddd; border-radius: 6px; padding: 10px; font-family: 'Fira Mono', 'Consolas', monospace; font-size: 0.95em; margin-bottom: 16px; max-height: 220px; overflow: auto; }
+        .json-viewer { background: #f7f7f7; border: 1px solid #ddd; border-radius: 6px; padding: 12px; font-family: 'Fira Mono', 'Consolas', monospace; font-size: 1em; margin-bottom: 18px; max-height: 260px; overflow: auto; }
         .section-title { font-size: 1.1em; font-weight: bold; margin: 18px 0 8px; color: #2196F3; }
     </style>
 </head>
 <body>
 <div class="container">
 <fieldset>
-    <legend>Ajuster une écriture dans un chèque ou une facture JSON</legend>
-    <form id="ajustementDocForm">
+    <legend>Correction : Numéro manquant</legend>
+    <form id="numeroManquantForm">
         <label>Type de document :
             <select id="typeDoc" required>
                 <option value="">Sélectionner</option>
@@ -31,65 +31,54 @@
                 <option value="facture_client">Facture Client</option>
             </select>
         </label>
-        <!-- Formulaire Chèque -->
         <div id="formCheque" style="display: none;">
             <h4>Données du Chèque</h4>
-            <label>Numéro de Chèque : <input type="text" id="numCheque" required></label>
-            <label>Montant : <input type="number" step="0.01" id="montantCheque" required></label>
-            <label>Date : <input type="date" id="dateCheque" required></label>
-            <label>Émetteur : <input type="text" id="emetteurCheque" required></label>
-            <label>Banque : <input type="text" id="banqueCheque" required></label>
-            <label>Adresse Banque : <input type="text" id="adresseBanqueCheque"></label>
-            <label>Adresse Émetteur : <input type="text" id="adresseEmetteurCheque"></label>
-            <label>Code Banque : <input type="text" id="codeBanqueCheque"></label>
-            <label>Code Guichet : <input type="text" id="codeGuichetCheque"></label>
-            <label>Numéro de Compte : <input type="text" id="compteCheque"></label>
+            <label>Numéro de Chèque : <input type="text" id="numCheque" required placeholder="À saisir"></label>
+            <label>Montant : <input type="number" step="0.01" id="montantCheque"></label>
+            <label>Date : <input type="text" id="dateCheque" placeholder="JJ/MM/AAAA"></label>
+            <label>Émetteur : <input type="text" id="emetteurCheque"></label>
+            <label>Banque : <input type="text" id="banqueCheque"></label>
         </div>
-        <!-- Formulaire Facture -->
         <div id="formFacture" style="display: none;">
             <h4>Données de la Facture</h4>
-            <label>Numéro de Facture : <input type="text" id="numFacture" required></label>
-            <label>Date Facturation : <input type="date" id="dateFacture" required></label>
-            <label>Date Échéance : <input type="date" id="dateEcheanceFacture" required></label>
-            <label>Nom Client / Fournisseur : <input type="text" id="nomClientFacture" required></label>
-            <label>Adresse Client : <input type="text" id="adresseClientFacture"></label>
-            <label>Total TTC : <input type="number" step="0.01" id="ttcFacture" required></label>
-            <label>Type d'opération : <input type="text" id="typeOperationFacture"></label>
+            <label>Numéro de Facture : <input type="text" id="numFacture" required placeholder="À saisir"></label>
+            <label>Date Facturation : <input type="text" id="dateFacture" placeholder="JJ/MM/AAAA"></label>
+            <label>Date Échéance : <input type="text" id="dateEcheanceFacture" placeholder="JJ/MM/AAAA"></label>
+            <label>Nom Client / Fournisseur : <input type="text" id="nomClientFacture"></label>
+            <label>Total TTC : <input type="number" step="0.01" id="ttcFacture"></label>
         </div>
-        <br>
-        <button type="button" onclick="enregistrerCorrection()">Enregistrer la correction</button>
+        <button type="button" onclick="enregistrerNumero()">Enregistrer</button>
         <div id="message"></div>
     </form>
 </fieldset>
-
-<div class="section-title">Contenu JSON original</div>
+<div class="section-title">Contenu JSON du document OCR</div>
 <pre class="json-viewer" id="jsonOriginal">Chargement...</pre>
-
-<div class="section-title">Correction proposée</div>
-<pre class="json-viewer" id="jsonCorrection">Aucune correction</pre>
-</div>
 <script>
 function getParam() {
     const url = new URL(window.location.href);
-    return url.pathname.split('/').pop(); // alert_id à la fin de l'URL
+    return url.pathname.split('/').pop();
 }
 const API_BASE = '/';
 let alertData = null;
 let docData = null;
 let documentId = null;
-let lastCorrection = null;
 window.onload = async function() {
     const alertId = getParam();
     if (!alertId) return;
     try {
-        // Charger l'alerte
+        // Charger l'alerte pour obtenir le document_id du document OCR (facture ou chèque)
         const alertResp = await fetch(`${API_BASE}alert_data/${alertId}`);
         if (!alertResp.ok) throw new Error('Alerte non trouvée');
         alertData = await alertResp.json();
+        if (!alertData.document_id) {
+            document.getElementById('message').innerHTML = '<span class="error">Impossible de retrouver le document OCR associé à cette alerte.</span>';
+            document.getElementById('jsonOriginal').textContent = 'Erreur : document_id manquant';
+            return;
+        }
         documentId = alertData.document_id;
-        // Charger le JSON du document
+        // Charger le JSON du document OCR (facture ou chèque)
         const docResp = await fetch(`${API_BASE}download_json/${documentId}`);
-        if (!docResp.ok) throw new Error('Fichier JSON non trouvé');
+        if (!docResp.ok) throw new Error('Fichier JSON du document OCR non trouvé');
         docData = await docResp.json();
         document.getElementById('jsonOriginal').textContent = JSON.stringify(docData, null, 2);
         // Déduire le type et pré-remplir le formulaire
@@ -102,7 +91,6 @@ window.onload = async function() {
         document.getElementById('typeDoc').value = type;
         afficherFormulaire(type);
         preRemplirFormulaire(type, docData);
-        updateCorrectionPreview();
     } catch (e) {
         document.getElementById('message').innerHTML = `<span class='error'>${e.message}</span>`;
         document.getElementById('jsonOriginal').textContent = 'Erreur de chargement';
@@ -110,7 +98,6 @@ window.onload = async function() {
 };
 document.getElementById('typeDoc').addEventListener('change', function() {
     afficherFormulaire(this.value);
-    updateCorrectionPreview();
 });
 function afficherFormulaire(type) {
     document.getElementById('formCheque').style.display = (type === 'cheque') ? 'block' : 'none';
@@ -118,76 +105,41 @@ function afficherFormulaire(type) {
 }
 function preRemplirFormulaire(type, data) {
     if (type === 'cheque') {
-        document.getElementById('numCheque').value = data['Numéro de Chèque'] || '';
+        document.getElementById('numCheque').value = '';
         document.getElementById('montantCheque').value = data['Montant du Chèque'] || '';
-        document.getElementById('dateCheque').value = data['Le'] || '';
+        document.getElementById('dateCheque').value = (data['Le'] || '').replace(/-/g, '/');
         document.getElementById('emetteurCheque').value = data['Emetteur'] || '';
         document.getElementById('banqueCheque').value = data['Banque'] || '';
-        document.getElementById('adresseBanqueCheque').value = data['Adresse Banque'] || '';
-        document.getElementById('adresseEmetteurCheque').value = data['Adresse Emetteur'] || '';
-        document.getElementById('codeBanqueCheque').value = data['Code Banque'] || '';
-        document.getElementById('codeGuichetCheque').value = data['Code Guichet'] || '';
-        document.getElementById('compteCheque').value = data['Numéro de Compte'] || '';
     }
     if (type === 'facture_fournisseur' || type === 'facture_client') {
-        document.getElementById('numFacture').value = data['Numéro Facture'] || '';
-        document.getElementById('dateFacture').value = data['Date Facturation'] || '';
-        document.getElementById('dateEcheanceFacture').value = data['Date Echeance'] || '';
+        document.getElementById('numFacture').value = '';
+        document.getElementById('dateFacture').value = (data['Date Facturation'] || '').replace(/-/g, '/');
+        document.getElementById('dateEcheanceFacture').value = (data['Date Echeance'] || '').replace(/-/g, '/');
         document.getElementById('nomClientFacture').value = data['Nom Client/Fournisseur'] || '';
-        document.getElementById('adresseClientFacture').value = data['Adresse Client'] || '';
         document.getElementById('ttcFacture').value = data['Total TTC'] || '';
-        document.getElementById('typeOperationFacture').value = data['Type d\'opération'] || '';
     }
 }
-function getCorrectionFromForm() {
-    const type = document.getElementById('typeDoc').value;
-    let doc = { type };
-    if (type === 'cheque') {
-        doc = {
-            "type": "cheque",
-            "Numéro de Chèque": document.getElementById("numCheque").value,
-            "Montant du Chèque": parseFloat(document.getElementById("montantCheque").value) || 0,
-            "Le": document.getElementById("dateCheque").value,
-            "Emetteur": document.getElementById("emetteurCheque").value,
-            "Banque": document.getElementById("banqueCheque").value,
-            "Adresse Banque": document.getElementById("adresseBanqueCheque").value,
-            "Adresse Emetteur": document.getElementById("adresseEmetteurCheque").value,
-            "Code Banque": document.getElementById("codeBanqueCheque").value,
-            "Code Guichet": document.getElementById("codeGuichetCheque").value,
-            "Numéro de Compte": document.getElementById("compteCheque").value
-        };
-    }
-    if (type === "facture_fournisseur" || type === "facture_client") {
-        doc = {
-            "type": type,
-            "Numéro Facture": document.getElementById("numFacture").value,
-            "Date Facturation": document.getElementById("dateFacture").value,
-            "Date Echeance": document.getElementById("dateEcheanceFacture").value,
-            "Nom Client/Fournisseur": document.getElementById("nomClientFacture").value,
-            "Adresse Client": document.getElementById("adresseClientFacture").value,
-            "Total TTC": parseFloat(document.getElementById("ttcFacture").value) || 0,
-            "Type d'opération": document.getElementById("typeOperationFacture").value
-        };
-    }
-    return doc;
-}
-function updateCorrectionPreview() {
-    const doc = getCorrectionFromForm();
-    lastCorrection = doc;
-    document.getElementById('jsonCorrection').textContent = JSON.stringify(doc, null, 2);
-}
-// Mettre à jour l'aperçu à chaque modification
-['typeDoc','numCheque','montantCheque','dateCheque','emetteurCheque','banqueCheque','adresseBanqueCheque','adresseEmetteurCheque','codeBanqueCheque','codeGuichetCheque','compteCheque','numFacture','dateFacture','dateEcheanceFacture','nomClientFacture','adresseClientFacture','ttcFacture','typeOperationFacture'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('input', updateCorrectionPreview);
-});
-async function enregistrerCorrection() {
+async function enregistrerNumero() {
     const type = document.getElementById('typeDoc').value;
     if (!type) {
         alert('Veuillez sélectionner un type de document.');
         return;
     }
-    const doc = getCorrectionFromForm();
+    let doc = { ...docData };
+    if (type === 'cheque') {
+        doc['Numéro de Chèque'] = document.getElementById('numCheque').value;
+        doc['Montant du Chèque'] = parseFloat(document.getElementById('montantCheque').value) || 0;
+        doc['Le'] = document.getElementById('dateCheque').value;
+        doc['Emetteur'] = document.getElementById('emetteurCheque').value;
+        doc['Banque'] = document.getElementById('banqueCheque').value;
+    }
+    if (type === 'facture_fournisseur' || type === 'facture_client') {
+        doc['Numéro Facture'] = document.getElementById('numFacture').value;
+        doc['Date Facturation'] = document.getElementById('dateFacture').value;
+        doc['Date Echeance'] = document.getElementById('dateEcheanceFacture').value;
+        doc['Nom Client/Fournisseur'] = document.getElementById('nomClientFacture').value;
+        doc['Total TTC'] = parseFloat(document.getElementById('ttcFacture').value) || 0;
+    }
     try {
         const resp = await fetch(`${API_BASE}save_json/${documentId}`, {
             method: 'POST',
@@ -196,7 +148,8 @@ async function enregistrerCorrection() {
         });
         const result = await resp.json();
         if (resp.ok) {
-            document.getElementById('message').innerHTML = `<span class='success'>Correction enregistrée !</span>`;
+            document.getElementById('message').innerHTML = `<span class='success'>Numéro ajouté et document mis à jour !</span>`;
+            document.getElementById('jsonOriginal').textContent = JSON.stringify(doc, null, 2);
         } else {
             document.getElementById('message').innerHTML = `<span class='error'>${result.error || 'Erreur lors de la sauvegarde'}</span>`;
         }
@@ -206,5 +159,4 @@ async function enregistrerCorrection() {
 }
 </script>
 </body>
-</html>
-
+</html> 

@@ -810,6 +810,11 @@ def correction_ecart_fenetre(alert_id):
     """Affiche la fenêtre de correction pour un écart de montant."""
     return render_template('fenetre_ecart.html', alert_id=alert_id)
 
+@app.route('/correction_ajout_gl/<int:alert_id>')
+def correction_ajout_gl_fenetre(alert_id):
+    """Affiche la fenêtre pour ajouter des écritures au GL pour corriger une anomalie."""
+    return render_template('fenetre_ajout_gl.html', alert_id=alert_id)
+
 @app.route('/invoice_data/<invoice_ref>')
 def get_invoice_data(invoice_ref):
     """Trouve les données d'une facture à partir de sa référence (Numéro Facture)."""
